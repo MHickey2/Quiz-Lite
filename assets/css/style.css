@@ -69,6 +69,7 @@ body {
     text-align: center;
     border-radius: 15px;
     border: 1px solid black;
+    text-transform: uppercase;
 }
 
 #start-btn:hover,
@@ -90,17 +91,26 @@ body {
 
 .choice-container {
     height: 150px;
-    width: 400px;
-    border: 5px solid white;
+    width: 370px;
+    border: 8px solid white;
     font-size: 1.4rem;
     padding: 25px;
     margin: 15px;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     vertical-align: middle;
-    background-color: rgba(255, 255, 255, 0.3);
-    
+    background-color: rgb(102, 95, 95, 0.3);   
 }
+
+.choice-container:hover {
+    border: 8px solid rgb(233, 123, 233);      
+    background-color: rgb(80, 59, 82);   
+}
+
+/*.choice-container:selected {
+    border: 8px solid rgb(190, 15, 190);      
+    background-color: rgb(25, 14, 26); 
+}*/
 
 .question-panel {
     border: 3px solid white;
@@ -111,7 +121,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 65%;
+    width: 62%;
     
 }
 
@@ -174,5 +184,16 @@ body {
 .score-area {
     text-align: center;
     font-size: 130%;
+    margin-bottom: 15px;
 }
 
+.footer {
+    text-align: center;
+    background-color: black;
+    height: 150px;
+    vertical-align: middle;
+    font-size: 180%;
+    letter-spacing: 10px;
+    padding: 50px;
+    margin-bottom: 0;
+}

@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Index - Play</title>
 </head>
@@ -33,7 +34,7 @@ repository in the READ.me and will commit in small increments so im sure of what
    <div id="welcome-modal" class="hide">
         <h4>Welcome to Quiz-Lite</h4>
         <div class="content">
-            <p>Welcome to Quiz Lite.In a few simple steps you can customize the game to suit your needs. First
+            <p>Welcome to Quiz-Lite.In a few simple steps you can customize the game to suit your needs. First
                 choose your name<br> Good Luck!<br></p>
             <br />
             <input type="text" id="username" placeholder="Enter Name : ">
@@ -41,6 +42,36 @@ repository in the READ.me and will commit in small increments so im sure of what
         </div>
     </div>
     <br />
+
+    <div class="w3-container">
+        
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+      
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <header class="w3-container w3-purple"> 
+              <span onclick="document.getElementById('id01').style.display='none'" 
+              class="w3-button w3-display-topright">&times;</span>
+              <h2>Quiz-Lite Username Selection</h2>
+            </header>
+            <div class="w3-container">
+                <p style="color: purple;">Welcome to Quiz Lite.In a few simple steps you can customize the game to suit your needs. First
+                    choose your name<br>and Good Luck with the Quiz!<br></p>
+                <br/>
+                <div class = "center">
+                <input type="text" id="username" placeholder="Enter Name: ">
+                <button onclick="userName" id="userName" data-type="submitname">Submit now</button> 
+                </div>
+                <br/>             
+            </div>
+            <footer class="w3-container w3-purple">
+              <p>Quiz-Lite Username Modal </p>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+
     <img id="seventyfive"  class="brain" src="/assets/images/brain.png" alt="brain"/>
     <h1 class="heading">Quiz-Lite</h1>
     <p class="center-message">Welcome to the lite-weight Quiz, for a quick round quizzing sensation.</p>
@@ -93,9 +124,19 @@ boxes in each-->
     </div>
 
     <script src="assets/js/script.js"></script>
-    <script>
-    
-</script>
+    <footer class="footer">
+        <div class="links">
+            
+            <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i><span
+                    class="sr-only">Facebook</span></a>            
+            <a href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i><span
+                    class="sr-only">Twitter</span></a>
+            <a href="http://www.github.com" target="_blank"><i class="fab fa-github"></i><span
+                    class="sr-only">Github</span></a>        
+            <a href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i><span
+                    class="sr-only">Instagram</span></a>        
+        </div>
+    </footer>
 </body>
 
 </html>
