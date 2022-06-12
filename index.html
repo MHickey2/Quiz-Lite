@@ -12,97 +12,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="jquery-1.10.2.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Index - Play</title>
-
 </head>
 
 <body>
 
-<!--Orinally I experimented within the horror-quiz repository, but I made a hash of it and changed so many things I got
+    <!--Orinally I experimented within the horror-quiz repository, but I made a hash of it and changed so many things I got
 totally confused and overwhelmee but rebooted the whole project, initally I was going to do horror-quiz, formulating my own
 questions and answers but changed the focus of the quiz and decided to utilize an existing API, I will include the original
-repository in the READ.me and will commit in small increments so im sure of what im doing from this point--> 
+repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
 
 
 <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h2 id="welcomeText"></h2>
+    <h2 id="welcomeText">Welcome, ${username}</h2>
     <br />
-
 
 <!--Modal Form to get the username from the user-->
     <!-- Welcome modal -->
     <div id="welcome-modal">
-
-        <div class="">
-            <div>
-                <h4>Welcome to Quiz-Lite</h4>
-            </div>
-            <div class="content">
-                <p>Welcome to Quiz Lite.In a few simple steps you can customize the game to suit your needs. First
-                    choose your name<br> Good Luck!<br><br></p>
-                <br />
-                <input type="text" id="username" placeholder="Enter Name : ">
-                <button onclick="userName" id="userName">Submit now</button>
-            </div>
-
-
+        <h4>Welcome to Quiz-Lite</h4>
+        <div class="content">
+            <p>Welcome to Quiz Lite.In a few simple steps you can customize the game to suit your needs. First
+                choose your name<br> Good Luck!<br></p>
             <br />
-
-<!--This is the start button for the Game, it will initilaze the game-->
-            <div class="controls">
-                <btn id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start
-            </div>
+            <input type="text" id="username" placeholder="Enter Name : ">
+            <button onclick="userName" id="userName">Submit now</button>
         </div>
+    </div>
+    <br />
+<!--This is the start button for the Game, it will initilaze the game-->
+    <div class="controls">
+        <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
+    </div>
 
 <!--The game elements will not be visible to the user until they press the start button-->
+    <div id="hidden">
 
-        <div id="hidden">
-
-<!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->            
-            <p>You have: <span id="time-keeper"></span> seconds remaining!</p>
+<!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
+        <p>You have: <span id="time-keeper"></span> seconds remaining!</p>
 
 
 <!--This section will describe the category and the difficulty for each question set in the quiz-->
-            <div class="informationForQuestion">
-                <p id="category" class="center"></p>
-                <p id="difficulty" class="center"></p>
-            </div>
-            <br />
+        <div class="informationForQuestion">
+            <p id="category" class="center"></p>
+            <p id="difficulty" class="center"></p>
+        </div>
+        <br />
 
-            <div class="question-container">
-                <p class="question"><span id="questionNumber"></span></p>
-                <h3 id="question"></h3>
-            </div>
+<!--This is where each question will be displayed-->
 
-            <div class="question-panel">
-                <div class="main-container">
-                    <button id="answer1" class="choice-container"></button>
-                    <button id="answer2" class="choice-container"></button>
-                </div>
-                <div class="main-container">
-                    <button id="answer3" class="choice-container"></button>
-                    <button id="answer4" class="choice-container"></button>
-                </div>
-            </div>
-
-
-
-            <div class="score-area">
-                <p class="scores">Correct Answers <span id="score">0</span></p>
-                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-            </div>
-
-            <div id="number_incorrect">
-
-            </div>
-
-
+        <div class="question-container">
+            <p class="question"><span id="questionNumber"></span></p>
+            <h3 id="question"></h3>
         </div>
 
+<!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
+boxes in each-->
 
-        <script src="assets/js/script1.js"></script>
+        <div class="question-panel">
+            <div class="main-container">
+                <button id="answer1" class="choice-container"></button>
+                <button id="answer2" class="choice-container"></button>
+            </div>
+            <div class="main-container">
+                <button id="answer3" class="choice-container"></button>
+                <button id="answer4" class="choice-container"></button>
+            </div>
+        </div>
+
+<!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
+
+        <div class="score-area">
+            <p class="scores">Correct Answers <span id="correct">0</span></p>
+            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
