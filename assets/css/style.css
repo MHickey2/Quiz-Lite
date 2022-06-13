@@ -1,3 +1,4 @@
+/*styling for the body of the app*/
 body {
     background-color: #280a30;
     font-size: 100%;
@@ -16,7 +17,7 @@ body {
     text-align: left;
     font-size: 120%;
 }
-
+/*Image for top of page*/
 .brain {
     margin-top: 5px;
     display: block;
@@ -88,10 +89,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
+/*Each individual answer box for displaying the options to the user*/
 .choice-container {
     height: 150px;
-    width: 370px;
+    width: 360px;
     border: 8px solid white;
     font-size: 1.4rem;
     padding: 25px;
@@ -115,15 +116,16 @@ body {
 .question-panel {
     border: 3px solid white;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);    
     box-shadow: 0 0 5px 1px;
     padding: 10px;
-    display: block;
+    display: flexbox;
     margin-left: auto;
     margin-right: auto;
-    width: 62%;
-    
+    width: 80%;  
 }
+
+
 
 .hide {
     display: none;
@@ -137,6 +139,7 @@ body {
 }
 
 .main-container {
+    clear: both;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -157,7 +160,8 @@ body {
 .informationForQuestion {
     background-color: black;
     height: 100px;
-    width: 450px;
+    width: 300px;
+    text-align: center;
     border: 5px solid white;
     border-radius: 20px;
     display: block;
@@ -181,6 +185,9 @@ body {
     text-transform: capitalize;
 }
 
+.question-container {
+    text-align: center;
+}
 .score-area {
     text-align: center;
     font-size: 130%;
@@ -196,4 +203,8 @@ body {
     letter-spacing: 10px;
     padding: 50px;
     margin-bottom: 0;
+}
+
+.w3-button w3-pink {
+    margin-bottom: 5px;
 }
