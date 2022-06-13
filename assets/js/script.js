@@ -96,4 +96,6 @@ document.getElementById("submitname").onclick = function(){
     document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
 }
 
-//difficulty level for the game  
+//difficulty level for the game
+
+

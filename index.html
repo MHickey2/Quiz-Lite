@@ -78,9 +78,11 @@ repository in the READ.me and will commit in small increments so im sure of what
                 <div class="w3-container">
                     <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
                     <section class="center">
-                        <button type="button" id="easy-button" class="btn-easy">Easy</button>
-                        <button type="button" id="medium-button" class="btn-medium">Medium</button>
-                        <button type="button" id="hard-button" class="btn-hard">Hard</button>
+                        <form name="optionsDifficulty" action="">
+                        <button type="button" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
+                        <button type="button" id="medium-button" class="btn-medium" onclick="medium" value=1>Medium</button>
+                        <button type="button" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
+                        </form>
                     </section>
                     <br />
                 </div>
