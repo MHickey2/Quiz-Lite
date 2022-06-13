@@ -208,3 +208,10 @@ body {
 .w3-button w3-pink {
     margin-bottom: 5px;
 }
+
+.button-link-close {
+    float: right;
+    margin-top: -45px;
+    padding: 5px;
+    margin-right: 15px;
+}
