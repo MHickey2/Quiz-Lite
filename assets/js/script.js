@@ -33,8 +33,7 @@ function getNextQuestion(index) {
 
 startButton = document.getElementById("start-btn");
 
-function startGame() {
-    
+function startGame() {    
     const targetDiv = document.getElementById("hidden");
     targetDiv.style.display = "block";
 }
@@ -49,13 +48,9 @@ function choiceListeners() {
             //event target is the one that is clicked 
             const value = event.target.innerText;
             console.log(value)
-
         })
     })
 }
-
-
-
 
 async function init() {
     await getQuestions();
@@ -63,18 +58,15 @@ async function init() {
     startGame();
     choiceListeners();
     checkAnswers();
-
 }
 
 init()
 
-function checkAnswers(value) {
-    
+function checkAnswers() {    
     
     let button1 = document.getElementById("answer1");
-    button1.addEventListener("click", event => {
-        
-        const selectedChoice = event.target.innerHTML;
+    button1.addEventListener("click", event => {        
+    const selectedChoice = event.target.innerHTML;
 
         console.log("This is the correctAnswer:", correctAnswer)
         console.log("This is the selectedChoice:", selectedChoice)
@@ -83,27 +75,29 @@ function checkAnswers(value) {
         if (selectedChoice === correctAnswer) {
             alert("you are correct");
             button1.style.background = "green";
-            // incrementScore();
+            incrementScore();
         } else {
             alert("you are incorrect");
             button1.style.background = "red";
-            // incrementWrongAnswer();
-        }         
+            incrementWrongAnswer()
+            showCorrectAnswer()  
+        }                
     })
 
     let button2 = document.getElementById("answer2");
-    button2.addEventListener("click", event => {
-               
+    button2.addEventListener("click", event => {               
 
         if (selectedChoice === correctAnswer) {
             alert("you are correct");
             button2.style.background = "green";
-            // incrementScore();
+            incrementScore();
         } else {
             alert("you are incorrect");
-            button2.style.background = "red";
-            // incrementWrongAnswer();
-        }         
+            button2.style.background = "red";            
+            incrementWrongAnswer();
+            showCorrectAnswer()  
+        }
+                
     })
 
     let button3 = document.getElementById("answer3");
@@ -112,12 +106,13 @@ function checkAnswers(value) {
         if (selectedChoice === correctAnswer) {
             alert("you are correct");
             button3.style.background = "green";
-            // incrementScore();
+            incrementScore();
         } else {
             alert("you are incorrect");
             button3.style.background = "red";
-            // incrementWrongAnswer();
-        }        
+            incrementWrongAnswer();
+            showCorrectAnswer()  
+        }               
     })
 
     let button4 = document.getElementById("answer4");
@@ -126,40 +121,36 @@ function checkAnswers(value) {
         if (selectedChoice === correctAnswer) {
             alert("you are correct");
             button4.style.background = "green";
-            // incrementScore();
+            incrementScore();
         } else {
             alert("you are incorrect");
             button4.style.background = "red";
-            // incrementWrongAnswer();
-        }         
-    })
-    init()
+            incrementWrongAnswer();
+            showCorrectAnswer()  
+        }                
+    })    
 }
 
-init()
 
-/*choices.forEach(choice => {
-    //for each choice add a click event listener, pass the event to the callback function
-    choice.addEventListener("click", event => {
-        if (!acceptingAnswers) return
+function showCorrectAnswer() {
+        button1.style.background = "green";
+        getNextQuestion(index)
+    }
+    
 
-        acceptingAnswers = false;
-        const selectedChoice = e.target
-        const selectedAnswer = selectedChoice.dataset('questions')
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
-        if (classToApply === "correct"){
-            alert("your are right")
-        } else alert("you are wrong")
-    })
-}) */   
-        
+//Scoring for the Game, increments score when there is a correct answer from the question asked
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("correct").innerText);
+    document.getElementById("correct").innerText = ++oldScore;
+}
 
-
+//Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
+function incrementWrongAnswer() {
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;    
+}
 
 //Get username of the user and send to welcome message on game page
-
-//Username for the game
-
 document.getElementById("submitname").onclick = function(){
     var userName = document.getElementById("username").value;
     console.log("Hello", userName);
