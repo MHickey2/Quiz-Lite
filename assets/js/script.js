@@ -54,29 +54,33 @@ function choiceListeners() {
     })
 }
 
+
+
+
 async function init() {
     await getQuestions();
     getNextQuestion(0);
     startGame();
     choiceListeners();
-    //checkAnswers();
+    checkAnswers();
 
 }
 
 init()
 
-
-
-
-function checkAnswers() {
+function checkAnswers(value) {
     
-
+    
     let button1 = document.getElementById("answer1");
     button1.addEventListener("click", event => {
-        const selectedChoice = e.target
         
+        const selectedChoice = event.target.innerHTML;
 
-        if (selectedChoice === correctAnswer.value) {
+        console.log("This is the correctAnswer:", correctAnswer)
+        console.log("This is the selectedChoice:", selectedChoice)
+        console.log("This is the value:", event.target.innerText)        
+
+        if (selectedChoice === correctAnswer) {
             alert("you are correct");
             button1.style.background = "green";
             // incrementScore();
@@ -84,11 +88,55 @@ function checkAnswers() {
             alert("you are incorrect");
             button1.style.background = "red";
             // incrementWrongAnswer();
-        } 
-        init()   
+        }         
     })
 
+    let button2 = document.getElementById("answer2");
+    button2.addEventListener("click", event => {
+               
+
+        if (selectedChoice === correctAnswer) {
+            alert("you are correct");
+            button2.style.background = "green";
+            // incrementScore();
+        } else {
+            alert("you are incorrect");
+            button2.style.background = "red";
+            // incrementWrongAnswer();
+        }         
+    })
+
+    let button3 = document.getElementById("answer3");
+    button3.addEventListener("click", event => {
+        
+        if (selectedChoice === correctAnswer) {
+            alert("you are correct");
+            button3.style.background = "green";
+            // incrementScore();
+        } else {
+            alert("you are incorrect");
+            button3.style.background = "red";
+            // incrementWrongAnswer();
+        }        
+    })
+
+    let button4 = document.getElementById("answer4");
+    button4.addEventListener("click", event => {
+                
+        if (selectedChoice === correctAnswer) {
+            alert("you are correct");
+            button4.style.background = "green";
+            // incrementScore();
+        } else {
+            alert("you are incorrect");
+            button4.style.background = "red";
+            // incrementWrongAnswer();
+        }         
+    })
+    init()
 }
+
+init()
 
 /*choices.forEach(choice => {
     //for each choice add a click event listener, pass the event to the callback function
