@@ -6,11 +6,15 @@ var quiz;
 var index = 0;
 var correctAnswer;
 var selectedChoice;
+var amount=20;
+var questionNumber;
+
+window.onload = getQuestions()
 
 
 async function getQuestions() {
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=10`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=20&category=11&difficulty=hard&type=multiple`);
     questions = await response.json()
 }
 
@@ -31,11 +35,14 @@ function getNextQuestion(index) {
     document.getElementById("answer4").innerHTML = choices[3]
 }
 
-startButton = document.getElementById("start-btn");
-
-function startGame() {    
+function startGame() {   
+//Use Start button to begin the game
+    let startButton = document.getElementById("start-btn");
+    startButton.addEventListener("click", startGame => { 
     const targetDiv = document.getElementById("hidden");
     targetDiv.style.display = "block";
+    showProgress()
+    })
 }
 
 function choiceListeners() {
@@ -46,7 +53,7 @@ function choiceListeners() {
         //for each choice add a click event listener, pass the event to the callback function
         choice.addEventListener("click", event => {
             //event target is the one that is clicked 
-            const value = event.target.innerText;
+            var value = event.target.innerText;
             console.log(value)
         })
     })
@@ -57,97 +64,103 @@ async function init() {
     getNextQuestion(0);
     startGame();
     choiceListeners();
-    checkAnswers();
+       
 }
-
 init()
+checkAnswers()
 
-function checkAnswers() {    
-    
+
+
+
+function checkAnswers() {        
     let button1 = document.getElementById("answer1");
     button1.addEventListener("click", event => {        
-    const selectedChoice = event.target.innerHTML;
+    //selectedChoice = event.target.innerHTML;
 
-        console.log("This is the correctAnswer:", correctAnswer)
-        console.log("This is the selectedChoice:", selectedChoice)
-        console.log("This is the value:", event.target.innerText)        
+        //console.log("This is the correctAnswer:", correctAnswer)
+        //console.log("This is the selectedChoice:", selectedChoice)
+        //console.log("This is the value:", event.target.innerText) 
+        //console.log(button1.innerHTML)       
 
-        if (selectedChoice === correctAnswer) {
+        if (button1.innerHTML === correctAnswer) {
             alert("you are correct");
             button1.style.background = "green";
-            incrementScore();
+            incrementScore() 
+                      
+                                 
         } else {
             alert("you are incorrect");
             button1.style.background = "red";
-            incrementWrongAnswer()
-            showCorrectAnswer()  
-        }                
+            incrementWrongAnswer()            
+        }                          
     })
 
     let button2 = document.getElementById("answer2");
     button2.addEventListener("click", event => {               
 
-        if (selectedChoice === correctAnswer) {
+        if (button2.innerHTML === correctAnswer) {
             alert("you are correct");
             button2.style.background = "green";
             incrementScore();
         } else {
             alert("you are incorrect");
             button2.style.background = "red";            
-            incrementWrongAnswer();
-            showCorrectAnswer()  
-        }
-                
+            incrementWrongAnswer();                      
+        }                
     })
 
     let button3 = document.getElementById("answer3");
     button3.addEventListener("click", event => {
         
-        if (selectedChoice === correctAnswer) {
+        if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
             button3.style.background = "green";
             incrementScore();
         } else {
             alert("you are incorrect");
             button3.style.background = "red";
-            incrementWrongAnswer();
-            showCorrectAnswer()  
+            incrementWrongAnswer();                      
         }               
     })
 
     let button4 = document.getElementById("answer4");
     button4.addEventListener("click", event => {
                 
-        if (selectedChoice === correctAnswer) {
+        if (button4.HTML === correctAnswer) {
             alert("you are correct");
             button4.style.background = "green";
             incrementScore();
         } else {
             alert("you are incorrect");
             button4.style.background = "red";
-            incrementWrongAnswer();
-            showCorrectAnswer()  
-        }                
-    })    
+            incrementWrongAnswer();                        
+        } 
+                           
+    })
+    getNextQuestion()   
 }
 
 
 function showCorrectAnswer() {
-        button1.style.background = "green";
-        getNextQuestion(index)
+        button1.style.background = "green";        
     }
     
+function showProgress() {
+        questionNumber = document.getElementById("progress").innerText;
+        document.getElementById("progress").innerText = ++questionNumber; 
+        
+    }
 
 //Scoring for the Game, increments score when there is a correct answer from the question asked
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("correct").innerText);
-    document.getElementById("correct").innerText = ++oldScore;
+    document.getElementById("correct").innerText = ++oldScore;   
 }
 
 //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;    
+    document.getElementById("incorrect").innerText = ++oldScore;      
 }
 
 //Get username of the user and send to welcome message on game page

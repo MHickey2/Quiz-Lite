@@ -125,8 +125,6 @@ body {
     width: 80%;  
 }
 
-
-
 .hide {
     display: none;
 }
@@ -151,10 +149,11 @@ body {
     width: 50%;
 }
 
-/*Used to hide the gaming area before the user presses the start button
-/*#hidden {
+/*Used to hide the gaming area before the user presses the start button*/
+#hidden {
     display: none;
-}*/
+    visibility: none;    
+}
 
 /*styling for the information panel relating to the category and difficulty level to the game*/
 .informationForQuestion {
@@ -205,6 +204,7 @@ body {
     margin-bottom: 0;
 }
 
+/*styling for the modals*/
 .w3-button w3-pink {
     margin-bottom: 5px;
 }
