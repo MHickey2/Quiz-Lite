@@ -119,10 +119,10 @@ body {
     background-color: rgba(255, 255, 255, 0.5);    
     box-shadow: 0 0 5px 1px;
     padding: 10px;
-    display: flexbox;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;  
+    width: 60%;  
 }
 
 .hide {
@@ -158,8 +158,8 @@ body {
 /*styling for the information panel relating to the category and difficulty level to the game*/
 .informationForQuestion {
     background-color: black;
-    height: 100px;
-    width: 300px;
+    height: 120px;
+    width: 350px;
     text-align: center;
     border: 5px solid white;
     border-radius: 20px;
