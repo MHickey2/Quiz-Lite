@@ -215,3 +215,10 @@ body {
     padding: 5px;
     margin-right: 15px;
 }
+
+#verify-answer {
+    color: green;
+    font-weight: Bold;
+    font-size: 120%;
+    text-transform: uppercase;
+}

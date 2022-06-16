@@ -24,10 +24,13 @@ function getNextQuestion() {
     currentQuestion = questions.results[index]
     console.log("current question",currentQuestion)
     //put correct answers in list with incorrect answers
-    correctAnswer = questions.results[index].correct_answer;   
+    correctAnswer = questions.results[index].correct_answer;
+    
     console.log("this is currentQuestion.correct_answer",currentQuestion.correct_answer);
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
-    choices.sort(() => Math.random() - 5);
+    choices.sort(() => Math.random() - 5);  
+    console.log(correctAnswer) 
+    
 
     document.getElementById("category").innerHTML = ' Category:' + currentQuestion.category
     document.getElementById("difficulty").innerHTML = ' Difficulty: ' + currentQuestion.difficulty
@@ -71,6 +74,7 @@ async function init() {
 init()
 checkAnswers()
 
+
 //check if answers are correct or not
 function checkAnswers() {
     let button1 = document.getElementById("answer1");
@@ -83,16 +87,18 @@ function checkAnswers() {
         if (button1.innerHTML === correctAnswer) {
             alert("you are correct");
             button1.style.background = "green";
-            incrementScore()
-            
-            getNextQuestion() 
+           // showCorrectAnswer();
+            incrementScore();  
+            resetOptions();          
+            getNextQuestion(); 
 
         } else {
             alert("you are incorrect");
             button1.style.background = "red";
-            incrementWrongAnswer()
-            
-            getNextQuestion() 
+           // showCorrectAnswer();
+            incrementWrongAnswer();
+            resetOptions();            
+            getNextQuestion(); 
         }
     })
 
@@ -102,13 +108,15 @@ function checkAnswers() {
         if (button2.innerHTML === correctAnswer) {
             alert("you are correct");
             button2.style.background = "green";
-            incrementScore();
-            getNextQuestion() 
+         //  showCorrectAnswer();
+            incrementScore();            
+            getNextQuestion(); 
         } else {
             alert("you are incorrect");
             button2.style.background = "red";
-            incrementWrongAnswer();
-            getNextQuestion() 
+          //  showCorrectAnswer();
+            incrementWrongAnswer();            
+            getNextQuestion(); 
         }
     })
 
@@ -118,13 +126,14 @@ function checkAnswers() {
         if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
             button3.style.background = "green";
-            incrementScore();
-            getNextQuestion() 
+            incrementScore();            
+            getNextQuestion(); 
         } else {
             alert("you are incorrect");
             button3.style.background = "red";
-            incrementWrongAnswer();
-            getNextQuestion() 
+           // showCorrectAnswer();
+            incrementWrongAnswer();           
+            getNextQuestion();
         }
     })
 
@@ -134,13 +143,14 @@ function checkAnswers() {
         if (button4.HTML === correctAnswer) {
             alert("you are correct");
             button4.style.background = "green";
-            incrementScore();
-            getNextQuestion() 
+            incrementScore();            
+            getNextQuestion(); 
         } else {
             alert("you are incorrect");
             button4.style.background = "red";
-            incrementWrongAnswer();
-            getNextQuestion() 
+            //showCorrectAnswer();
+            incrementWrongAnswer();            
+            getNextQuestion(); 
         }
     })      
 }
@@ -156,7 +166,17 @@ function showProgress() {
     document.getElementById("progress").innerText = ++questionNumber;
 }
 
-//Scoring for the Game, increments score when there is a correct answer from the question asked
+function showCorrectAnswer() {
+    document.getElementById("verify-answer").innerHTML = correctAnswer;
+    console.log(correctAnswer)
+}
+
+function resetOptions() {
+    document.getElementByClassName(choice-container).background = "rgb(102, 95, 95, 0.3)";
+       
+}
+
+//Scoring for the Game, increment score when there is a correct answer from the question asked
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("correct").innerText);
     document.getElementById("correct").innerText = ++oldScore;
