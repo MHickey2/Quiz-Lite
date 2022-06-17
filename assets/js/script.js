@@ -5,15 +5,19 @@ var quiz;
 var index = 0;
 var correctAnswer;
 var selectedChoice;
-var amount = 20;
+var amount = 10;
 var currentQuestion;
+var category = 8;
+var difficultyLevel; 
 
-window.onload = getQuestions()
+//window.onload = getQuestions()
 
 
 async function getQuestions() {
+   // Fetch 10 questions from API from general knowledge category
+//fetch("https://opentdb.com/api.php?amount=15&category=${questionId}&difficulty=${difficulty}&type=multiple`")
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=20&category=11&difficulty=hard&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple`);
     questions = await response.json()
 }
 
@@ -78,8 +82,6 @@ checkAnswers()
 showCorrectAnswer()
 
 
-
-
 //check if answers are correct or not
 function checkAnswers() {
     let button1 = document.getElementById("answer1");
@@ -93,16 +95,12 @@ function checkAnswers() {
             alert("you are correct");
             showCorrectAnswer()
             button1.style.background = "green";           
-            incrementScore();                                       
-            //getNextQuestion(); 
-           
-
+            incrementScore();                
         } else {
             alert("you are incorrect");
             showCorrectAnswer()
             button1.style.background = "red";           
-            incrementWrongAnswer();                     
-           // getNextQuestion(); 
+            incrementWrongAnswer();           
         }
     })
 
@@ -111,17 +109,14 @@ function checkAnswers() {
 
         if (button2.innerHTML === correctAnswer) {
             alert("you are correct");
+            showCorrectAnswer()
             button2.style.background = "green";           
-            incrementScore();            
-           // getNextQuestion();
-           
+            incrementScore();              
         } else {
             alert("you are incorrect");
             showCorrectAnswer()
             button2.style.background = "red";           
-            incrementWrongAnswer();            
-           // getNextQuestion(); 
-           
+            incrementWrongAnswer();          
         }
     })
 
@@ -130,43 +125,39 @@ function checkAnswers() {
 
         if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
+            showCorrectAnswer()
             button3.style.background = "green";           
-            incrementScore();            
-           // getNextQuestion(); 
+            incrementScore();             
         } else {
             alert("you are incorrect");
             showCorrectAnswer()
             button3.style.background = "red";           
             incrementWrongAnswer();           
-           // getNextQuestion();
         }
     })
 
     let button4 = document.getElementById("answer4");
     button4.addEventListener("click", event => {
 
-        if (button4.HTML === correctAnswer) {
+        if (button4.innerHTML === correctAnswer) {
             alert("you are correct");
+            showCorrectAnswer()
             button4.style.background = "green";            
-            incrementScore();            
-           // getNextQuestion(); 
+            incrementScore();             
         } else {
             alert("you are incorrect");
             showCorrectAnswer()
             button4.style.background = "red";            
-            incrementWrongAnswer();            
-            //getNextQuestion(); 
+            incrementWrongAnswer();              
         }
-    })
-         
+    })         
 }
 
 //show the question number to the user    
 function showProgress() {    
     let questionNumber = document.getElementById("next-btn");
     questionNumber = partseInt(document.getElementById("progress").innerText);
-    document.getElementById("progress").innerText = questionNumber+1;  
-    
+    document.getElementById("progress").innerText = questionNumber+1;      
 }
 
 //show the correct answer to the user, before moving to next question
@@ -174,16 +165,12 @@ function showCorrectAnswer() {
     document.getElementById("verify-answer").innerHTML = currentQuestion.correct_answer;
     console.log(correctAnswer);
 }
-
-
      
     let nextButton = document.getElementById("next-btn");
     nextButton.addEventListener("click", getNextQuestion => {
         document.getElementById(button1).backgroundColor = "rgb(102, 95, 95, 0.3)";
-        document.getElementById("verify-answer").innerHTML = "";
-          
+        document.getElementById("verify-answer").innerHTML = "";          
 })
-
 
 //Scoring for the Game, increment score when there is a correct answer from the question asked
 function incrementScore() {
@@ -199,13 +186,41 @@ function incrementWrongAnswer() {
     index++;
 }
 
-
-
 //Get username of the user and send to welcome message on game page
-document.getElementById("submitname").onclick = function () {
+document.getElementById("submitname").onClick = function() {
     var userName = document.getElementById("username").value;
     console.log("Hello", userName);
     document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
 }
 
-//difficulty level for the game
+
+//When the quiz is over the score is shown to the user
+function showFinalScore() {
+    if (currentQuestion !== true) {
+        alert("you have scored:", oldscore)
+        console.log("you have scored:",oldscore)
+        showScores()
+    }
+}
+
+showScores()
+userScore = 5;
+
+function showScores() {
+    let finalScore = oldScore;
+    //final scores to be displayed to user
+    let userScore = document.getElementById("correct");
+    userScore.innerHTML = finalScore;
+    let closingMessage = document.getElementById("closing-message");
+    if (userScore == 0) {
+        closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+    } else if (userScore < 3) {
+        closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+    } else if (userScore < 6) {
+        closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
+    } else if (userScore < 9) {
+        closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
+    } else if (userScore == 10) {
+        closingMessage.innerHTML = "You have achieved greatness";
+    }
+}
