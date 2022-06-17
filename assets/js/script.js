@@ -1,13 +1,11 @@
 var answers = [];
 var questions = [];
 var userName;
-var questionNumber;
 var quiz;
 var index = 0;
 var correctAnswer;
 var selectedChoice;
 var amount = 20;
-var questionNumber;
 var currentQuestion;
 
 window.onload = getQuestions()
@@ -28,9 +26,10 @@ function getNextQuestion() {
     
     console.log("this is currentQuestion.correct_answer",currentQuestion.correct_answer);
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
-    choices.sort(() => Math.random() - 5);  
-    console.log(correctAnswer) 
-    
+   // choices.sort(() => Math.random() - 5);
+   choices.sort();  
+    console.log(correctAnswer)  
+    console.log("These are choices", choices)   
 
     document.getElementById("category").innerHTML = ' Category:' + currentQuestion.category
     document.getElementById("difficulty").innerHTML = ' Difficulty: ' + currentQuestion.difficulty
@@ -39,6 +38,7 @@ function getNextQuestion() {
     document.getElementById("answer2").innerHTML = choices[1]
     document.getElementById("answer3").innerHTML = choices[2]
     document.getElementById("answer4").innerHTML = choices[3]
+    
 }
 
 function startGame() {
@@ -47,8 +47,7 @@ function startGame() {
     startButton.addEventListener("click", startGame => {
         const targetDiv = document.getElementById("hidden");
         targetDiv.style.display = "block";
-        //showProgress()
-    })
+    })    
 }
 
 function choiceListeners() {
@@ -65,14 +64,20 @@ function choiceListeners() {
     })
 }
 
+
+
 async function init() {
     await getQuestions();
     getNextQuestion(0);
     startGame();
     choiceListeners();
+    
 }
 init()
 checkAnswers()
+showCorrectAnswer()
+
+
 
 
 //check if answers are correct or not
@@ -86,19 +91,18 @@ function checkAnswers() {
 
         if (button1.innerHTML === correctAnswer) {
             alert("you are correct");
-            button1.style.background = "green";
-           // showCorrectAnswer();
-            incrementScore();  
-            resetOptions();          
-            getNextQuestion(); 
+            showCorrectAnswer()
+            button1.style.background = "green";           
+            incrementScore();                                       
+            //getNextQuestion(); 
+           
 
         } else {
             alert("you are incorrect");
-            button1.style.background = "red";
-           // showCorrectAnswer();
-            incrementWrongAnswer();
-            resetOptions();            
-            getNextQuestion(); 
+            showCorrectAnswer()
+            button1.style.background = "red";           
+            incrementWrongAnswer();                     
+           // getNextQuestion(); 
         }
     })
 
@@ -107,16 +111,17 @@ function checkAnswers() {
 
         if (button2.innerHTML === correctAnswer) {
             alert("you are correct");
-            button2.style.background = "green";
-         //  showCorrectAnswer();
+            button2.style.background = "green";           
             incrementScore();            
-            getNextQuestion(); 
+           // getNextQuestion();
+           
         } else {
             alert("you are incorrect");
-            button2.style.background = "red";
-          //  showCorrectAnswer();
+            showCorrectAnswer()
+            button2.style.background = "red";           
             incrementWrongAnswer();            
-            getNextQuestion(); 
+           // getNextQuestion(); 
+           
         }
     })
 
@@ -125,15 +130,15 @@ function checkAnswers() {
 
         if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
-            button3.style.background = "green";
+            button3.style.background = "green";           
             incrementScore();            
-            getNextQuestion(); 
+           // getNextQuestion(); 
         } else {
             alert("you are incorrect");
-            button3.style.background = "red";
-           // showCorrectAnswer();
+            showCorrectAnswer()
+            button3.style.background = "red";           
             incrementWrongAnswer();           
-            getNextQuestion();
+           // getNextQuestion();
         }
     })
 
@@ -142,53 +147,59 @@ function checkAnswers() {
 
         if (button4.HTML === correctAnswer) {
             alert("you are correct");
-            button4.style.background = "green";
+            button4.style.background = "green";            
             incrementScore();            
-            getNextQuestion(); 
+           // getNextQuestion(); 
         } else {
             alert("you are incorrect");
-            button4.style.background = "red";
-            //showCorrectAnswer();
+            showCorrectAnswer()
+            button4.style.background = "red";            
             incrementWrongAnswer();            
-            getNextQuestion(); 
+            //getNextQuestion(); 
         }
-    })      
+    })
+         
+}
+
+//show the question number to the user    
+function showProgress() {    
+    let questionNumber = document.getElementById("next-btn");
+    questionNumber = partseInt(document.getElementById("progress").innerText);
+    document.getElementById("progress").innerText = questionNumber+1;  
+    
 }
 
 //show the correct answer to the user, before moving to next question
-//function showCorrectAnswer() {
- //   button1.style.background = "green";
-//}
-
-//show the question number to the user    
-function showProgress() {
-    questionNumber = document.getElementById("progress").innerText;
-    document.getElementById("progress").innerText = ++questionNumber;
+function showCorrectAnswer() {    
+    document.getElementById("verify-answer").innerHTML = currentQuestion.correct_answer;
+    console.log(correctAnswer);
 }
 
-function showCorrectAnswer() {
-    document.getElementById("verify-answer").innerHTML = correctAnswer;
-    console.log(correctAnswer)
-}
 
-function resetOptions() {
-    document.getElementByClassName(choice-container).background = "rgb(102, 95, 95, 0.3)";
-       
-}
+     
+    let nextButton = document.getElementById("next-btn");
+    nextButton.addEventListener("click", getNextQuestion => {
+        document.getElementById(button1).backgroundColor = "rgb(102, 95, 95, 0.3)";
+        document.getElementById("verify-answer").innerHTML = "";
+          
+})
+
 
 //Scoring for the Game, increment score when there is a correct answer from the question asked
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("correct").innerText);
-    document.getElementById("correct").innerText = ++oldScore;
+    document.getElementById("correct").innerText = ++oldScore;    
     index++;
 }
 
 //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
+    document.getElementById("incorrect").innerText = ++oldScore;    
     index++;
 }
+
+
 
 //Get username of the user and send to welcome message on game page
 document.getElementById("submitname").onclick = function () {
