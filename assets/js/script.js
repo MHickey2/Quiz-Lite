@@ -102,7 +102,10 @@ function checkAnswers() {
         if (button1.innerHTML === correctAnswer) {
             alert("you are correct");           
             showCorrectAnswer()
-            button1.style.background = "green";           
+           // button1.style.background = "green";
+            setTimeout(function(){
+                button1.style.background = "green";
+           }, 500);           
             incrementScore();                
         } else {
             alert("you are incorrect");           
@@ -130,12 +133,7 @@ function checkAnswers() {
 
     let button3 = document.getElementById("answer3");
     button3.addEventListener("click", event => {
-        setTimeout(() => {
-            text.classList.remove( 'clicked' )
-         active = false;
-      }, 500)
         
-
         if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
             showCorrectAnswer()
@@ -167,15 +165,14 @@ function checkAnswers() {
 }
 
 //show the question number to the user    
-function showProgress() {    
+/*function showProgress() {    
     let questionNumber = document.getElementById("next-btn");
     questionNumber = partseInt(document.getElementById("progress").innerText);
     document.getElementById("progress").innerText = questionNumber+1;      
-}
+}*/
 
 //audio for alerting users if they got correct or wrong answer
 function playMusic() {
-
 if ((button1.innerHTML === correctAnswer) || (button2.innerHTML === correctAnswer) || (button3.innerHTML === correctAnswer) || (button4.innerHTML === correctAnswer))
 {
     //document.getElementById('music1').this.correct.play();
@@ -193,11 +190,15 @@ function showCorrectAnswer() {
     document.getElementById("verify-answer").innerHTML = currentQuestion.correct_answer;
     console.log(correctAnswer);
 }
-     
+//The user can click on next to see the next question     
     let nextButton = document.getElementById("next-btn");
     nextButton.addEventListener("click", getNextQuestion => {
-        document.getElementById(button1).backgroundColor = "rgb(102, 95, 95, 0.3)";
-        document.getElementById("verify-answer").innerHTML = "";          
+        button1.style.background = "rgb(102, 95, 95, 0.3)";
+        button2.style.background = "rgb(102, 95, 95, 0.3)";
+        button3.style.background = "rgb(102, 95, 95, 0.3)";
+        button4.style.background = "rgb(102, 95, 95, 0.3)";        
+        document.getElementById("verify-answer").innerHTML = ""; 
+        alert("This is working")         
 })
 
 //Scoring for the Game, increment score when there is a correct answer from the question asked
