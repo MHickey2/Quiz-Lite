@@ -8,9 +8,8 @@
 <br/>  
 
  
-
 ## Introduction <a name="introduction"></a>
-
+Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set questions within the general category, which encompasses all categories. The difficulty level includes all levels of difficulty. The website application is fully responsive for Desktop and mobile screens.
 <br/>
 
 []()  

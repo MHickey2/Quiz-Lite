@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <title>Index - Play</title>
 </head>
 
@@ -213,6 +214,13 @@ boxes in each-->
             <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
         </div>
     </div>
+
+    <section class="closing">
+        <h1 id="closing-message"></h1>
+    </section>
+
+    <audio id="music1" src="/assets/audio/correct.mp3" preload="auto"></audio>
+    <audio id="music2" src="/assets/audio/wrong.mp3" preload="auto"></audio>
 
     <script src="assets/js/script.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->

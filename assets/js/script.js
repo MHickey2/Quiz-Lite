@@ -8,7 +8,11 @@ var selectedChoice;
 var amount = 10;
 var currentQuestion;
 var category = 8;
-var difficultyLevel; 
+var difficultyLevel;
+var questionNumber =1; 
+var maxQuestions=10;
+var soundcorrect = new Audio("/assets/audio/correct.mp3");
+var soundwrong = new Audio("/assets/audio/wrong.mp3");
 
 //window.onload = getQuestions()
 
@@ -17,7 +21,7 @@ async function getQuestions() {
    // Fetch 10 questions from API from general knowledge category
 //fetch("https://opentdb.com/api.php?amount=15&category=${questionId}&difficulty=${difficulty}&type=multiple`")
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
     questions = await response.json()
 }
 
@@ -42,7 +46,10 @@ function getNextQuestion() {
     document.getElementById("answer2").innerHTML = choices[1]
     document.getElementById("answer3").innerHTML = choices[2]
     document.getElementById("answer4").innerHTML = choices[3]
-    
+
+      
+    document.getElementById("progress").innerText = `Question ${questionNumber}/${maxQuestions}`;
+    questionNumber++;  
 }
 
 function startGame() {
@@ -80,6 +87,7 @@ async function init() {
 init()
 checkAnswers()
 showCorrectAnswer()
+playMusic()
 
 
 //check if answers are correct or not
@@ -92,12 +100,12 @@ function checkAnswers() {
         //console.log(button1.innerHTML)       
 
         if (button1.innerHTML === correctAnswer) {
-            alert("you are correct");
+            alert("you are correct");           
             showCorrectAnswer()
             button1.style.background = "green";           
             incrementScore();                
         } else {
-            alert("you are incorrect");
+            alert("you are incorrect");           
             showCorrectAnswer()
             button1.style.background = "red";           
             incrementWrongAnswer();           
@@ -122,6 +130,11 @@ function checkAnswers() {
 
     let button3 = document.getElementById("answer3");
     button3.addEventListener("click", event => {
+        setTimeout(() => {
+            text.classList.remove( 'clicked' )
+         active = false;
+      }, 500)
+        
 
         if (button3.innerHTML === correctAnswer) {
             alert("you are correct");
@@ -160,6 +173,21 @@ function showProgress() {
     document.getElementById("progress").innerText = questionNumber+1;      
 }
 
+//audio for alerting users if they got correct or wrong answer
+function playMusic() {
+
+if ((button1.innerHTML === correctAnswer) || (button2.innerHTML === correctAnswer) || (button3.innerHTML === correctAnswer) || (button4.innerHTML === correctAnswer))
+{
+    //document.getElementById('music1').this.correct.play();
+    soundcorrect.play()    
+}
+else
+{
+    //document.getElementById('music2').this.wrong.play(); 
+    soundwrong.play()  
+}
+}
+
 //show the correct answer to the user, before moving to next question
 function showCorrectAnswer() {    
     document.getElementById("verify-answer").innerHTML = currentQuestion.correct_answer;
@@ -196,7 +224,7 @@ document.getElementById("submitname").onClick = function() {
 
 //When the quiz is over the score is shown to the user
 function showFinalScore() {
-    if (currentQuestion !== true) {
+    if (currentQuestion === maxQuestions) {
         alert("you have scored:", oldscore)
         console.log("you have scored:",oldscore)
         showScores()
