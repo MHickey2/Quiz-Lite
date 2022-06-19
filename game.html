@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome and google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+    <title>Index - Play</title>
+</head>
+
+<body>
+
+    <!--Orinally I experimented within the horror-quiz repository, but I made a hash of it and changed so many things I got
+totally confused and overwhelmee but rebooted the whole project, initally I was going to do horror-quiz, formulating my own
+questions and answers but changed the focus of the quiz and decided to utilize an existing API, I will include the original
+repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
+
+
+    <!--This will be a welcome message for the user, after they have supplied their username-->
+    <h2 id="welcomeText"> <span id="welcomeMessage"></span></h2>
+   
+    <br />
+
+    <!--Modal Form to get the username from the user-->
+    <div class="w3-container">
+
+        <button onclick="document.getElementById('id01').style.display='block'"
+            class="w3-button w3-pink">Username</button>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-purple">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2>Quiz-Lite Username Selection</h2>
+                </header>
+                <div class="w3-container">
+                    <p style="color: purple;">Welcome to Quiz Lite.In a few simple steps you can customize the game to
+                        suit your needs. First
+                        choose your name<br>and Good Luck with the Quiz!<br></p>
+                    <br />
+                    <div class="center">
+                        <input type="text" id="username" placeholder="Enter Name: ">
+                        <button onclick="username" id="submitname" data-type="submitname">Submit now</button>
+                    </div>
+                    <br />
+                </div>
+                <button class="button-link-close">Close</button>
+                <footer class="w3-container w3-purple">
+                    <p>Quiz-Lite Username Modal </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Form to get the difficulty level of the quiz from the user-->
+    <div class="w3-container">
+
+        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-pink">Difficulty
+            Level</button>
+        <br />
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-purple">
+                    <span onclick="document.getElementById('id02').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2>Quiz-Lite Difficulty Level Selection</h2>
+                </header>
+                <div class="w3-container">
+                    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
+                    <section class="center">
+                        <form name="optionsDifficulty" action="">
+                            <button type="button" id="easy-button" class="btn-easy" onclick="easy"
+                                value="easy">Easy</button>
+                            <button type="button" id="medium-button" class="btn-medium" onclick="medium"
+                                value=1>Medium</button>
+                            <button type="button" id="hard-button" class="btn-hard" onclick="hard"
+                                value="hard">Hard</button>
+                        </form>
+                    </section>
+                    <br />
+                </div>
+                <button class="button-link-close">Close</button>
+                <footer class="w3-container w3-purple">
+                    <p>Quiz-Lite Difficulty level Modal</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Form to get the number of questions for the quiz from the user-->
+    <div class="w3-container">
+
+        <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-pink">Question
+            Number
+        </button>
+        <br />
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-purple">
+                    <span onclick="document.getElementById('id03').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2>Quiz-Lite Quiz Questions Number Selection</h2>
+                </header>
+                <div class="w3-container">
+                    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
+                    <section class="center">
+                        <button type="button" id="10-button" class="btn-10">10</button>
+                        <button type="button" id="20-button" class="btn-20">20</button>
+                        <button type="button" id="30-button" class="btn-30">30</button>
+                    </section>
+                    <br />
+                </div>
+                <button class="button-link-close">Close</button>
+                <footer class="w3-container w3-purple">
+                    <p>Quiz-Lite Modal</p>Question Number Modal
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Form to get the category of the quiz from the user-->
+    <div class="w3-container">
+
+        <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-pink">Category
+        </button>
+        <br />
+        <div id="id04" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-purple">
+                    <span onclick="document.getElementById('id04').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2>Quiz-Lite Category Selection</h2>
+                </header>
+                <div class="w3-container">
+                    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
+                    <section class="center">
+                        <button type="button" id="general" class="btn-general">General</button>
+                        <button type="button" id="film" class="btn-film">Movies</button>
+                        <button type="button" id="tv" class="btn-tv">TV</button>
+                        <button type="button" id="music" class="music">Music</button>
+                        <button type="button" id="books" class="btn-books">Books</button>
+                    </section>
+                    <br />
+                </div>
+                <button class="button-link-close">Close</button>
+                <footer class="w3-container w3-purple">
+                    <p>Quiz-Lite Category Modal</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
+    <h1 class="heading">Quiz-Lite</h1>
+    <p class="center-message">Welcome to the lite-weight Quiz, for a quick round quizzing sensation.</p>
+    <!--This is the start button for the Game, it will initilaze the game-->
+    <div class="controls">
+        <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
+    </div>
+
+    <!--The game elements will not be visible to the user until they press the start button-->
+    <div id="hidden">
+
+        <!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
+        <p class="center">Question:&nbsp;<span class="center" id="progress"></span>
+        <p class="center">You have: <span id="time-keeper"></span> seconds remaining!</p>
+
+
+        <!--This section will describe the category and the difficulty for each question set in the quiz-->
+        <div class="informationForQuestion">
+            <p id="category" class="center"></p>
+            <p id="difficulty" class="center"></p>
+        </div>
+        <br />
+
+        <!--This is where each question will be displayed-->
+
+        <div class="question-container">
+            <p class="question"><span id="progress"></span></p>
+            <h3 id="question"></h3>
+        </div>
+        <br />
+        <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
+boxes in each-->
+
+        <div class="question-panel">
+            <div class="main-container">
+                <button id="answer1" class="choice-container  option"></button>
+                <button id="answer2" class="choice-container  option"></button>
+            </div>
+            <div class="main-container">
+                <button id="answer3" class="choice-container  option"></button>
+                <button id="answer4" class="choice-container  option"></button>
+            </div>
+        </div>
+
+        <h1 id="verification" class="center">The correct answer is: <span id="verify-answer"></span></h1>        
+        <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
+        <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
+
+        <div class="score-area">
+            <p class="scores">Correct Answers <span id="correct">0</span></p>
+            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+        </div>
+    </div>
+
+    <section class="closing">
+        <p class="scores">Your Results<span id="scoreText"></span></p>
+        <h1 id="closing-message"></h1>
+    </section>
+
+    <a class="btn" id="restart-btn" href="index.html">Restart</a>
+
+    <audio id="music1" src="/assets/audio/correct.mp3" preload="auto"></audio>
+    <audio id="music2" src="/assets/audio/wrong.mp3" preload="auto"></audio>
+
+    <script src="assets/js/script.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->
+        <footer class = "footer">
+        </footer>
+
+</body>
+</html>

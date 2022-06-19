@@ -11,12 +11,35 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 /*styling for the welcome message including the username*/
 #welcomeText {
     color: white;
     text-align: left;
     font-size: 120%;
 }
+
 /*Image for top of page*/
 .brain {
     margin-top: 5px;
@@ -24,9 +47,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-    
-    
+
+
 }
+
 /*Styling for the main heading*/
 .heading {
     margin-top: 5px;
@@ -35,6 +59,7 @@ body {
     color: white;
     letter-spacing: 5px;
 }
+
 /*styling for quick blurb introducing quiz*/
 .center-message {
     text-align: center;
@@ -58,7 +83,8 @@ body {
 }
 
 #start-btn,
-#next-btn, #restart-btn {
+#next-btn,
+#restart-btn {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -71,6 +97,8 @@ body {
     border-radius: 15px;
     border: 1px solid black;
     text-transform: uppercase;
+    text-decoration: none;
+    
 }
 
 #start-btn:hover,
@@ -89,6 +117,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 /*Each individual answer box for displaying the options to the user*/
 .choice-container {
     height: 150px;
@@ -100,12 +129,12 @@ body {
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     vertical-align: middle;
-    background-color: rgb(102, 95, 95, 0.3);   
+    background-color: rgb(102, 95, 95, 0.3);
 }
 
 .choice-container:hover {
-    border: 8px solid rgb(233, 123, 233);      
-    background-color: rgb(80, 59, 82);   
+    border: 8px solid rgb(233, 123, 233);
+    background-color: rgb(80, 59, 82);
 }
 
 /*.choice-container:selected {
@@ -116,14 +145,14 @@ body {
 .question-panel {
     border: 3px solid white;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.5);    
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px 1px;
     padding: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;  
-    
+    width: 60%;
+
 }
 
 .hide {
@@ -153,7 +182,7 @@ body {
 /*Used to hide the gaming area before the user presses the start button*/
 #hidden {
     display: none;
-    visibility: none;    
+    visibility: none;
 }
 
 /*styling for the information panel relating to the category and difficulty level to the game*/
@@ -188,6 +217,7 @@ body {
 .question-container {
     text-align: center;
 }
+
 .score-area {
     text-align: center;
     font-size: 130%;

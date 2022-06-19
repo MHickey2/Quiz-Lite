@@ -1,6 +1,5 @@
 var answers = [];
 var questions = [];
-var userName;
 var quiz;
 var index = 0;
 var correctAnswer;
@@ -14,6 +13,17 @@ var maxQuestions = 10;
 var soundcorrect = new Audio("/assets/audio/correct.mp3");
 var soundwrong = new Audio("/assets/audio/wrong.mp3");
 var lastQuestion = questions.length -1;
+
+
+    
+
+
+ //Get username of the user and send to welcome message on game page
+ /*document.getElementById("submitname").onClick = function () {
+    userName = document.getElementById("username").value;
+    console.log("Hello", userName);
+    document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";*/
+//}
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
@@ -201,14 +211,14 @@ function checkAnswers() {
 
     //Scoring for the Game, increment score when there is a correct answer from the question asked
     function incrementScore() {
-        let oldScore = parseInt(document.getElementById("correct").innerText);
+        var oldScore = parseInt(document.getElementById("correct").innerText);
         document.getElementById("correct").innerText = ++oldScore;
         index++;
     }
 
     //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
     function incrementWrongAnswer() {
-        let oldScore = parseInt(document.getElementById("incorrect").innerText);
+        var oldScore = parseInt(document.getElementById("incorrect").innerText);
         document.getElementById("incorrect").innerText = ++oldScore;
         index++;
     }
@@ -222,18 +232,17 @@ function checkAnswers() {
         }
     }
 
-    //Get username of the user and send to welcome message on game page
-    document.getElementById("submitname").onClick = function () {
-        userName = document.getElementById("username").value;
-        console.log("Hello", userName);
-        document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
-    }
+    
 
     //When the quiz is over the score is shown to the user
     function showFinalScore() {
-        if (lastQuestion === questions.length) {
+
+        var lastQuestion = questions.length -1;
+        oldScore = parseInt(document.getElementById("correct").innerText);
+        if (lastQuestion.value === 10) {
             alert("you got " + oldScore + "/" + questions.length);
             console.log("you have scored:", oldScore)
+            console.log(lastQuestion.value)
             showScores()
         }
     }    
@@ -257,3 +266,4 @@ function checkAnswers() {
         }
     }
 }
+
