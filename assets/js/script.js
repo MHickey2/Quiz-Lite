@@ -13,11 +13,11 @@ var questionNumber = 1;
 var maxQuestions = 10;
 var soundcorrect = new Audio("/assets/audio/correct.mp3");
 var soundwrong = new Audio("/assets/audio/wrong.mp3");
+var lastQuestion = questions.length -1;
 
-
+// Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
-    // Fetch 10 questions from API from general knowledge category
-    //fetch("https://opentdb.com/api.php?amount=15&category=${questionId}&difficulty=${difficulty}&type=multiple`")
+        
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
     questions = await response.json()
@@ -29,7 +29,6 @@ function getNextQuestion() {
     console.log("current question", currentQuestion)
     //put correct answers in list with incorrect answers
     correctAnswer = questions.results[index].correct_answer;
-
     console.log("this is currentQuestion.correct_answer", currentQuestion.correct_answer);
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
     // choices.sort(() => Math.random() - 5);
@@ -86,16 +85,14 @@ showCorrectAnswer()
 playMusic()
 reset()
 
-
-
 //check if answers are correct or not
 function checkAnswers() {
     var button1 = document.getElementById("answer1");
     button1.addEventListener("click", event => {
-        //console.log("This is the correctAnswer:", correctAnswer)
-        //console.log("This is the selectedChoice:", selectedChoice)
-        //console.log("This is the value:", event.target.innerText) 
-        //console.log(button1.innerHTML)       
+        console.log("This is the correctAnswer:", correctAnswer)
+        console.log("This is the selectedChoice:", selectedChoice)
+        console.log("This is the value:", event.target.innerText) 
+        console.log(button1.innerHTML)       
 
         if (button1.innerHTML === correctAnswer) {
             button1.style.background = "green";
@@ -160,7 +157,6 @@ function checkAnswers() {
         }
     })
 
-    
     //The answer choices and correct answer are removed in order to display new choices
     function reset() {
         document.getElementById("verify-answer").innerHTML = "";
@@ -174,11 +170,9 @@ function checkAnswers() {
     function playMusic() {
     var options= document.getElementsByClassName("options");
         options.addEventListener("click", event => {
-        //  document.getElementById('music1').this.correct.play();
         if (button1.innerHTML === correctAnswer) {
             soundcorrect.play()
         } else {
-            //  document.getElementById('music2').this.wrong.play();
             if (button1.innerHTML === currentQuestion.incorrect_answers) {
                 soundwrong.play()
             }
@@ -198,6 +192,12 @@ function checkAnswers() {
         console.log("new question shown")
         reset()
     })
+
+    /*let restartButton = document.getElementById("restart-btn");
+    restartButton.addEventListener("click", _getQuestions => {
+        console.log("Restarting Game")
+        reset()
+    })*/
 
     //Scoring for the Game, increment score when there is a correct answer from the question asked
     function incrementScore() {
@@ -229,24 +229,20 @@ function checkAnswers() {
         document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
     }
 
-
     //When the quiz is over the score is shown to the user
     function showFinalScore() {
-        if (questions.length === maxQuestions) {
-            alert("you have scored:", oldscore)
-            console.log("you have scored:", oldscore)
+        if (lastQuestion === questions.length) {
+            alert("you got " + oldScore + "/" + questions.length);
+            console.log("you have scored:", oldScore)
             showScores()
         }
-    }
+    }    
 
-    showScores()
-
-
-    function showScores() {
-        let finalScore = oldScore;
+    //final scores to be displayed to user on ending the game 
+    function showScores() {        
         //final scores to be displayed to user
-        let userScore = document.getElementById("correct");
-        userScore.innerHTML = finalScore;
+        let userScore = document.getElementById("correct").innerText;
+        document.getElementById("scoreText").innerText = "You have scored, " + `${userScore}` + "!";
         let closingMessage = document.getElementById("closing-message");
         if (userScore == 0) {
             closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";

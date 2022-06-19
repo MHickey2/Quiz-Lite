@@ -206,7 +206,7 @@ boxes in each-->
             </div>
         </div>
 
-        <h1 id="verification" class="center">The correct answer is: <span id="verify-answer"></span></h1>
+        <h1 id="verification" class="center">The correct answer is: <span id="verify-answer"></span></h1>        
         <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
         <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 
@@ -217,8 +217,11 @@ boxes in each-->
     </div>
 
     <section class="closing">
+        <p class="scores">Your Results<span id="scoreText"></span></p>
         <h1 id="closing-message"></h1>
     </section>
+
+    <button id="restart-btn" class="restart-btn" onclick="getQuestions()" data-type="Restart">Restart</button>
 
     <audio id="music1" src="/assets/audio/correct.mp3" preload="auto"></audio>
     <audio id="music2" src="/assets/audio/wrong.mp3" preload="auto"></audio>
