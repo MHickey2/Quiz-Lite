@@ -33,25 +33,22 @@ repository in the READ.me and will commit in small increments so im sure of what
 
     <hr>
     <h3 class="center">First choose your name<br>and Good Luck with the Quiz!</h3>
-    <br/>
-
-    
-    <div class="center">
-        <input type="text" id="username" placeholder="Enter Name: ">
-        <button onclick="username" id="submitname" data-type="submitname">Submit now</button>
-    </div>
-    <br />
-    </div>
+    <br/>    
+    <form class="center">
+        <input type="text" name="username" id="username" placeholder="Enter Name: " aria-label="Enter your name (required)" required>
+        <button onclick="username" id="submitname"  aria-label="Opens the user name form" data-type="submitname">Submit now</button>
+    </form>    
+    <br />    
     <hr>
+
     <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
    
-    
-        <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
+    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
         <section class="center">
             <form name="optionsDifficulty" action="">
                 <button type="button" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
                 <button type="button" id="medium-button" class="btn-medium" onclick="medium" value=1>Medium</button>
-                <button type="button" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
+                <button type="button" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>                
             </form>
         </section>
         <br/>
@@ -62,7 +59,7 @@ repository in the READ.me and will commit in small increments so im sure of what
     
     
         <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-        <section class="center">            
+        <section class="center" id="difficulty-level">            
             <button type="button" id="general" class="btn-general">General</button>
             <button type="button" id="film" class="btn-film">Movies</button>
             <button type="button" id="tv" class="btn-tv">TV</button>            
@@ -72,7 +69,7 @@ repository in the READ.me and will commit in small increments so im sure of what
         <br />
     <hr>
 
-
+    <div class="loader"></div>
     
     <script src="assets/js/script.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->

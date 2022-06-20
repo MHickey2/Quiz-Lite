@@ -12,22 +12,22 @@ var questionNumber = 1;
 var maxQuestions = 10;
 var soundcorrect = new Audio("/assets/audio/correct.mp3");
 var soundwrong = new Audio("/assets/audio/wrong.mp3");
-var lastQuestion = questions.length -1;
+var lastQuestion = questions.length - 1;
 
 
-    
 
 
- //Get username of the user and send to welcome message on game page
- /*document.getElementById("submitname").onClick = function () {
-    userName = document.getElementById("username").value;
-    console.log("Hello", userName);
-    document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";*/
-//}
+
+//Get username of the user and send to welcome message on game page
+document.getElementById("submitname").onClick = function () {
+   userName = document.getElementById("username").value;
+   console.log("Hello", userName);
+   document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
+}
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
-        
+
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
     questions = await response.json()
@@ -59,7 +59,7 @@ function getNextQuestion() {
 }
 
 function startGame() {
-    //Use Start button to begin the game
+    //Use Start button to show the gaming area
     let startButton = document.getElementById("start-btn");
     startButton.classList.add("hide");
     startButton.addEventListener("click", startGame => {
@@ -91,9 +91,10 @@ async function init() {
 }
 init()
 checkAnswers()
-showCorrectAnswer()
-playMusic()
-reset()
+
+//playMusic()
+
+
 
 //check if answers are correct or not
 function checkAnswers() {
@@ -101,19 +102,19 @@ function checkAnswers() {
     button1.addEventListener("click", event => {
         console.log("This is the correctAnswer:", correctAnswer)
         console.log("This is the selectedChoice:", selectedChoice)
-        console.log("This is the value:", event.target.innerText) 
-        console.log(button1.innerHTML)       
+        console.log("This is the value:", event.target.innerText)
+        console.log(button1.innerHTML)
 
         if (button1.innerHTML === correctAnswer) {
             button1.style.background = "green";
-            alert("you are correct");           
-            showCorrectAnswer()            
+            alert("you are correct");
+            showCorrectAnswer();
             incrementScore();
 
         } else {
             button1.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()           
+            showCorrectAnswer();
             incrementWrongAnswer();
         }
     })
@@ -123,13 +124,13 @@ function checkAnswers() {
 
         if (button2.innerHTML === correctAnswer) {
             button2.style.background = "green";
-            alert("you are correct");           
-            showCorrectAnswer()           
+            alert("you are correct");
+            showCorrectAnswer()
             incrementScore();
         } else {
             button2.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()            
+            showCorrectAnswer()
             incrementWrongAnswer();
         }
     })
@@ -140,15 +141,14 @@ function checkAnswers() {
         if (button3.innerHTML === correctAnswer) {
             button3.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer()            
+            showCorrectAnswer()
             incrementScore();
         } else {
             button3.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()            
+            showCorrectAnswer()
             incrementWrongAnswer();
         }
-        playMusic()
     })
 
     var button4 = document.getElementById("answer4");
@@ -157,12 +157,12 @@ function checkAnswers() {
         if (button4.innerHTML === correctAnswer) {
             button4.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer()           
+            showCorrectAnswer()
             incrementScore();
         } else {
             button4.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()           
+            showCorrectAnswer()
             incrementWrongAnswer();
         }
     })
@@ -176,19 +176,20 @@ function checkAnswers() {
         }
     }
 
+
     //audio for alerting users if they got correct or wrong answer
-    function playMusic() {
+    /*function playMusic() {
     var options= document.getElementsByClassName("options");
         options.addEventListener("click", event => {
-        if (button1.innerHTML === correctAnswer) {
+        if (button1.innerHTML === correctAnswer || button2.innerHTML === correctAnswer || button3.innerHTML === correctAnswer || button4.innerHTML === correctAnswer) {
             soundcorrect.play()
-        } else {
-            if (button1.innerHTML === currentQuestion.incorrect_answers) {
+        } else {            
                 soundwrong.play()
-            }
-        }
-    })
+               }
+        })    
     }
+
+    playMusic();*/
 
     //show the correct answer to the user, before moving to next question
     function showCorrectAnswer() {
@@ -203,17 +204,13 @@ function checkAnswers() {
         reset()
     })
 
-    /*let restartButton = document.getElementById("restart-btn");
-    restartButton.addEventListener("click", _getQuestions => {
-        console.log("Restarting Game")
-        reset()
-    })*/
 
     //Scoring for the Game, increment score when there is a correct answer from the question asked
     function incrementScore() {
         var oldScore = parseInt(document.getElementById("correct").innerText);
         document.getElementById("correct").innerText = ++oldScore;
-        index++;
+        index++
+        
     }
 
     //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
@@ -225,45 +222,48 @@ function checkAnswers() {
 
     function hideButton() {
         var x = document.getElementById("nextButton");
-        if (maxQuestions === 10) {
+        if (maxQuestions.value === 10) {
             nextButton.style.display = "none";
         } else {
             nextButton.style.display = "block";
         }
     }
 
-    
+    //var lastQuestion = questions.length - 1; 
+    let lastquestion = questions[questions.length - 1];
 
-    //When the quiz is over the score is shown to the user
+    //When the quiz is over the score is shown to the user    
+    finalScore = parseInt(document.getElementById("correct").value)
     function showFinalScore() {
+        if (questions.length === 0 || questionNumber === maxQuestions) {          
 
-        var lastQuestion = questions.length -1;
-        oldScore = parseInt(document.getElementById("correct").innerText);
-        if (lastQuestion.value === 10) {
-            alert("you got " + oldScore + "/" + questions.length);
-            console.log("you have scored:", oldScore)
-            console.log(lastQuestion.value)
+        alert(questions.length)
+        alert(lastQuestion)
+           
+            console.log("you have scored:", finalScore)
             showScores()
         }
-    }    
+    }
+
+    
+    showFinalScore();
+    showScores()
 
     //final scores to be displayed to user on ending the game 
-    function showScores() {        
+    function showScores() {
         //final scores to be displayed to user
-        let userScore = document.getElementById("correct").innerText;
-        document.getElementById("scoreText").innerText = "You have scored, " + `${userScore}` + "!";
+        document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
         let closingMessage = document.getElementById("closing-message");
-        if (userScore == 0) {
+        if (finalScore == 0) {
             closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
-        } else if (userScore < 3) {
+        } else if (finalScore < 3) {
             closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
-        } else if (userScore < 6) {
+        } else if (finalScore < 6) {
             closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
-        } else if (userScore < 9) {
+        } else if (finalScore < 9) {
             closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
-        } else if (userScore == 10) {
+        } else if (finalScore == 10) {
             closingMessage.innerHTML = "You have achieved greatness";
         }
     }
 }
-
