@@ -19,9 +19,9 @@ var finalScore;
 
 //Get username of the user and send to welcome message on game page
 document.getElementById("submitname").onClick = function () {
-   username = document.getElementById("username").value;
-   console.log("Hello", username);
-   document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
+    username = document.getElementById("username").value;
+    console.log("Hello", username);
+    document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
 }
 
 // Fetch 10 questions from API from general knowledge category
@@ -55,7 +55,41 @@ function getNextQuestion() {
 
     document.getElementById("progress").innerText = `Question ${questionNumber}/${maxQuestions}`;
     ++questionNumber;
+
+    if (index + 1 === questions.length)alert("Game Over"); {  
+        console.log(index + 1)  
+        console.log(questions.length)   
+        console.log("no more questions")
+        
+    }    
+
+
+    //When the quiz is over the score is shown to the user  
+    //final scores to be displayed to user on ending the game 
+    function showFinalScore() {
+        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {
+            finalScore = parseInt(document.getElementById("correct").value)
+            console.log("you have scored:", finalScore)
+            //final scores to be displayed to user
+            document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
+            let closingMessage = document.getElementById("closing-message");
+            if (finalScore == 0) {
+                closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+            } else if (finalScore < 3) {
+                closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+            } else if (finalScore < 6) {
+                closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
+            } else if (finalScore < 9) {
+                closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
+            } else if (finalScore == 10) {
+                closingMessage.innerHTML = "You have achieved greatness";
+            }
+        }
+
+    }
 }
+
+
 
 function startGame() {
     //Use Start button to show the gaming area
@@ -84,6 +118,7 @@ function choiceListeners() {
 async function init() {
     await getQuestions();
     getNextQuestion(0);
+    showFinalScore();
     startGame();
     choiceListeners();
 }
@@ -171,7 +206,7 @@ function checkAnswers() {
         }
     }
 
-    //audio for alerting users if they got correct or wrong answer
+    //audio for alerting users if they got correct or wrong answer, not functional yet
     /*function playMusic() {
     var options= document.getElementsByClassName("options");
         options.addEventListener("click", event => {
@@ -202,7 +237,7 @@ function checkAnswers() {
     function incrementScore() {
         var oldScore = parseInt(document.getElementById("correct").innerText);
         document.getElementById("correct").innerText = ++oldScore;
-        index++        
+        index++
     }
 
     //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
@@ -211,7 +246,7 @@ function checkAnswers() {
         document.getElementById("incorrect").innerText = ++oldScore;
         index++;
     }
-
+    //hide next button when there are no questions left in the game
     function hideButton() {
         var x = document.getElementById("nextButton");
         if (maxQuestions.value === 10) {
@@ -224,34 +259,27 @@ function checkAnswers() {
     //var lastQuestion = questions.length - 1; 
     let lastquestion = questions[questions.length - 1];
 
-    //When the quiz is over the score is shown to the user    
-    finalScore = parseInt(document.getElementById("correct").value)
-    function showFinalScore() {
-        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {            
-            console.log("you have scored:", finalScore)
-            hideButton()
-            showScores()
-        }
-    }    
-    
+    //When the quiz is over the score is shown to the user  
     //final scores to be displayed to user on ending the game 
-    function showScores() {
-        //final scores to be displayed to user
-        document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
-        let closingMessage = document.getElementById("closing-message");
-        if (finalScore == 0) {
-            closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
-        } else if (finalScore < 3) {
-            closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
-        } else if (finalScore < 6) {
-            closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
-        } else if (finalScore < 9) {
-            closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
-        } else if (finalScore == 10) {
-            closingMessage.innerHTML = "You have achieved greatness";
+    function showFinalScore() {
+        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {
+            finalScore = parseInt(document.getElementById("correct").value)
+            console.log("you have scored:", finalScore)
+            //final scores to be displayed to user
+            document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
+            let closingMessage = document.getElementById("closing-message");
+            if (finalScore == 0) {
+                closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+            } else if (finalScore < 3) {
+                closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+            } else if (finalScore < 6) {
+                closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
+            } else if (finalScore < 9) {
+                closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
+            } else if (finalScore == 10) {
+                closingMessage.innerHTML = "You have achieved greatness";
+            }
         }
+
     }
 }
-
-showFinalScore();
-showScores()
