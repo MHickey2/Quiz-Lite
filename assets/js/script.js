@@ -13,16 +13,15 @@ var maxQuestions = 10;
 var soundcorrect = new Audio("/assets/audio/correct.mp3");
 var soundwrong = new Audio("/assets/audio/wrong.mp3");
 var lastQuestion = questions.length - 1;
-
-
-
+var username;
+var finalScore;
 
 
 //Get username of the user and send to welcome message on game page
 document.getElementById("submitname").onClick = function () {
-   userName = document.getElementById("username").value;
-   console.log("Hello", userName);
-   document.getElementById("welcomeText").innerText = "Welcome, " + `${userName}` + "!";
+   username = document.getElementById("username").value;
+   console.log("Hello", username);
+   document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
 }
 
 // Fetch 10 questions from API from general knowledge category
@@ -87,14 +86,10 @@ async function init() {
     getNextQuestion(0);
     startGame();
     choiceListeners();
-
 }
 init()
 checkAnswers()
-
 //playMusic()
-
-
 
 //check if answers are correct or not
 function checkAnswers() {
@@ -176,7 +171,6 @@ function checkAnswers() {
         }
     }
 
-
     //audio for alerting users if they got correct or wrong answer
     /*function playMusic() {
     var options= document.getElementsByClassName("options");
@@ -204,13 +198,11 @@ function checkAnswers() {
         reset()
     })
 
-
     //Scoring for the Game, increment score when there is a correct answer from the question asked
     function incrementScore() {
         var oldScore = parseInt(document.getElementById("correct").innerText);
         document.getElementById("correct").innerText = ++oldScore;
-        index++
-        
+        index++        
     }
 
     //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
@@ -235,20 +227,13 @@ function checkAnswers() {
     //When the quiz is over the score is shown to the user    
     finalScore = parseInt(document.getElementById("correct").value)
     function showFinalScore() {
-        if (questions.length === 0 || questionNumber === maxQuestions) {          
-
-        alert(questions.length)
-        alert(lastQuestion)
-           
+        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {            
             console.log("you have scored:", finalScore)
+            hideButton()
             showScores()
         }
-    }
-
+    }    
     
-    showFinalScore();
-    showScores()
-
     //final scores to be displayed to user on ending the game 
     function showScores() {
         //final scores to be displayed to user
@@ -267,3 +252,6 @@ function checkAnswers() {
         }
     }
 }
+
+showFinalScore();
+showScores()
