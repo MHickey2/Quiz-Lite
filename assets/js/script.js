@@ -1,20 +1,21 @@
-var answers = [];
-var questions = [];
-var quiz;
-var index = 0;
-var correctAnswer;
-var selectedChoice;
-var amount = 10;
-var currentQuestion;
-var category = 8;
-var difficultyLevel;
-var questionNumber = 1;
-var maxQuestions = 10;
-var soundcorrect = new Audio("/assets/audio/correct.mp3");
-var soundwrong = new Audio("/assets/audio/wrong.mp3");
-var lastQuestion = questions.length - 1;
-var username;
-var finalScore;
+let answers = [];
+let questions = [];
+let quiz;
+let index = 0;
+let correctAnswer;
+let selectedChoice;
+let amount = 10;
+let currentQuestion;
+let category = 8;
+let difficultyLevel;
+let questionNumber = 1;
+let maxQuestions = 10;
+let soundcorrect = new Audio("/assets/audio/correct.mp3");
+let soundwrong = new Audio("/assets/audio/wrong.mp3");
+let lastQuestion = questions.length - 1;
+let username;
+let finalScore;
+let score = 0;
 
 
 //Get username of the user and send to welcome message on game page
@@ -26,6 +27,7 @@ document.getElementById("submitname").onClick = function () {
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
+    
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
@@ -33,6 +35,18 @@ async function getQuestions() {
 }
 
 function getNextQuestion() {
+
+    if (questionNumber == [questions.results.length]) {
+        if (confirm("Game Over!")) {
+          showFinalScore()
+        } else {          
+          return;
+          hideButton()
+        }
+      }
+
+    document.getElementById("progress").innerText = `Question ${questionNumber}/${maxQuestions}`;
+    ++questionNumber;
     //getCurrent question
     currentQuestion = questions.results[index]
     console.log("current question", currentQuestion)
@@ -53,22 +67,17 @@ function getNextQuestion() {
     document.getElementById("answer3").innerHTML = choices[2]
     document.getElementById("answer4").innerHTML = choices[3]
 
-    document.getElementById("progress").innerText = `Question ${questionNumber}/${maxQuestions}`;
-    ++questionNumber;
-
-    if (index + 1 === questions.length)alert("Game Over"); {  
-        console.log(index + 1)  
-        console.log(questions.length)   
+   /* if (questionNumber == questions[questions.length]) alert("Game Over"); {
+        console.log(questionNumber)
+        console.log([questions.results.length])
         console.log("no more questions")
-        
-    }    
-
+    }*/
 
     //When the quiz is over the score is shown to the user  
     //final scores to be displayed to user on ending the game 
     function showFinalScore() {
-        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {
-            finalScore = parseInt(document.getElementById("correct").value)
+        if (questionNumber == [questions.results.length]) {
+            finalScore = parseInt(document.getElementById("correct").value);
             console.log("you have scored:", finalScore)
             //final scores to be displayed to user
             document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
@@ -89,8 +98,6 @@ function getNextQuestion() {
     }
 }
 
-
-
 function startGame() {
     //Use Start button to show the gaming area
     let startButton = document.getElementById("start-btn");
@@ -100,6 +107,7 @@ function startGame() {
         targetDiv.style.display = "block";
     })
 }
+
 
 function choiceListeners() {
     //get all choice buttons
@@ -124,7 +132,7 @@ async function init() {
 }
 init()
 checkAnswers()
-//playMusic()
+
 
 //check if answers are correct or not
 function checkAnswers() {
@@ -197,6 +205,8 @@ function checkAnswers() {
         }
     })
 
+}
+
     //The answer choices and correct answer are removed in order to display new choices
     function reset() {
         document.getElementById("verify-answer").innerHTML = "";
@@ -207,18 +217,20 @@ function checkAnswers() {
     }
 
     //audio for alerting users if they got correct or wrong answer, not functional yet
-    /*function playMusic() {
+    function playMusic() {
     var options= document.getElementsByClassName("options");
         options.addEventListener("click", event => {
         if (button1.innerHTML === correctAnswer || button2.innerHTML === correctAnswer || button3.innerHTML === correctAnswer || button4.innerHTML === correctAnswer) {
             soundcorrect.play()
+            alert("pos sound called")
         } else {            
                 soundwrong.play()
+                alert("neg sound called")
                }
         })    
     }
 
-    playMusic();*/
+    //playMusic()
 
     //show the correct answer to the user, before moving to next question
     function showCorrectAnswer() {
@@ -235,17 +247,19 @@ function checkAnswers() {
 
     //Scoring for the Game, increment score when there is a correct answer from the question asked
     function incrementScore() {
-        var oldScore = parseInt(document.getElementById("correct").innerText);
-        document.getElementById("correct").innerText = ++oldScore;
+        let oldScoreR = parseInt(document.getElementById("correct").innerText);
+        document.getElementById("correct").innerText = ++oldScoreR;
+        console.log(oldScoreR)        
         index++
     }
 
     //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
     function incrementWrongAnswer() {
-        var oldScore = parseInt(document.getElementById("incorrect").innerText);
-        document.getElementById("incorrect").innerText = ++oldScore;
+        let oldScoreW = parseInt(document.getElementById("incorrect").innerText);
+        document.getElementById("incorrect").innerText = ++oldScoreW;        
         index++;
     }
+
     //hide next button when there are no questions left in the game
     function hideButton() {
         var x = document.getElementById("nextButton");
@@ -256,30 +270,4 @@ function checkAnswers() {
         }
     }
 
-    //var lastQuestion = questions.length - 1; 
-    let lastquestion = questions[questions.length - 1];
-
-    //When the quiz is over the score is shown to the user  
-    //final scores to be displayed to user on ending the game 
-    function showFinalScore() {
-        if (questions.length === 0 || questionNumber.value === maxQuestions.value || currentQuestion === 0) {
-            finalScore = parseInt(document.getElementById("correct").value)
-            console.log("you have scored:", finalScore)
-            //final scores to be displayed to user
-            document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
-            let closingMessage = document.getElementById("closing-message");
-            if (finalScore == 0) {
-                closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
-            } else if (finalScore < 3) {
-                closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
-            } else if (finalScore < 6) {
-                closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
-            } else if (finalScore < 9) {
-                closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
-            } else if (finalScore == 10) {
-                closingMessage.innerHTML = "You have achieved greatness";
-            }
-        }
-
-    }
-}
+    
