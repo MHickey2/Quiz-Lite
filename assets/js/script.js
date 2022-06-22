@@ -4,18 +4,18 @@ let quiz;
 let index = 0;
 let correctAnswer;
 let selectedChoice;
-let amount = 10;
+let amount = 20;
 let currentQuestion;
 let category = 8;
-let difficultyLevel;
+let difficulty = "easy";
 let questionNumber = 1;
 let maxQuestions = 10;
-let soundcorrect = new Audio("/assets/audio/correct.mp3");
-let soundwrong = new Audio("/assets/audio/wrong.mp3");
+let soundcorrect = new Audio("/audio/correct.mp3");
+let soundwrong = new Audio("/audio/wrong.mp3");
 let lastQuestion = questions.length - 1;
 let username;
-let finalScore;
-let score = 0;
+let finalScore = 0;
+
 
 
 //Get username of the user and send to welcome message on game page
@@ -30,7 +30,7 @@ async function getQuestions() {
     
 
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficulty}&type=multiple`);
     questions = await response.json()
 }
 
@@ -67,18 +67,18 @@ function getNextQuestion() {
     document.getElementById("answer3").innerHTML = choices[2]
     document.getElementById("answer4").innerHTML = choices[3]
 
-   /* if (questionNumber == questions[questions.length]) alert("Game Over"); {
+   
         console.log(questionNumber)
         console.log([questions.results.length])
-        console.log("no more questions")
-    }*/
+       console.log(oldScoreR)
 
     //When the quiz is over the score is shown to the user  
     //final scores to be displayed to user on ending the game 
     function showFinalScore() {
         if (questionNumber == [questions.results.length]) {
-            finalScore = parseInt(document.getElementById("correct").value);
+            let finalScore = parseInt(document.getElementById("correct"));
             console.log("you have scored:", finalScore)
+            console.log("oldScoreR",oldScoreR)
             //final scores to be displayed to user
             document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
             let closingMessage = document.getElementById("closing-message");
@@ -138,21 +138,21 @@ checkAnswers()
 function checkAnswers() {
     var button1 = document.getElementById("answer1");
     button1.addEventListener("click", event => {
-        console.log("This is the correctAnswer:", correctAnswer)
-        console.log("This is the selectedChoice:", selectedChoice)
-        console.log("This is the value:", event.target.innerText)
-        console.log(button1.innerHTML)
+        //console.log("This is the correctAnswer:", correctAnswer)
+        //console.log("This is the selectedChoice:", selectedChoice)
+        //console.log("This is the value:", event.target.innerText)
+        //console.log(button1.innerHTML)
 
         if (button1.innerHTML === correctAnswer) {
             button1.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer();
+            showCorrectAnswer();           
             incrementScore();
 
         } else {
             button1.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer();
+            showCorrectAnswer();           
             incrementWrongAnswer();
         }
     })
@@ -216,21 +216,27 @@ function checkAnswers() {
         }
     }
 
+    /* Function to Play sound ons answer choice*/
+    var options = document.addEventListener("options", function (event) {
+        playMusic(event);
+
+    });
+
     //audio for alerting users if they got correct or wrong answer, not functional yet
-    function playMusic() {
-    var options= document.getElementsByClassName("options");
-        options.addEventListener("click", event => {
+    /*function playMusic() {
+    //var options= document.getElementsByClassName("options");
+      /*  options.addEventListener("click", event => {
         if (button1.innerHTML === correctAnswer || button2.innerHTML === correctAnswer || button3.innerHTML === correctAnswer || button4.innerHTML === correctAnswer) {
-            soundcorrect.play()
-            alert("pos sound called")
+            soundcorrect.play();
+            alert("pos sound called");
         } else {            
-                soundwrong.play()
-                alert("neg sound called")
+                soundwrong.play();
+                alert("neg sound called");
                }
         })    
     }
 
-    //playMusic()
+    playMusic()*/
 
     //show the correct answer to the user, before moving to next question
     function showCorrectAnswer() {
@@ -263,7 +269,7 @@ function checkAnswers() {
     //hide next button when there are no questions left in the game
     function hideButton() {
         var x = document.getElementById("nextButton");
-        if (maxQuestions.value === 10) {
+        if (questionNumber === 10) {
             nextButton.style.display = "none";
         } else {
             nextButton.style.display = "block";

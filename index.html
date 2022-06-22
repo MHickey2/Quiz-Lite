@@ -34,7 +34,7 @@ repository in the READ.me and will commit in small increments so im sure of what
     <hr>
     <h3 class="center">First choose your name<br>and Good Luck with the Quiz!</h3>
     <br/>    
-    <form class="center">
+    <form class="center" id="user-level">
         <input type="text" name="username" id="username" placeholder="Enter Name: " aria-label="Enter your name (required)" required>
        <!-- <button onclick="username" id="submitname"  aria-label="Opens the user name form" data-type="submitname">Submit now</button>-->
         <button onclick="document.getElementById('id01').style.display='block'"
@@ -46,11 +46,12 @@ repository in the READ.me and will commit in small increments so im sure of what
     <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
    
     <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-        <section class="center">
-            <form name="optionsDifficulty" action="">
-                <button type="button" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
-                <button type="button" id="medium-button" class="btn-medium" onclick="medium" value=1>Medium</button>
-                <button type="button" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>                
+        <section class="center" id="difficulty-level">
+            <form name="optionsDifficulty" action="/action_page.php">
+                <button type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
+                <button type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium">Medium</button>
+                <button type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
+                <input class="w3-button w3-pink" type="submit" value="Submit">                
             </form>
         </section>
         <br/>
@@ -60,13 +61,15 @@ repository in the READ.me and will commit in small increments so im sure of what
     <h2 class="center">Quiz-Lite Category Selection</h2>
     
     
-        <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-        <section class="center" id="difficulty-level">            
-            <button type="button" id="general" class="btn-general">General</button>
-            <button type="button" id="film" class="btn-film">Movies</button>
-            <button type="button" id="tv" class="btn-tv">TV</button>            
-            <button type="button" id="music" class="music">Music</button>
-            <button type="button" id="books" class="btn-books">Books</button>            
+        <h3 style="color: purple; text-align: center;">Next you will chose a Category level:</h3>
+        <section class="center" id="category-level">            
+            <button type="radio" id="general" class="btn-general">General</button>
+            <button type="radio" id="film" class="btn-film">Movies</button>
+            <button type="radio" id="tv" class="btn-tv">TV</button>            
+            <button type="radio" id="music" class="music">Music</button>
+            <button type="radio" id="books" class="btn-books">Books</button> 
+            <br/>
+            <input class="w3-button w3-pink" type="submit" value="Submit">            
         </section>
         <br />
     <hr>
