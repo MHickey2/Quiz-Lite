@@ -1,49 +1,35 @@
 /*styling for the body of the app*/
 body {
-    background-color: #280a30;
-    font-size: 100%;
+  /*  background-color: #280a30;*/
+    background-color: white;
+    font-size: 0.75rem;
     box-sizing: border-box;
     color: #313131;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vw;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;   
 }
 
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid pink;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
+.dark-mode {
+    background-color: black;
+    color: white;    
   }
 
+/*styling for the difficulty section on index page*/
   #difficulty-level {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    display: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;   
   }
   
-  /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
 /*styling for the welcome message including the username*/
 #welcomeText {
-    color: white;
+    color: black;
     text-align: left;
-    font-size: 120%;
+    font-size: 1rem;
 }
 
 /*Image for top of page*/
@@ -53,16 +39,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-
-
 }
 
-/*Styling for the main heading*/
+/*Styling for the main heading on each page*/
 .heading {
     margin-top: 5px;
     text-align: center;
-    font-size: 2.6rem;
-    color: white;
+    font-size: 2.2rem;
+    color:  #e91e63;    
     letter-spacing: 5px;
     font-family: 'Calistoga', cursive;
 }
@@ -72,7 +56,7 @@ body {
     text-align: center;
     width: 50%;
     color: white;
-    font-size: 130%;
+    font-size: 1rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -89,13 +73,28 @@ body {
     margin-top: 30px;
 }
 
+.btn-easy, .btn-medium, .btn-hard,
+.btn-general, .btn-books, .btn-music,
+.btn-tv, .btn-film {    
+    height: 40px;
+    width: 100px;
+    margin-top: 10px; 
+}  
+
+.btn-easy:hover, .btn-medium:hover, .btn-hard:hover,
+.btn-general:hover, .btn-books:hover, .btn-music:hover,
+.btn-tv:hover, .btn-film:hover {    
+    background-color: #df5784;
+    color: white;
+}  
+
 #start-btn,
 #next-btn,
 #restart-btn {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(202, 65, 202);
+    background-color: rgb(148, 93, 109);
     width: 120px;
     height: 40px;
     color: white;
@@ -126,9 +125,9 @@ body {
 }
 
 /*Each individual answer box for displaying the options to the user*/
-.choice-container {
+.choice-container {   
     height: 150px;
-    width: 360px;
+    width: 300px;
     border: 8px solid white;
     font-size: 1.4rem;
     padding: 25px;
@@ -160,6 +159,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    
 
 }
 
@@ -167,11 +167,11 @@ body {
     display: none;
 }
 
-.choice-text {
-    font-size: 1.1rem;
+.choice-text {   
     display: block;
     margin-left: auto;
     margin-right: auto;
+    font: .75rem;
 }
 
 .main-container {
@@ -211,13 +211,13 @@ body {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
-    font-size: 80%;
+    font-size: .75rem;
     color: white;
 }
 
 #difficulty {
     text-align: center;
-    font-size: 80%;
+    font-size: .75rem;
     color: white;
     text-transform: capitalize;
 }
@@ -243,10 +243,7 @@ body {
     margin-bottom: 0;
 }
 
-/*styling for the modals*/
-.w3-button w3-pink {
-    margin-bottom: 5px;
-}
+
 
 .button-link-close {
     float: right;
@@ -261,3 +258,37 @@ body {
     font-size: 120%;
     text-transform: uppercase;
 }
+
+.pink-buttons{    
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e91e63;
+    color: white;
+    height: 40px;
+    width: 100px;
+
+}
+
+/*Styling for the loader*/
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid pink;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+   /* Safari */
+   @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

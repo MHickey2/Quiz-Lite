@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="shortcut icon" href="../favicon.ico" />
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <title>Index - Play</title>
@@ -23,59 +25,63 @@ totally confused and overwhelmee but rebooted the whole project, initally I was 
 questions and answers but changed the focus of the quiz and decided to utilize an existing API, I will include the original
 repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
 
-
+<button onclick="myFunction()">Toggle dark mode</button>
     <!--This will be a welcome message for the user, after they have supplied their username-->
     <h2 id="welcomeText"> <span id="welcomeMessage"></span></h2>
 
+
     <br /><img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
     <h1 class="heading">Quiz-Lite</h1>
-    <p class="center">Welcome to the lite-weight Quiz, for a quick round quizzing sensation.</p>
+    <p class="center">Welcome to the lite-weight Quiz, for a quick round quizzing sensation. Test your brainpower in a
+        fun accessible bitesize Quiz</p>
 
     <hr>
     <h3 class="center">First choose your name<br>and Good Luck with the Quiz!</h3>
-    <br/>    
+    <br />
     <form class="center" id="user-level">
-        <input type="text" name="username" id="username" placeholder="Enter Name: " aria-label="Enter your name (required)" required>
-       <!-- <button onclick="username" id="submitname"  aria-label="Opens the user name form" data-type="submitname">Submit now</button>-->
-        <button onclick="document.getElementById('id01').style.display='block'"
-        class="w3-button w3-pink">Username</button>
-    </form>    
-    <br />    
+        <input type="text" name="username" id="username" placeholder="Enter Name: "
+            aria-label="Enter your name (required)" required>
+        <button onclick="getUserName()" input class="pink-buttons" id="submitname" aria-label="Opens the user name form" data-type="submitname">Submit
+            now</button>
+    </form>
+    <br />
     <hr>
 
     <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
-   
+    <br />
     <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-        <section class="center" id="difficulty-level">
-            <form name="optionsDifficulty" action="/action_page.php">
-                <button type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
-                <button type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium">Medium</button>
-                <button type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
-                <input class="w3-button w3-pink" type="submit" value="Submit">                
-            </form>
-        </section>
-        <br/>
+    <section class="center" id="difficulty-level">
+        <form name="optionsDifficulty" action="/action_page.php">
+            <button type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
+            <button type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium">Medium</button>
+            <button type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
+            <br/>
+            <input class="pink-buttons" type="submit" value="Submit">
+        </form>
+    </section>
+    <br />
     <hr>
 
 
     <h2 class="center">Quiz-Lite Category Selection</h2>
-    
-    
-        <h3 style="color: purple; text-align: center;">Next you will chose a Category level:</h3>
-        <section class="center" id="category-level">            
-            <button type="radio" id="general" class="btn-general">General</button>
-            <button type="radio" id="film" class="btn-film">Movies</button>
-            <button type="radio" id="tv" class="btn-tv">TV</button>            
-            <button type="radio" id="music" class="music">Music</button>
-            <button type="radio" id="books" class="btn-books">Books</button> 
-            <br/>
-            <input class="w3-button w3-pink" type="submit" value="Submit">            
-        </section>
-        <br />
+    <br />
+
+    <h3 style="color: purple; text-align: center;">Next you will chose a Category level:</h3>
+    <section class="center" id="category-level">
+        <button type="radio"  class="btn-general" value="">General</button>
+        <button type="radio"  class="btn-film" class="btn-film" value="">Movies</button>
+        <button type="radio"  class="btn-tv" value="">TV</button>
+        <br/>
+        <button type="radio"  class="btn-music" value="">Music</button>
+        <button type="radio"  class="btn-books" value="">Books</button>
+        <br/>
+        <input class="pink-buttons" type="submit" value="Submit">
+    </section>
+    <br/>
     <hr>
 
     <div class="loader"></div>
-    
+
     <script src="assets/js/script.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->
     <footer class="footer">
