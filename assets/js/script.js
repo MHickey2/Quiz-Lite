@@ -13,10 +13,12 @@ let maxQuestions = 10;
 let soundcorrect = new Audio("/audio/correct.mp3");
 let soundwrong = new Audio("/audio/wrong.mp3");
 let lastQuestion = questions.length - 1;
-var username ;
-//localStorage.setItem("username", username);
-var finalScore;
-//localStorage.setItem("finalScore", oldScoreR);
+let username;
+localStorage.setItem("username", username);
+let finalScore;
+let timer;
+let timeLeft = 60;
+
 
 
 
@@ -24,16 +26,7 @@ function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
-//Get username of the user and send to welcome message on game page
 
-//function getUserName() {  
-/*let submitbutton.getElementById("submitname").click = event =>{
-    username = document.getElementById("username").value;
-    console.log("Hello", username);
-    document.getElementById("welcomeText").innerHTML = "Welcome, " + `${username}` + "!";
-
-}
-}*/
 
 
 // Fetch 10 questions from API from general knowledge category
@@ -63,8 +56,7 @@ function getNextQuestion() {
     //put correct answers in list with incorrect answers
     correctAnswer = questions.results[index].correct_answer;
     console.log("this is currentQuestion.correct_answer", currentQuestion.correct_answer);
-    let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
-    // choices.sort(() => Math.random() - 5);
+    let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);    
     choices.sort();
     console.log(correctAnswer)
     console.log("These are choices", choices)
@@ -75,8 +67,18 @@ function getNextQuestion() {
     document.getElementById("answer1").innerHTML = choices[0]
     document.getElementById("answer2").innerHTML = choices[1]
     document.getElementById("answer3").innerHTML = choices[2]
-    document.getElementById("answer4").innerHTML = choices[3]  
+    document.getElementById("answer4").innerHTML = choices[3]
 
+    //Functions dealing with the timer for the Quiz    
+    timer = setInterval(updateTimer, 1000);
+    updateTimer();
+
+    function updateTimer() {
+        timeLeft = timeLeft - 1;
+        if (timeLeft >= 0)
+            document.getElementById("time-keeper").innerHTML = timeLeft
+       
+    }
 }
 
 
@@ -235,10 +237,9 @@ nextButton.addEventListener("click", getNextQuestion => {
 
 //Scoring for the Game, increment score when there is a correct answer from the question asked
 function incrementScore() {
-    var oldScoreR = parseInt(document.getElementById("correct").innerText);
+    let oldScoreR = parseInt(document.getElementById("correct").innerText);
     document.getElementById("correct").innerText = ++oldScoreR;
-    console.log(oldScoreR)
-    localStorage.setItem("oldscoreR", oldScoreR);   
+    finalScore = parseInt(document.getElementById("correct").innerText);
     index++
 }
 
@@ -274,14 +275,11 @@ difficulty = () => {
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
-    if (questionNumber == [questions.results.length]) {
-        let finalScore = parseInt(document.getElementById("correct"));   
-      
-        localStorage.setItem("finalScore", finalScore);        
-        console.log("you have scored:", finalScore)
+   // if (questionNumber == [questions.results.length]) {             
+        
         //final scores to be displayed to user
-        document.querySelector("correct").textContent = finalScore;
-        document.getElementById("scoreText").innerHTML = "You have scored, " + `${finalScore}` + "!";
+       
+        document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
         let closingMessage = document.getElementById("closing-message");
         if (finalScore == 0) {
             closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
@@ -295,7 +293,9 @@ function showFinalScore() {
             closingMessage.innerHTML = "You have achieved greatness";
         }
     }
-}
+
+
+showFinalScore()
 
 /*function setcookie(){
     document.cookie = 'username='cookieName.value;    
@@ -322,4 +322,15 @@ function showFinalScore() {
         document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
     }
 
+}*/
+
+//Get username of the user and send to welcome message on game page
+
+//function getUserName() {  
+/*let submitbutton.getElementById("submitname").click = event =>{
+    username = document.getElementById("username").value;
+    console.log("Hello", username);
+    document.getElementById("welcomeText").innerHTML = "Welcome, " + `${username}` + "!";
+
+}
 }*/
