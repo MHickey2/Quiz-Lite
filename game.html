@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font awesome and google fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <title>Game - Play</title>
 </head>
 
@@ -27,8 +27,8 @@ repository in the READ.me and will commit in small increments so im sure of what
 
 
     <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h2 id="welcomeText"> <span id="welcomeMessage"></span></h2>
-   
+    <h2 id="welcomeToGame"> <span id="welcomeMessage"></span></h2>
+
     <!--Modal Form to get the username from the user-->
     <div class="w3-container">
 
@@ -158,7 +158,7 @@ repository in the READ.me and will commit in small increments so im sure of what
             </div>
         </div>
     </div>
-    
+
     <button onclick="myFunction()">Toggle dark mode</button>
     <img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
     <h1 class="heading">Quiz-Lite</h1>
@@ -172,57 +172,59 @@ repository in the READ.me and will commit in small increments so im sure of what
     <div id="hidden">
 
         <!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
-        <p class="center">Question:&nbsp;<span class="center" id="progress"></span>
-        <p class="center">You have: <span id="time-keeper"></span> seconds remaining!</p>
+        <p class="center"><span class="center" id="progress"></span>
+            <p class="center">You have: <span id="time-keeper"></span> seconds remaining!</p>
 
-        <!--This section will describe the category and the difficulty for each question set in the quiz-->
-        <div class="informationForQuestion">
-            <p id="category" class="center"></p>
-            <p id="difficulty" class="center"></p>
-        </div>
-        <br />
+            <!--This section will describe the category and the difficulty for each question set in the quiz-->
+            <div class="informationForQuestion">
+                <p id="category" class="center"></p>
+                <p id="difficulty" class="center"></p>
+            </div>
+            <br />
 
-        <!--This is where each question will be displayed-->
+            <!--This is where each question will be displayed-->
 
-        <div class="question-container">
-            <p class="question"><span id="progress"></span></p>
-            <h3 id="question"></h3>
-        </div>
-        <br />
-        <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
+            <div class="question-container">
+                <p class="question"><span id="progress"></span></p>
+                <h3 id="question"></h3>
+            </div>
+            <br />
+            <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
 boxes in each-->
 
-        <div class="question-panel">
-            <div class="main-container">
+            <div class="flex-container">
+                <!--<div class="main-container">-->
                 <button id="answer1" class="choice-container  option"></button>
                 <button id="answer2" class="choice-container  option"></button>
-            </div>
-            <div class="main-container">
+                <!--</div>-->
+                <!--<div class="main-container">-->
                 <button id="answer3" class="choice-container  option"></button>
                 <button id="answer4" class="choice-container  option"></button>
+                <!--</div>-->
             </div>
-        </div>
+            <section class="verify-answer">
+                <h1 id="verification" class="center">The correct answer is:</h1>
+                <br\><span id="verify-answer"></span>
+            </section>
+            <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
+            <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 
-        <h1 id="verification" class="center">The correct answer is: <span id="verify-answer"></span></h1>        
-        <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
-        <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
-
-        <div class="score-area">
-            <p class="scores">Correct Answers <span id="correct">0</span></p>
-            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
-        </div>
-    
-
-    <section class="closing" id="hiddenResults">
-        <p class="scores"><span id="scoreText"></span></p>
-        <h1 id="closing-message"></h1>
-    </section>
-    
-    <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Start Game Again</button>
-    <button onclick="window.location.href='/index.html'">Choose Different Options</button>
+            <div class="score-area">
+                <p class="scores">Correct Answers <span id="correct">0</span></p>
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+            </div>
 
 
-</div>    
+            <section class="closing" id="hiddenResults">
+                <p class="scores"><span id="scoreText"></span></p>
+                <h1 id="closing-message"></h1>
+            </section>
+
+            <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Start Game Again</button>
+            <button onclick="window.location.href='/index.html'">Choose Different Options</button>
+
+
+    </div>
 
     <!--<a class="btn" id="restart-btn" href="index.html">Restart</a>
     pop-up with results
@@ -242,8 +244,9 @@ boxes in each-->
 
     <script src="assets/js/script.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->
-    
-    <footer class = "footer">
+
+    <footer class="footer">
     </footer>
 </body>
+
 </html>

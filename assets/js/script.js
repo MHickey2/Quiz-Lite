@@ -14,10 +14,11 @@ let soundcorrect = new Audio("/audio/correct.mp3");
 let soundwrong = new Audio("/audio/wrong.mp3");
 let lastQuestion = questions.length - 1;
 let username;
-localStorage.setItem("username", username);
 let finalScore;
 let timer;
 let timeLeft = 60;
+
+
 
 
 
@@ -25,6 +26,13 @@ function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
+
+// Save data to sessionStorage
+localStorage.setItem('element', 'dark-mode');
+let theme = localStorage.getItem('element');
+
+
+
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
@@ -53,7 +61,7 @@ function getNextQuestion() {
     //put correct answers in list with incorrect answers
     correctAnswer = questions.results[index].correct_answer;
     console.log("this is currentQuestion.correct_answer", currentQuestion.correct_answer);
-    let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);    
+    let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
     choices.sort();
     console.log(correctAnswer);
     console.log("These are choices", choices);
@@ -66,7 +74,6 @@ function getNextQuestion() {
     document.getElementById("answer3").innerHTML = choices[2];
     document.getElementById("answer4").innerHTML = choices[3];
 
-   
 
     //Functions dealing with the timer for the Quiz    
     timer = setInterval(updateTimer, 1000);
@@ -76,7 +83,7 @@ function getNextQuestion() {
         timeLeft = timeLeft - 1;
         if (timeLeft >= 0)
             document.getElementById("time-keeper").innerHTML = timeLeft;
-       
+
     }
 }
 
@@ -84,8 +91,8 @@ function getNextQuestion() {
 function startGame() {
     //Use Start button to show the gaming area
     let startButton = document.getElementById("start-btn");
-    startButton.classList.add("hide"); 
-    document.getElementById("scoreText").innerText = "";   
+    startButton.classList.add("hide");
+    document.getElementById("scoreText").innerText = "";
     startButton.addEventListener("click", startGame => {
         const targetDiv = document.getElementById("hidden");
         targetDiv.style.display = "block";
@@ -122,10 +129,6 @@ checkAnswers();
 function checkAnswers() {
     var button1 = document.getElementById("answer1");
     button1.addEventListener("click", event => {
-        //console.log("This is the correctAnswer:", correctAnswer)
-        //console.log("This is the selectedChoice:", selectedChoice)
-        //console.log("This is the value:", event.target.innerText)
-        //console.log(button1.innerHTML)
 
         if (button1.innerHTML === correctAnswer) {
             button1.style.background = "green";
@@ -194,7 +197,7 @@ function checkAnswers() {
 //The answer choices and correct answer are removed in order to display new choices
 function reset() {
     document.getElementById("verify-answer").innerHTML = "";
-      
+
     var elements = document.getElementsByClassName('option'); // get all elements
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = "grey";
@@ -275,38 +278,37 @@ difficulty = () => {
 
 function closepopup() {
     document.getElementById("alertbox").style.display = "none";
-  }
-  
-  
-  function openpopup() {  
+}
+
+
+function openpopup() {
     document.getElementById("alertbox").style.display = "inline-block";
-  }
+}
 
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
-   // if (questionNumber == [questions.results.length]) {             
-       // openpopup();
-        //final scores to be displayed to user
-        document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
-        let closingMessage = document.getElementById("closing-message");
-        if (finalScore == 0) {
-            closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
-        } else if (finalScore < 3) {
-            closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
-        } else if (finalScore < 6) {
-            closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
-        } else if (finalScore < 9) {
-            closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
-        } else if (finalScore == 10) {
-            closingMessage.innerHTML = "You have achieved greatness";
-        }
+    // if (questionNumber == [questions.results.length]) {             
+    // openpopup();
+    //final scores to be displayed to user
+    document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
+    let closingMessage = document.getElementById("closing-message");
+    if (finalScore == 0) {
+        closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+    } else if (finalScore < 3) {
+        closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+    } else if (finalScore < 6) {
+        closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
+    } else if (finalScore < 9) {
+        closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
+    } else if (finalScore == 10) {
+        closingMessage.innerHTML = "You have achieved greatness";
     }
+}
 
 // Save data to sessionStorage
 sessionStorage.setItem('score', 'finalScore');
 let data = sessionStorage.getItem('score');
-
 
 showFinalScore();
 
@@ -331,15 +333,28 @@ showFinalScore();
 
 //Get username of the user and send to welcome message on game page
 
-/*function getUserName() {  
-let submitbutton.getElementById("submitname").click = event =>{
-    username = document.getElementById("username").value;
-    console.log("Hello", username);
-    document.getElementById("welcomeText").innerHTML = "Welcome, " + `${username}` + "!";
-
-}
+/*function getUserName() {   
+    document.getElementById("submitname").onClick, () => {
+        username = document.getElementById("username");       
+        console.log("Hello", username);
+        alert(username);
+        document.getElementById("welcomeText").innerHTML = "Welcome, " + '{username.value}' + "!";
+    }
 }*/
 
-function replay(){
+function replay() {
     location.reload();
 }
+
+/*function getUserName() {
+    let username = prompt("Enter a username");
+    if (username != '') {
+        sessionStorage.setItem('username', 'username');
+        document.getElementById('welcomeText').innerHTML = "Welcome " + username + "! to Quiz-Lite";
+      
+    } else {
+        alert("Username cannot be blank!");
+    }
+}
+
+getUserName();*/

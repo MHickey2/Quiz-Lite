@@ -14,7 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+
     <title>Index - Play</title>
 </head>
 
@@ -25,10 +27,10 @@ totally confused and overwhelmee but rebooted the whole project, initally I was 
 questions and answers but changed the focus of the quiz and decided to utilize an existing API, I will include the original
 repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
 
-<button onclick="myFunction()">Toggle dark mode</button>
-
+<!--<button onclick="myFunction()">Toggle dark mode</button>-->
+<img onclick="myFunction()" id="daynight" class="nightday" height="50px" width="50px" src="/assets/images/day-and-night.png" alt="night and day image" />
     <!--This will be a welcome message for the user, after they have supplied their username-->
-    <!--<h2 id="welcomeText"> </h2>-->
+    <h2 id="welcomeText"> </h2>
     <span id="welcomeMessage">Welcome</span>
 
     <br /><img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
@@ -37,16 +39,7 @@ repository in the READ.me and will commit in small increments so im sure of what
         fun accessible bitesize Quiz</p>
 
     <hr>
-    <h3 class="center">First choose your name<br>and Good Luck with the Quiz!</h3>
-    <br />
-    <form class="center" id="user-level">
-        <input type="text" name="username" id="username" placeholder="Enter Name: "
-            aria-label="Enter your name" required>
-        <button onclick="getUserName()" data-type="submitname" input class="pink-buttons" id="submitname" aria-label="Opens the user name form" >Submit</button>
-    </form>
-    <br />
-    <hr>
-
+    
     <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
     <br />
     <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
