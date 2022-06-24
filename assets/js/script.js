@@ -21,53 +21,50 @@ let timeLeft = 60;
 
 
 
-
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
-
-
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficulty}&type=multiple`);
-    questions = await response.json()
+    questions = await response.json();
 }
 
 function getNextQuestion() {
 
     if (questionNumber == [questions.results.length]) {
         if (confirm("Game Over!")) {
-            showFinalScore()
+            showFinalScore();
         } else {
             return;
-            hideButton()
+            //hideButton()
         }
     }
 
     document.getElementById("progress").innerText = `Question ${questionNumber}/${maxQuestions}`;
     ++questionNumber;
     //getCurrent question
-    currentQuestion = questions.results[index]
-    console.log("current question", currentQuestion)
+    currentQuestion = questions.results[index];
+    console.log("current question", currentQuestion);
     //put correct answers in list with incorrect answers
     correctAnswer = questions.results[index].correct_answer;
     console.log("this is currentQuestion.correct_answer", currentQuestion.correct_answer);
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);    
     choices.sort();
-    console.log(correctAnswer)
-    console.log("These are choices", choices)
+    console.log(correctAnswer);
+    console.log("These are choices", choices);
 
-    document.getElementById("category").innerHTML = ' Category:' + currentQuestion.category
-    document.getElementById("difficulty").innerHTML = ' Difficulty: ' + currentQuestion.difficulty
-    document.getElementById("question").innerHTML = ' Question:' + currentQuestion.question
-    document.getElementById("answer1").innerHTML = choices[0]
-    document.getElementById("answer2").innerHTML = choices[1]
-    document.getElementById("answer3").innerHTML = choices[2]
-    document.getElementById("answer4").innerHTML = choices[3]
+    document.getElementById("category").innerHTML = ' Category:' + currentQuestion.category;
+    document.getElementById("difficulty").innerHTML = ' Difficulty: ' + currentQuestion.difficulty;
+    document.getElementById("question").innerHTML = ' Question:' + currentQuestion.question;
+    document.getElementById("answer1").innerHTML = choices[0];
+    document.getElementById("answer2").innerHTML = choices[1];
+    document.getElementById("answer3").innerHTML = choices[2];
+    document.getElementById("answer4").innerHTML = choices[3];
 
     //Functions dealing with the timer for the Quiz    
     timer = setInterval(updateTimer, 1000);
@@ -76,7 +73,7 @@ function getNextQuestion() {
     function updateTimer() {
         timeLeft = timeLeft - 1;
         if (timeLeft >= 0)
-            document.getElementById("time-keeper").innerHTML = timeLeft
+            document.getElementById("time-keeper").innerHTML = timeLeft;
        
     }
 }
@@ -89,7 +86,7 @@ function startGame() {
     startButton.addEventListener("click", startGame => {
         const targetDiv = document.getElementById("hidden");
         targetDiv.style.display = "block";
-    })
+    });
 }
 
 
@@ -102,9 +99,9 @@ function choiceListeners() {
         choice.addEventListener("click", event => {
             //event target is the one that is clicked 
             var value = event.target.innerText;
-            console.log(value)
-        })
-    })
+            console.log(value);
+        });
+    });
 }
 
 async function init() {
@@ -114,8 +111,8 @@ async function init() {
     startGame();
     choiceListeners();
 }
-init()
-checkAnswers()
+init();
+checkAnswers();
 
 
 //check if answers are correct or not
@@ -139,7 +136,7 @@ function checkAnswers() {
             showCorrectAnswer();
             incrementWrongAnswer();
         }
-    })
+    });
 
     var button2 = document.getElementById("answer2");
     button2.addEventListener("click", event => {
@@ -147,15 +144,15 @@ function checkAnswers() {
         if (button2.innerHTML === correctAnswer) {
             button2.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementScore();
         } else {
             button2.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementWrongAnswer();
         }
-    })
+    });
 
     var button3 = document.getElementById("answer3");
     button3.addEventListener("click", event => {
@@ -163,15 +160,15 @@ function checkAnswers() {
         if (button3.innerHTML === correctAnswer) {
             button3.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementScore();
         } else {
             button3.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementWrongAnswer();
         }
-    })
+    });
 
     var button4 = document.getElementById("answer4");
     button4.addEventListener("click", event => {
@@ -179,15 +176,15 @@ function checkAnswers() {
         if (button4.innerHTML === correctAnswer) {
             button4.style.background = "green";
             alert("you are correct");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementScore();
         } else {
             button4.style.background = "red";
             alert("you are incorrect");
-            showCorrectAnswer()
+            showCorrectAnswer();
             incrementWrongAnswer();
         }
-    })
+    });
 
 }
 
@@ -231,16 +228,16 @@ function showCorrectAnswer() {
 //The user can click on next to see the next question       
 let nextButton = document.getElementById("next-btn");
 nextButton.addEventListener("click", getNextQuestion => {
-    console.log("new question shown")
-    reset()
-})
+    console.log("new question shown");
+    reset();
+});
 
 //Scoring for the Game, increment score when there is a correct answer from the question asked
 function incrementScore() {
     let oldScoreR = parseInt(document.getElementById("correct").innerText);
     document.getElementById("correct").innerText = ++oldScoreR;
     finalScore = parseInt(document.getElementById("correct").innerText);
-    index++
+    index++;
 }
 
 //Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
@@ -270,7 +267,7 @@ difficulty = () => {
     } else if (hard.checked) {
         difficulty = 'hard';
     }
-}
+};
 
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
@@ -294,8 +291,13 @@ function showFinalScore() {
         }
     }
 
+// Save data to sessionStorage
+sessionStorage.setItem('score', 'finalScore');
 
-showFinalScore()
+let data = sessionStorage.getItem('score');
+
+
+showFinalScore();
 
 /*function setcookie(){
     document.cookie = 'username='cookieName.value;    
@@ -326,8 +328,8 @@ showFinalScore()
 
 //Get username of the user and send to welcome message on game page
 
-//function getUserName() {  
-/*let submitbutton.getElementById("submitname").click = event =>{
+/*function getUserName() {  
+let submitbutton.getElementById("submitname").click = event =>{
     username = document.getElementById("username").value;
     console.log("Hello", username);
     document.getElementById("welcomeText").innerHTML = "Welcome, " + `${username}` + "!";
