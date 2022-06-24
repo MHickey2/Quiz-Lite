@@ -26,9 +26,10 @@ questions and answers but changed the focus of the quiz and decided to utilize a
 repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
 
 <button onclick="myFunction()">Toggle dark mode</button>
-    <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h2 id="welcomeText"> <span id="welcomeMessage"></span></h2>
 
+    <!--This will be a welcome message for the user, after they have supplied their username-->
+    <!--<h2 id="welcomeText"> </h2>-->
+    <span id="welcomeMessage">Welcome</span>
 
     <br /><img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
     <h1 class="heading">Quiz-Lite</h1>
@@ -40,9 +41,8 @@ repository in the READ.me and will commit in small increments so im sure of what
     <br />
     <form class="center" id="user-level">
         <input type="text" name="username" id="username" placeholder="Enter Name: "
-            aria-label="Enter your name (required)" required>
-        <button onclick="getUserName()" input class="pink-buttons" id="submitname" aria-label="Opens the user name form" data-type="submitname">Submit
-            now</button>
+            aria-label="Enter your name" required>
+        <button onclick="getUserName()" data-type="submitname" input class="pink-buttons" id="submitname" aria-label="Opens the user name form" >Submit</button>
     </form>
     <br />
     <hr>
@@ -52,9 +52,12 @@ repository in the READ.me and will commit in small increments so im sure of what
     <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
     <section class="center" id="difficulty-level">
         <form name="optionsDifficulty" action="/action_page.php">
-            <button type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy">Easy</button>
-            <button type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium">Medium</button>
-            <button type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard">Hard</button>
+            <input type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy"/>
+            <label for="easy">Easy</label>
+            <input type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium"/>
+            <label for="medium">Medium</label>
+            <input type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard"/>
+            <label for="hard">Hard</label>
             <br/>
             <input class="pink-buttons" type="submit" value="Submit">
         </form>
@@ -68,17 +71,19 @@ repository in the READ.me and will commit in small increments so im sure of what
 
     <h3 style="color: purple; text-align: center;">Next you will chose a Category level:</h3>
     <section class="center" id="category-level">
-        <button type="radio"  class="btn-general" value="">General</button>
-        <button type="radio"  class="btn-film" class="btn-film" value="">Movies</button>
-        <button type="radio"  class="btn-tv" value="">TV</button>
+        <input type="radio"  class="btn-general" value="">General</input>
+        <input type="radio"  class="btn-film" class="btn-film" value="">Movies</input>
+        <input type="radio"  class="btn-tv" value="">TV</input>
         <br/>
-        <button type="radio"  class="btn-music" value="">Music</button>
-        <button type="radio"  class="btn-books" value="">Books</button>
+        <input type="radio"  class="btn-music" value="">Music</input>
+        <input type="radio"  class="btn-books" value="">Books</input>
         <br/>
         <input class="pink-buttons" type="submit" value="Submit">
     </section>
     <br/>
     <hr>
+
+    <button onclick="window.location.href='/game.html'">Proceed to Game</button>
 
     <div class="loader"></div>
 

@@ -66,6 +66,8 @@ function getNextQuestion() {
     document.getElementById("answer3").innerHTML = choices[2];
     document.getElementById("answer4").innerHTML = choices[3];
 
+   
+
     //Functions dealing with the timer for the Quiz    
     timer = setInterval(updateTimer, 1000);
     updateTimer();
@@ -82,7 +84,8 @@ function getNextQuestion() {
 function startGame() {
     //Use Start button to show the gaming area
     let startButton = document.getElementById("start-btn");
-    startButton.classList.add("hide");
+    startButton.classList.add("hide"); 
+    document.getElementById("scoreText").innerText = "";   
     startButton.addEventListener("click", startGame => {
         const targetDiv = document.getElementById("hidden");
         targetDiv.style.display = "block";
@@ -191,6 +194,7 @@ function checkAnswers() {
 //The answer choices and correct answer are removed in order to display new choices
 function reset() {
     document.getElementById("verify-answer").innerHTML = "";
+      
     var elements = document.getElementsByClassName('option'); // get all elements
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = "grey";
@@ -250,7 +254,7 @@ function incrementWrongAnswer() {
 //hide next button when there are no questions left in the game
 function hideButton() {
     var x = document.getElementById("nextButton");
-    if (questionNumber === 10) {
+    if (questionNumber == 10) {
         nextButton.style.display = "none";
     } else {
         nextButton.style.display = "block";
@@ -269,13 +273,21 @@ difficulty = () => {
     }
 };
 
+function closepopup() {
+    document.getElementById("alertbox").style.display = "none";
+  }
+  
+  
+  function openpopup() {  
+    document.getElementById("alertbox").style.display = "inline-block";
+  }
+
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
    // if (questionNumber == [questions.results.length]) {             
-        
+       // openpopup();
         //final scores to be displayed to user
-       
         document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
         let closingMessage = document.getElementById("closing-message");
         if (finalScore == 0) {
@@ -293,20 +305,11 @@ function showFinalScore() {
 
 // Save data to sessionStorage
 sessionStorage.setItem('score', 'finalScore');
-
 let data = sessionStorage.getItem('score');
 
 
 showFinalScore();
 
-/*function setcookie(){
-    document.cookie = 'username='cookieName.value;    
-    }
-    function showCookie(){
-
-        alert(document.cookie);
-        
-        }
 
 //First set the date
 /*function getUserName() {
@@ -336,3 +339,7 @@ let submitbutton.getElementById("submitname").click = event =>{
 
 }
 }*/
+
+function replay(){
+    location.reload();
+}
