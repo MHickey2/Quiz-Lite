@@ -7,7 +7,7 @@ let selectedChoice;
 let amount = 20;
 let currentQuestion;
 let category = 8;
-let difficulty = "easy";
+//let difficulty;
 let questionNumber = 1;
 let maxQuestions = 10;
 let soundcorrect = new Audio("/audio/correct.mp3");
@@ -18,7 +18,30 @@ let finalScore;
 let timer;
 let timeLeft = 60;
 
+const modal = document.querySelector('#modal')
+const openModal = document.querySelector('.open-button')
+const closeModal = document.querySelector('.close-button')
+const modal2 = document.querySelector('#modal2')
+const openModal2 = document.querySelector('.open-button2')
+const closeModal2 = document.querySelector('.close-button2')
 
+
+
+openModal.addEventListener('click', () => {
+    modal.showModal();
+});
+
+openModal2.addEventListener('click', () => {
+    modal2.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+    modal.close();    
+});
+
+closeModal2.addEventListener("click", () => {
+    modal2.close();   
+});
 
 
 
@@ -31,7 +54,22 @@ function myFunction() {
 localStorage.setItem('element', 'dark-mode');
 let theme = localStorage.getItem('element');
 
+function getDifficultyLevel () {
+    difficultylevel = document.forms[0];
+    let difficulty = '';
+    let i;
 
+    for (i=0; i < difficultylevel.length; i++){
+        if (difficultylevel[i].checked){
+            difficulty = difficultylevel[i].value;
+        }
+    }
+    //document.getElementById("results").value ="You have chosen:" + difficulty;
+    document.getElementById("results").value ="You have chosen, " + `${difficulty}` ;
+    localStorage.setItem('difficulty', difficulty);
+    console.log(difficulty);
+
+}
 
 
 // Fetch 10 questions from API from general knowledge category
@@ -265,16 +303,7 @@ function hideButton() {
 }
 
 
-//user can select the difficulty level for the game
-difficulty = () => {
-    if (easy.checked) {
-        difficulty = 'easy';
-    } else if (medium.checked) {
-        difficulty = 'medium';
-    } else if (hard.checked) {
-        difficulty = 'hard';
-    }
-};
+
 
 function closepopup() {
     document.getElementById("alertbox").style.display = "none";
@@ -313,6 +342,25 @@ let data = sessionStorage.getItem('score');
 showFinalScore();
 
 
+
+function getCategory () {
+    categoryChoice = document.forms[0];
+    let category = "";
+    let i;
+
+    for (i=0; i < categoryChoice.length; i++){
+        if (categoryChoice[i].checked){
+            category = categoryChoice[i].value;
+        }
+    }
+    document.getElementById("results").value ="You have chosen:" + category;
+    localStorage.setItem('category', category);
+    console.log(category);
+
+}
+
+
+
 //First set the date
 /*function getUserName() {
     var now = new Date();
@@ -346,15 +394,15 @@ function replay() {
     location.reload();
 }
 
-/*function getUserName() {
+function getUserName() {
     let username = prompt("Enter a username");
     if (username != '') {
         sessionStorage.setItem('username', 'username');
         document.getElementById('welcomeText').innerHTML = "Welcome " + username + "! to Quiz-Lite";
-      
+
     } else {
         alert("Username cannot be blank!");
     }
 }
 
-getUserName();*/
+getUserName();

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome and google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+
+    <title>Index - Play</title>
+</head>
+
+<body>
+
+    <!--Orinally I experimented within the horror-quiz repository, but I made a hash of it and changed so many things I got
+totally confused and overwhelmee but rebooted the whole project, initally I was going to do horror-quiz, formulating my own
+questions and answers but changed the focus of the quiz and decided to utilize an existing API, I will include the original
+repository in the READ.me and will commit in small increments so im sure of what im doing from this point-->
+
+<!--<button onclick="myFunction()">Toggle dark mode</button>-->
+<img onclick="myFunction()" id="daynight" class="nightday" height="50px" width="50px" src="/assets/images/day-and-night.png" alt="night and day image" />
+    <!--This will be a welcome message for the user, after they have supplied their username-->
+    <h2 id="welcomeText"> </h2>
+    <span id="welcomeMessage">Welcome</span>
+
+    <br /><img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
+    <h1 class="heading">Quiz-Lite</h1>
+    <p class="center">Welcome to the lite-weight Quiz, for a quick round quizzing sensation. Test your brainpower in a
+        fun accessible bitesize Quiz</p>
+
+    <hr>
+    
+    <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
+    <br />
+    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
+    <section class="center" id="difficulty-level">
+        <form name="optionsDifficulty" action="/action_page.php">
+            <input type="radio" id="easy-button" class="btn-easy" onclick="easy" value="easy"/>
+            <label for="easy">Easy</label>
+            <input type="radio" id="medium-button" class="btn-medium" onclick="medium" value="medium"/>
+            <label for="medium">Medium</label>
+            <input type="radio" id="hard-button" class="btn-hard" onclick="hard" value="hard"/>
+            <label for="hard">Hard</label>
+            <br/>
+            <input class="pink-buttons" type="submit" value="Submit">
+        </form>
+    </section>
+    <br />
+    <hr>
+
+
+    <h2 class="center">Quiz-Lite Category Selection</h2>
+    <br />
+
+    <h3 style="color: purple; text-align: center;">Next you will chose a Category level:</h3>
+    <section class="center" id="category-level">
+        <input type="radio"  class="btn-general" value="">General</input>
+        <input type="radio"  class="btn-film" class="btn-film" value="">Movies</input>
+        <input type="radio"  class="btn-tv" value="">TV</input>
+        <br/>
+        <input type="radio"  class="btn-music" value="">Music</input>
+        <input type="radio"  class="btn-books" value="">Books</input>
+        <br/>
+        <input class="pink-buttons" type="submit" value="Submit">
+    </section>
+    <br/>
+    <hr>
+
+    <button onclick="window.location.href='/game.html'">Proceed to Game</button>
+
+    <button class="open-button">open Modal</button>
+
+    <dialog class="modal" id="modal">
+        <h2>An interesting title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum temporibus ipsam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quo.</p>
+        <button class="close-button">close modal</button>
+        <form class="form" method="dialog">
+          <label>Your name <input type="text"></label>
+          <label>Your email <input type="email"></label>
+          <button class="button" type="submit">submit form</button>
+        </form>
+      
+      </dialog>
+      
+    
+
+    <div class="loader"></div>
+
+    <script src="assets/js/script.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">-->
+    <footer class="footer">
+    </footer>
+
+</body>
+
+</html>

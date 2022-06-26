@@ -322,6 +322,37 @@ body {
         transform: rotate(360deg);
     }
 }
+#choose {
+    margin-left: 10px;
+    display: inline-block;
+    background-color: #e91e63;
+    color: white;    
+}
+
+
+
+.modal, .modal2 {
+     padding: 1em;
+    max-width: 50ch;
+     border: 0;
+     box-shadow: 0 0 1em rgb(0 0 0 / .3);
+     background-color: rgb(230, 91, 230);
+     color: black;
+     opacity: 0.8;
+} 
+   
+  
+  .modal::backdrop {
+    background: rgb(0 0 0 / 0.4);
+  }
+  
+  /* extra styling */
+  
+
+label::after{
+    content: '\a';
+    white-space: pre;
+  }
 
 .closing {
     background-color: white;
