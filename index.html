@@ -37,11 +37,12 @@ repository in the READ.me and will commit in small increments so im sure of what
     <!--This will be a welcome message for the user, after they have supplied their username-->
     <h2 id="welcomeToGame"> <span id="welcomeMessage"></span></h2>
 
-    <button class="open-button w3-button w3-pink" id="choose">Difficulty Level</button>
-    <button class="open-button2 w3-button w3-pink" id="choose">Categories</button>
+    
+    <!--<button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
+    <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>-->
 
     <!--Modal Form to get the username from the user-->
-    <div class="w3-container">
+    <!--<div class="w3-container">
 
         <button onclick="document.getElementById('id01').style.display='block'"
             class="w3-button w3-pink">Username</button>
@@ -70,113 +71,53 @@ repository in the READ.me and will commit in small increments so im sure of what
                 </footer>
             </div>
         </div>
-    </div>
+    </div>-->
 
-    <dialog class="modal"  id="modal" class="w3-modal">           
+    <dialog class="modal" id="modal" class="w3-modal">
         <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
-        <br />
+        <br/>
         <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
         <section class="center" id="difficulty-level">
             <form action="/action_page.php">
                 <input type="radio" id="easy-button" class="chooseDifficulty" name="difficultylevel" value="easy" />
                 <label for="easy">Easy</label>
-                <input type="radio" id="medium-button" class="chooseDifficulty" name="difficultylevel"  value="medium" />
+                <input type="radio" id="medium-button" class="chooseDifficulty" name="difficultylevel" value="medium" />
                 <label for="medium">Medium</label>
                 <input type="radio" id="hard-button" class="chooseDifficulty" name="difficultylevel" value="hard" />
                 <label for="hard">Hard</label>
                 <br/>
-                <input type="button" class="pink-buttons" onclick="getDifficultyLevel()"type="submit" value="Submit">
-                <input type = "Text" id="results">
+                <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submit" value="Submit"/>
+                <input type="Text" id="resultsDifficulty">
             </form>
-            
-        </section>        
+        </section>
         <button class="close-button">Close Button</button>
-    
     </dialog>
 
-    <dialog class="modal2" id="modal2"  class="w3-modal">       
-            <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
-            <section class="center" id="category-level">
-                <input type="radio" class="chooseCategory" id="general" name="category">General</input>
-                <input type="radio" class="chooseCategory" id="movies" name="category">Movies</input>
-                <input type="radio" class="chooseCategory" id="tv" name="category">TV</input>
-                <input type="radio" class="chooseCategory" id="music" name="category">Music</input>
-                <input type="radio" class="chooseCategory" id="books" name="category">Books</input>
+<!--Modal Form to get the category of the quiz from the user-->    
+    <dialog class="modal2" id="modal2" class="w3-modal">
+        <h2 class="center">Quiz-Lite Category Level Selection</h2>
+        <br/>
+        <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
+        <section class="center" id="category-level">
+            <form action="/action_page.php">
+                <input type="radio" id="general" class="chooseCategory"  name="categorylevel" value="general" />
+                <label for="general">General</label>
+                <input type="radio" id="movies" class="chooseCategory"  name="categorylevel" value="movies" />
+                <label for="movies">Movies</label>
+                <input type="radio" id="tv" class="chooseCategory"  name="categorylevel" value="tv" />
+                <label for="tv">TV</label>
+                <input type="radio" id="music" class="chooseCategory"  name="categorylevel" value="music" />
+                <label for="music">Music</label>
+                <input type="radio" id="books" class="chooseCategory"  name="categorylevel" value="books" />
+                <label for="books">Books</label>
                 <br/>
-                <input class="pink-buttons" type="submit" value="Submit">
-            </section>            
-            <button class="close-button2">Close Button</button>
-       
+                <input type="button" class="pink-buttons" onclick="getCategory()" type="submit" value="Submit"/>
+                <input type="Text" id="resultsCategory">
+            </form>
+        </section>
+        <button class="close-button2">Close Button</button>
     </dialog>
-    <!--Modal Form to get the difficulty level of the quiz from the user-->
-    <!--<div class="w3-container">
-
-        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-pink">Difficulty
-            Level</button>
-        <br />
-        <div id="id02" class="w3-modal">
-            <div class="w3-modal-content">
-                <header class="w3-container w3-purple">
-                    <span onclick="document.getElementById('id02').style.display='none'"
-                        class="w3-button w3-display-topright">&times;</span>
-                    <h2>Quiz-Lite Difficulty Level Selection</h2>
-                </header>
-                <div class="w3-container">
-                    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-                    <section class="center">
-                        <form name="optionsDifficulty" action="">
-                            <button type="button" id="easy-button" class="btn-easy" onclick="easy"
-                                value="easy">Easy</button>
-                            <button type="button" id="medium-button" class="btn-medium" onclick="medium"
-                                value=1>Medium</button>
-                            <button type="button" id="hard-button" class="btn-hard" onclick="hard"
-                                value="hard">Hard</button>
-                        </form>
-                    </section>
-                    <br />
-                </div>
-                <button class="button-link-close">Close</button>
-                <footer class="w3-container w3-purple">
-                    <p>Quiz-Lite Difficulty level Modal</p>
-                </footer>
-            </div>
-        </div>
-    </div>-->
-
-
-
-    <!--Modal Form to get the category of the quiz from the user-->
-    <div class="w3-container">
-
-        <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-pink">Category
-        </button>
-        <br />
-        <div id="id04" class="w3-modal">
-            <div class="w3-modal-content">
-                <header class="w3-container w3-purple">
-                    <span onclick="document.getElementById('id04').style.display='none'"
-                        class="w3-button w3-display-topright">&times;</span>
-                    <h2>Quiz-Lite Category Selection</h2>
-                </header>
-                <div class="w3-container">
-                    <h3 style="color: purple; text-align: center;">Next you will chose a difficulty level:</h3>
-                    <section class="center">
-                        <button type="button" id="general" class="btn-general">General</button>
-                        <button type="button" id="film" class="btn-film">Movies</button>
-                        <button type="button" id="tv" class="btn-tv">TV</button>
-                        <button type="button" id="music" class="music">Music</button>
-                        <button type="button" id="books" class="btn-books">Books</button>
-                    </section>
-                    <br />
-                </div>
-                <button class="button-link-close">Close</button>
-                <footer class="w3-container w3-purple">
-                    <p>Quiz-Lite Category Modal</p>
-                </footer>
-            </div>
-        </div>
-    </div>
-
+ 
 
     <img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
     <h1 class="heading">Quiz-Lite</h1>
@@ -209,16 +150,11 @@ repository in the READ.me and will commit in small increments so im sure of what
             <br />
             <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
 boxes in each-->
-
-            <div class="flex-container">
-                <!--<div class="main-container">-->
+            <div class="flex-container">                
                 <button id="answer1" class="choice-container  option" name="answer"></button>
-                <button id="answer2" class="choice-container  option" name="answer"></button>
-                <!--</div>-->
-                <!--<div class="main-container">-->
+                <button id="answer2" class="choice-container  option" name="answer"></button>               
                 <button id="answer3" class="choice-container  option" name="answer"></button>
-                <button id="answer4" class="choice-container  option" name="answer"></button>
-                <!--</div>-->
+                <button id="answer4" class="choice-container  option" name="answer"></button>               
             </div>
             <section class="verify-answer">
                 <h1 id="verification" class="center">The correct answer is:</h1>
@@ -238,7 +174,7 @@ boxes in each-->
                 <h1 id="closing-message"></h1>
             </section>
 
-            <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Start Game Again</button>
+            <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Restart</button>
             <button onclick="window.location.href='/index.html'">Choose Different Options</button>
 
 
@@ -259,7 +195,7 @@ boxes in each-->
 
 
 
-    
+
 
 
     <audio id="music1" src="audio/correct.mp3" preload="auto"></audio>

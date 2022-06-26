@@ -7,7 +7,7 @@ let selectedChoice;
 let amount = 20;
 let currentQuestion;
 let category = 8;
-//let difficulty;
+let difficulty ="hard";
 let questionNumber = 1;
 let maxQuestions = 10;
 let soundcorrect = new Audio("/audio/correct.mp3");
@@ -18,6 +18,7 @@ let finalScore;
 let timer;
 let timeLeft = 60;
 
+//modals to get user categories and difficulty levels
 const modal = document.querySelector('#modal')
 const openModal = document.querySelector('.open-button')
 const closeModal = document.querySelector('.close-button')
@@ -26,25 +27,26 @@ const openModal2 = document.querySelector('.open-button2')
 const closeModal2 = document.querySelector('.close-button2')
 
 
-
+/*Modal 1 for categories
 openModal.addEventListener('click', () => {
     modal.showModal();
-});
-
-openModal2.addEventListener('click', () => {
-    modal2.showModal();
 });
 
 closeModal.addEventListener("click", () => {
     modal.close();    
 });
 
-closeModal2.addEventListener("click", () => {
-    modal2.close();   
+//Modal 2 for difficulty
+openModal2.addEventListener('click', () => {
+    modal2.showModal();
 });
 
+closeModal2.addEventListener("click", () => {
+    modal2.close();   
+});*/
 
 
+//function to choose dark-mode
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
@@ -54,34 +56,17 @@ function myFunction() {
 localStorage.setItem('element', 'dark-mode');
 let theme = localStorage.getItem('element');
 
-function getDifficultyLevel () {
-    difficultylevel = document.forms[0];
-    let difficulty = '';
-    let i;
-
-    for (i=0; i < difficultylevel.length; i++){
-        if (difficultylevel[i].checked){
-            difficulty = difficultylevel[i].value;
-        }
-    }
-    //document.getElementById("results").value ="You have chosen:" + difficulty;
-    document.getElementById("results").value ="You have chosen, " + `${difficulty}` ;
-    localStorage.setItem('difficulty', difficulty);
-    console.log(difficulty);
-
-}
 
 
 // Fetch 10 questions from API from general knowledge category
-async function getQuestions() {
+async function getQuestions() {    
 
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=${difficulty}&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
     questions = await response.json();
 }
 
 function getNextQuestion() {
-
     if (questionNumber == [questions.results.length]) {
         if (confirm("Game Over!")) {
             showFinalScore();
@@ -121,11 +106,10 @@ function getNextQuestion() {
         timeLeft = timeLeft - 1;
         if (timeLeft >= 0)
             document.getElementById("time-keeper").innerHTML = timeLeft;
-
     }
 }
 
-
+//function to show the game interface
 function startGame() {
     //Use Start button to show the gaming area
     let startButton = document.getElementById("start-btn");
@@ -137,7 +121,7 @@ function startGame() {
     });
 }
 
-
+//add event listeners to the answer buttons
 function choiceListeners() {
     //get all choice buttons
     const choices = document.querySelectorAll('.choice-container');
@@ -229,13 +213,11 @@ function checkAnswers() {
             incrementWrongAnswer();
         }
     });
-
 }
 
 //The answer choices and correct answer are removed in order to display new choices
 function reset() {
     document.getElementById("verify-answer").innerHTML = "";
-
     var elements = document.getElementsByClassName('option'); // get all elements
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = "grey";
@@ -245,7 +227,6 @@ function reset() {
 /* Function to Play sound ons answer choice*/
 var options = document.addEventListener("options", function (event) {
     playMusic(event);
-
 });
 
 //audio for alerting users if they got correct or wrong answer, not functional yet
@@ -343,21 +324,6 @@ showFinalScore();
 
 
 
-function getCategory () {
-    categoryChoice = document.forms[0];
-    let category = "";
-    let i;
-
-    for (i=0; i < categoryChoice.length; i++){
-        if (categoryChoice[i].checked){
-            category = categoryChoice[i].value;
-        }
-    }
-    document.getElementById("results").value ="You have chosen:" + category;
-    localStorage.setItem('category', category);
-    console.log(category);
-
-}
 
 
 
@@ -397,12 +363,53 @@ function replay() {
 function getUserName() {
     let username = prompt("Enter a username");
     if (username != '') {
-        sessionStorage.setItem('username', 'username');
+        // Save data to sessionStorage
+        sessionStorage.setItem('username', username);
         document.getElementById('welcomeText').innerHTML = "Welcome " + username + "! to Quiz-Lite";
-
     } else {
         alert("Username cannot be blank!");
     }
 }
 
 getUserName();
+
+
+//function to get category
+/*function getCategory() {
+    categorylevel = document.forms[0];
+    let category = '';
+    let i;
+
+    for (i=0; i < categorylevel.length; i++){
+        if (categorylevel[i].checked){
+            category = categorylevel[i].value;
+        }
+    }
+    // Save data to sessionStorage
+    sessionStorage.setItem('category', category);
+    document.getElementById("resultsCategory").value ="You have chosen:" + category;
+    /*document.getElementById("resultsCategory").value ="You have chosen:" + `${category}`;
+    console.log(category);
+}
+
+getCategory();
+
+//function to get difficulty level
+function getDifficultyLevel() {
+    difficultylevel = document.forms[0];
+    let difficulty = '';
+    let x;
+
+    for (x=0; x < difficultylevel.length; x++){
+        if (difficultylevel[x].checked){
+            difficulty = difficultylevel[x].value;
+        }
+    }
+    // Save data to sessionStorage
+    sessionStorage.setItem('difficulty', difficulty);
+    document.getElementById("resultsDifficulty").value ="You have chosen:" + difficulty;
+    //document.getElementById("resultsDifficulty").value ="You have chosen, " + `${difficulty}` ;   
+    console.log(difficulty);
+}
+
+getDifficultyLevel();*/ 

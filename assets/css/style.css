@@ -63,6 +63,7 @@ body {
     background-color: rgba(185, 19, 135, 0.4);
     border-radius: 15px;
     padding: 20px;
+    border: 5px solid white;
 }
 
 /*Styling for the start button, that starts the game*/
@@ -115,10 +116,8 @@ body {
 /*styling for any sundry text within the application*/
 .center {
     text-align: center;
-    width: 50%;
-    color: white;
-    font-size: 1.5rem;
-    margin-top: 20px;
+    width: 50%;    
+    font-size: 1.5rem;    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -126,7 +125,7 @@ body {
 
 /*Each individual answer box for displaying the options to the user*/
 .choice-container {
-    height: 150px;
+    height: 120px;
     width: 300px;
     border: 8px solid white;
     border-radius: 15px;
@@ -150,7 +149,7 @@ body {
 }*/
 
 .question-panel {
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px 1px;
@@ -191,7 +190,7 @@ body {
 }
 
 #content {
-    color: white;
+   
     font-size: 1rem;
     width: 50%;
 }
@@ -220,14 +219,14 @@ body {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
-    font-size: .75rem;
-    color: white;
+    font-size: 1rem;
+    
 }
 
 #difficulty {
     text-align: center;
-    font-size: .75rem;
-    color: white;
+    font-size: 1rem;   
+    font-weight: bold; 
     text-transform: capitalize;
 }
 
@@ -357,8 +356,7 @@ label::after{
 .closing {
     background-color: white;
     height: 130px;
-    width: 400px;
-    border: 2px solid #000000;
+    width: 400px;    
     font-weight: bold;
     border-radius: 15px;
     font-size: 1.1rem;
