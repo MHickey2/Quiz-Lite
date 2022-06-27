@@ -29,7 +29,7 @@ const openModal2 = document.querySelector('.open-button2');
 const closeModal2 = document.querySelector('.close-button2');
 
 
-//Modal 1 for categories
+//Modal1 for categories
 openModal.addEventListener('click', () => {
     modal.showModal();
 });
@@ -38,7 +38,7 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
-//Modal 2 for difficulty
+//Modal2 for difficulty
 openModal2.addEventListener('click', () => {
     modal2.showModal();
 });
