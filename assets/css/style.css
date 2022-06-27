@@ -11,56 +11,54 @@ body {
     height: 100vw;
     font-family: Arial, Helvetica, sans-serif;
 }
+/*Styling for the welcome message using username*/
+#welcomeText {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-left: 10px;
+    font-family: 'Arima Madurai', cursive;
+}
 
+/*If dark mode is chosen the colour scheme of the webpage changes*/
 .dark-mode {
     background-color: rgb(22, 1, 36);
     color: white;
 }
-
-/*styling for the difficulty section on index page*/
-/* #difficulty-level {
-    display: black;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;   
-  }
-  
-/*styling for the welcome message including the username*/
-#welcomeText {
-    color: black;
-    text-align: left;
-    font-size: 1rem;
+/*Styling for the light/dark mode image*/
+.nightday {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
 }
 
-/*Image for top of page*/
-.brain {
-    margin-top: 5px;
+/*Image for the brain at thetop of page*/
+.brain {   
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
+   
 }
 
-/*Styling for the main heading on each page*/
-.heading {
-    margin-top: 5px;
+/*Styling for the main heading on page*/
+.heading {    
     text-align: center;
-    font-size: 2.2rem;
-    color: #e91e63;
+    font-size: 2.5rem;
+    color: #e91e63;   
     letter-spacing: 5px;
     font-family: 'Calistoga', cursive;
+    text-shadow: #fff 2px 2px 3px;   
 }
 
 /*styling for quick blurb introducing quiz*/
 .center-message {
     text-align: center;
-    width: 50%;
-    color: white;
-    font-size: 1rem;
+    width: 50%;   
+    font-size: 1.2rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(185, 19, 135, 0.4);
+    background-color: rgba(88, 5, 64, 0.4);
     border-radius: 15px;
     padding: 20px;
     border: 5px solid white;
@@ -71,23 +69,8 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 10px;
+    margin-top: 10px;   
 }
-
-/*.btn-easy, .btn-medium, .btn-hard,
-.btn-general, .btn-books, .btn-music,
-.btn-tv, .btn-film {    
-    height: 40px;
-    width: 100px;
-    margin-top: 10px; 
-}  
-
-.btn-easy:hover, .btn-medium:hover, .btn-hard:hover,
-.btn-general:hover, .btn-books:hover, .btn-music:hover,
-.btn-tv:hover, .btn-film:hover {    
-    background-color: #df5784;
-    color: white;
-} */
 
 #start-btn,
 #next-btn,
@@ -95,22 +78,20 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(148, 93, 109);
+    background-color: #e91e63;
     width: 120px;
-    height: 40px;
-    color: white;
-    font-size: 120%;
+    height: 40px;   
+    font-size: 1rem;
     text-align: center;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 2px solid black;
     text-transform: uppercase;
-    text-decoration: none;
-
+    text-decoration: none;    
 }
 
 #start-btn:hover,
 #next-btn:hover {
-    background-color: rgb(99, 10, 99);
+    background-color:  rgba(185, 19, 135, 0.4);
 }
 
 /*styling for any sundry text within the application*/
@@ -125,22 +106,29 @@ body {
 
 /*Each individual answer box for displaying the options to the user*/
 .choice-container {
-    height: 120px;
-    width: 300px;
-    border: 8px solid white;
+    height: 80px;
+    width: 410px;
+    border: 5px solid white;
     border-radius: 15px;
-    font-size: 1rem;
-    padding: 25px;
-    margin: 15px;
+    font-size: 1.3rem;
+    padding: 10px;
+    display: flex;
+    flex-direction:column;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     vertical-align: middle;
-    background-color: rgb(102, 95, 95, 0.3);
+    background-color: rgba(199, 181, 181, 0.3);
+    align-content: center;
+    margin-bottom: 10px;
+    justify-content: space-between; 
+   
 }
 
 .choice-container:hover {
     border: 8px solid rgb(233, 123, 233);
-    background-color: rgb(80, 59, 82);
+    background-color: rgb(194, 95, 201);
 }
 
 /*.choice-container:selected {
@@ -148,51 +136,8 @@ body {
     background-color: rgb(25, 14, 26); 
 }*/
 
-.question-panel {
-    border: 3px solid black;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 5px 1px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    /*width: 60%;   
-    align-items: center; 
-    justify-content: center;
-    flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  width:100%;*/
-}
-
-
-
 .hide {
     display: none;
-}
-
-.choice-text {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font: .75rem;
-    color: rgba(185, 19, 135, 0.4);
-}
-
-.main-container {
-    clear: both;
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto;*/
-
-
-}
-
-#content {
-   
-    font-size: 1rem;
-    width: 50%;
 }
 
 /*Used to hide the gaming area before the user presses the start button*/
@@ -205,7 +150,7 @@ body {
 .informationForQuestion {
     background-color: rgba(185, 19, 135, 0.4);
     height: 120px;
-    width: 350px;
+    width: 340px;
     text-align: center;
     border: 5px solid white;
     border-radius: 20px;
@@ -213,22 +158,19 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    font-weight: bold;    
+    line-height: 1.5;
 }
 
-#category {
+#category, #difficulty {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
-    
+    text-transform: capitalize;    
 }
 
-#difficulty {
-    text-align: center;
-    font-size: 1rem;   
-    font-weight: bold; 
-    text-transform: capitalize;
-}
+ 
 
 .question-container {
     text-align: center;
@@ -359,18 +301,22 @@ label::after{
     width: 400px;    
     font-weight: bold;
     border-radius: 15px;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin-left: 5px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: #e91e63;
-    letter-spacing: 5px;
-    font-family: 'Calistoga', cursive;
+    letter-spacing: 5px;    
     margin-bottom: 10px;
+    font-family: 'Arima Madurai', cursive;
+    font-weight: bold;
 }
 
 #closing-message {
     font: 1rem sans-serif;
 }
+
+
+

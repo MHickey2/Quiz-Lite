@@ -106,3 +106,62 @@ repository in the READ.me and will commit in small increments so im sure of what
 </body>
 
 </html>
+
+/* Function to Play sound ons answer choice*/
+//var options = document.addEventListener("options", function (event) {
+//    playMusic(event);
+//});
+
+//audio for alerting users if they got correct or wrong answer, not functional yet
+/*function playMusic() {
+//var options= document.getElementsByClassName("options");
+  /*  options.addEventListener("click", event => {
+    if (button1.innerHTML === correctAnswer || button2.innerHTML === correctAnswer || button3.innerHTML === correctAnswer || button4.innerHTML === correctAnswer) {
+        soundcorrect.play();
+        alert("pos sound called");
+    } else {            
+            soundwrong.play();
+            alert("neg sound called");
+           }
+    })    
+}
+
+playMusic()*/
+
+//First set the date
+/*function getUserName() {
+    var now = new Date();
+    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+      
+    if ((!username) || (username == 'null'));
+    document.getElementById("submitname").onClick = function () {
+        username = document.getElementById("username").value;
+        setcookie("username", username, now);
+        if (username) {
+            document.write(username);             
+        }
+        console.log("Hello", username);
+        document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
+    }
+
+}*/
+
+//Get username of the user and send to welcome message on game page
+
+/*function getUserName() {   
+    document.getElementById("submitname").onClick, () => {
+        username = document.getElementById("username");       
+        console.log("Hello", username);
+        alert(username);
+        document.getElementById("welcomeText").innerHTML = "Welcome, " + '{username.value}' + "!";
+    }
+}*/
+
+function closepopup() {
+    document.getElementById("alertbox").style.display = "none";
+}
+
+
+function openpopup() {
+    document.getElementById("alertbox").style.display = "inline-block";
+}

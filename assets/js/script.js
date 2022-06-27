@@ -6,8 +6,8 @@ let correctAnswer;
 let selectedChoice;
 let amount = 20;
 let currentQuestion;
-let category = 8;
-let difficulty ="hard";
+let category;
+let difficulty;
 let questionNumber = 1;
 let maxQuestions = 10;
 let soundcorrect = new Audio("/audio/correct.mp3");
@@ -18,22 +18,24 @@ let finalScore;
 let timer;
 let timeLeft = 60;
 
+getUserName();
+
 //modals to get user categories and difficulty levels
-const modal = document.querySelector('#modal')
-const openModal = document.querySelector('.open-button')
-const closeModal = document.querySelector('.close-button')
-const modal2 = document.querySelector('#modal2')
-const openModal2 = document.querySelector('.open-button2')
-const closeModal2 = document.querySelector('.close-button2')
+const modal = document.querySelector('#modal');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
+const modal2 = document.querySelector('#modal2');
+const openModal2 = document.querySelector('.open-button2');
+const closeModal2 = document.querySelector('.close-button2');
 
 
-/*Modal 1 for categories
+//Modal 1 for categories
 openModal.addEventListener('click', () => {
     modal.showModal();
 });
 
 closeModal.addEventListener("click", () => {
-    modal.close();    
+    modal.close();
 });
 
 //Modal 2 for difficulty
@@ -42,8 +44,8 @@ openModal2.addEventListener('click', () => {
 });
 
 closeModal2.addEventListener("click", () => {
-    modal2.close();   
-});*/
+    modal2.close();
+});
 
 
 //function to choose dark-mode
@@ -56,23 +58,23 @@ function myFunction() {
 localStorage.setItem('element', 'dark-mode');
 let theme = localStorage.getItem('element');
 
-
+myFunction();
 
 // Fetch 10 questions from API from general knowledge category
-async function getQuestions() {    
+async function getQuestions() {
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
     questions = await response.json();
 }
-
+//Function to get next question, but also test to see if there is a next question to get, if not the game is over
 function getNextQuestion() {
-    if (questionNumber == [questions.results.length]) {
+    if (questionNumber > [questions.results.length]) {
         if (confirm("Game Over!")) {
             showFinalScore();
         } else {
             return;
-            //hideButton()
+            // hideButton()
         }
     }
 
@@ -89,14 +91,13 @@ function getNextQuestion() {
     console.log(correctAnswer);
     console.log("These are choices", choices);
 
-    document.getElementById("category").innerHTML = ' Category:' + currentQuestion.category;
-    document.getElementById("difficulty").innerHTML = ' Difficulty: ' + currentQuestion.difficulty;
-    document.getElementById("question").innerHTML = ' Question:' + currentQuestion.question;
+    document.getElementById("category").innerHTML = 'Category:' + currentQuestion.category;
+    document.getElementById("difficulty").innerHTML = 'Difficulty:' + currentQuestion.difficulty;
+    document.getElementById("question").innerHTML = 'Question:' + currentQuestion.question;
     document.getElementById("answer1").innerHTML = choices[0];
     document.getElementById("answer2").innerHTML = choices[1];
     document.getElementById("answer3").innerHTML = choices[2];
     document.getElementById("answer4").innerHTML = choices[3];
-
 
     //Functions dealing with the timer for the Quiz    
     timer = setInterval(updateTimer, 1000);
@@ -224,27 +225,6 @@ function reset() {
     }
 }
 
-/* Function to Play sound ons answer choice*/
-var options = document.addEventListener("options", function (event) {
-    playMusic(event);
-});
-
-//audio for alerting users if they got correct or wrong answer, not functional yet
-/*function playMusic() {
-//var options= document.getElementsByClassName("options");
-  /*  options.addEventListener("click", event => {
-    if (button1.innerHTML === correctAnswer || button2.innerHTML === correctAnswer || button3.innerHTML === correctAnswer || button4.innerHTML === correctAnswer) {
-        soundcorrect.play();
-        alert("pos sound called");
-    } else {            
-            soundwrong.play();
-            alert("neg sound called");
-           }
-    })    
-}
-
-playMusic()*/
-
 //show the correct answer to the user, before moving to next question
 function showCorrectAnswer() {
     document.getElementById("verify-answer").innerHTML = correctAnswer;
@@ -275,44 +255,33 @@ function incrementWrongAnswer() {
 
 //hide next button when there are no questions left in the game
 function hideButton() {
-    var x = document.getElementById("nextButton");
-    if (questionNumber == 10) {
+    document.getElementById("nextButton");
+    if (questionNumber >= 10) {
         nextButton.style.display = "none";
     } else {
         nextButton.style.display = "block";
     }
 }
 
-
-
-
-function closepopup() {
-    document.getElementById("alertbox").style.display = "none";
-}
-
-
-function openpopup() {
-    document.getElementById("alertbox").style.display = "inline-block";
-}
-
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
-    // if (questionNumber == [questions.results.length]) {             
-    // openpopup();
-    //final scores to be displayed to user
-    document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
-    let closingMessage = document.getElementById("closing-message");
-    if (finalScore == 0) {
-        closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
-    } else if (finalScore < 3) {
-        closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
-    } else if (finalScore < 6) {
-        closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
-    } else if (finalScore < 9) {
-        closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
-    } else if (finalScore == 10) {
-        closingMessage.innerHTML = "You have achieved greatness";
+    if (questionNumber > [questions.results.length]) {
+        // openpopup();
+        //final scores to be displayed to user
+        document.getElementById("scoreText").innerText = "You have scored, " + `${finalScore}` + "!";
+        let closingMessage = document.getElementById("closing-message");
+        if (finalScore == 0) {
+            closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+        } else if (finalScore < 3) {
+            closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+        } else if (finalScore < 6) {
+            closingMessage.innerHTML = "Better luck next time, I'm sure you will get there";
+        } else if (finalScore < 9) {
+            closingMessage.innerHTML = "So close, but no cigar, next time you will be the winner";
+        } else if (finalScore == 10) {
+            closingMessage.innerHTML = "You have achieved greatness";
+        }
     }
 }
 
@@ -322,73 +291,38 @@ let data = sessionStorage.getItem('score');
 
 showFinalScore();
 
-
-
-
-
-
-//First set the date
-/*function getUserName() {
-    var now = new Date();
-    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
-      
-    if ((!username) || (username == 'null'));
-    document.getElementById("submitname").onClick = function () {
-        username = document.getElementById("username").value;
-        setcookie("username", username, now);
-        if (username) {
-            document.write(username);             
-        }
-        console.log("Hello", username);
-        document.getElementById("welcomeText").innerText = "Welcome, " + `${username}` + "!";
-    }
-
-}*/
-
-//Get username of the user and send to welcome message on game page
-
-/*function getUserName() {   
-    document.getElementById("submitname").onClick, () => {
-        username = document.getElementById("username");       
-        console.log("Hello", username);
-        alert(username);
-        document.getElementById("welcomeText").innerHTML = "Welcome, " + '{username.value}' + "!";
-    }
-}*/
-
+//Reloads the page, so the game can start again
 function replay() {
     location.reload();
 }
 
+//Function to get user name and welcome them personally to the game
 function getUserName() {
     let username = prompt("Enter a username");
     if (username != '') {
         // Save data to sessionStorage
         sessionStorage.setItem('username', username);
-        document.getElementById('welcomeText').innerHTML = "Welcome " + username + "! to Quiz-Lite";
+        document.getElementById('welcomeText').innerHTML = "Welcome " + username + " to Quiz-Lite";
     } else {
         alert("Username cannot be blank!");
     }
 }
 
-getUserName();
-
-
 //function to get category
-/*function getCategory() {
-    categorylevel = document.forms[0];
-    let category = '';
+function getCategory() {
+    let categorylevel = document.forms[0];
+    let category;
     let i;
 
-    for (i=0; i < categorylevel.length; i++){
-        if (categorylevel[i].checked){
+    for (i = 0; i < categorylevel.length; i++) {
+        if (categorylevel[i].checked) {
             category = categorylevel[i].value;
         }
     }
     // Save data to sessionStorage
     sessionStorage.setItem('category', category);
-    document.getElementById("resultsCategory").value ="You have chosen:" + category;
-    /*document.getElementById("resultsCategory").value ="You have chosen:" + `${category}`;
+    document.getElementById("resultsCategory").value = "You have chosen:" + category;
+    //document.getElementById("resultsCategory").value ="You have chosen:" + `${category}`;
     console.log(category);
 }
 
@@ -396,20 +330,20 @@ getCategory();
 
 //function to get difficulty level
 function getDifficultyLevel() {
-    difficultylevel = document.forms[0];
+    let difficultylevel = document.forms[0];
     let difficulty = '';
     let x;
 
-    for (x=0; x < difficultylevel.length; x++){
-        if (difficultylevel[x].checked){
+    for (x = 0; x < difficultylevel.length; x++) {
+        if (difficultylevel[x].checked) {
             difficulty = difficultylevel[x].value;
         }
     }
     // Save data to sessionStorage
     sessionStorage.setItem('difficulty', difficulty);
-    document.getElementById("resultsDifficulty").value ="You have chosen:" + difficulty;
+    document.getElementById("resultsDifficulty").value = "You have chosen:" + difficulty;
     //document.getElementById("resultsDifficulty").value ="You have chosen, " + `${difficulty}` ;   
     console.log(difficulty);
 }
 
-getDifficultyLevel();*/ 
+getDifficultyLevel();

@@ -6,13 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font awesome and google fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;800&family=Calistoga&display=swap" rel="stylesheet">    
+   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->    
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <title>Game - Play</title>
@@ -32,14 +30,12 @@ repository in the READ.me and will commit in small increments so im sure of what
 
 
     <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h2 id="welcomeText"> </h2>
-
-    <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h2 id="welcomeToGame"> <span id="welcomeMessage"></span></h2>
+    <h3 id="welcomeText"></h3>
 
     
-    <!--<button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
-    <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>-->
+    
+    <button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
+    <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>
 
     <!--Modal Form to get the username from the user-->
     <!--<div class="w3-container">
@@ -73,6 +69,32 @@ repository in the READ.me and will commit in small increments so im sure of what
         </div>
     </div>-->
 
+    <!--Modal Form to get the category of the quiz from the user-->    
+    <dialog class="modal2" id="modal2" class="w3-modal">
+        <h2 class="center">Quiz-Lite Category Level Selection</h2>
+        <br/>
+        <h3 style="color: purple; text-align: center;">Choose a Category level:</h3>
+        <section class="center" id="category-level">
+            <form action="/action_page.php">
+                <input type="radio" id="general" class="chooseCategory"  name="categorylevel" value= 9 />
+                <label for="general">General</label>
+                <input type="radio" id="movies" class="chooseCategory"  name="categorylevel" value= 11 />
+                <label for="movies">Movies</label>
+                <input type="radio" id="tv" class="chooseCategory"  name="categorylevel" value= 14 />
+                <label for="tv">TV</label>
+                <input type="radio" id="music" class="chooseCategory"  name="categorylevel" value= 12 />
+                <label for="music">Music</label>
+                <input type="radio" id="books" class="chooseCategory"  name="categorylevel" value = 10 />
+                <label for="books">Books</label>
+                <br/>
+                <input type="button" class="pink-buttons" onclick="getCategory()" type="submitCategory" value="Submit"/>
+                <input type="Text" id="resultsCategory">
+            </form>
+        </section>
+        <button class="close-button2">Close Button</button>
+    </dialog>
+ 
+
     <dialog class="modal" id="modal" class="w3-modal">
         <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
         <br/>
@@ -86,42 +108,20 @@ repository in the READ.me and will commit in small increments so im sure of what
                 <input type="radio" id="hard-button" class="chooseDifficulty" name="difficultylevel" value="hard" />
                 <label for="hard">Hard</label>
                 <br/>
-                <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submit" value="Submit"/>
+                <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submitDifficulty" value="Submit"/>
                 <input type="Text" id="resultsDifficulty">
             </form>
         </section>
         <button class="close-button">Close Button</button>
     </dialog>
 
-<!--Modal Form to get the category of the quiz from the user-->    
-    <dialog class="modal2" id="modal2" class="w3-modal">
-        <h2 class="center">Quiz-Lite Category Level Selection</h2>
-        <br/>
-        <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
-        <section class="center" id="category-level">
-            <form action="/action_page.php">
-                <input type="radio" id="general" class="chooseCategory"  name="categorylevel" value="general" />
-                <label for="general">General</label>
-                <input type="radio" id="movies" class="chooseCategory"  name="categorylevel" value="movies" />
-                <label for="movies">Movies</label>
-                <input type="radio" id="tv" class="chooseCategory"  name="categorylevel" value="tv" />
-                <label for="tv">TV</label>
-                <input type="radio" id="music" class="chooseCategory"  name="categorylevel" value="music" />
-                <label for="music">Music</label>
-                <input type="radio" id="books" class="chooseCategory"  name="categorylevel" value="books" />
-                <label for="books">Books</label>
-                <br/>
-                <input type="button" class="pink-buttons" onclick="getCategory()" type="submit" value="Submit"/>
-                <input type="Text" id="resultsCategory">
-            </form>
-        </section>
-        <button class="close-button2">Close Button</button>
-    </dialog>
- 
+
 
     <img id="seventyfive" class="brain" src="/assets/images/brain.png" alt="brain" />
     <h1 class="heading">Quiz-Lite</h1>
-    <p class="center-message">Welcome to the lite-weight Quiz, for a quick round quizzing sensation.</p>
+    <p class="center-message">Welcome to the lite-weight Quiz. Test your brainpower in a
+        fun accessible bitesize Quiz, ready for a quick round quizzing sensation? Good Luck!</p>
+
     <!--This is the start button for the Game, it will initilaze the game-->
     <div class="controls">
         <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
@@ -136,13 +136,12 @@ repository in the READ.me and will commit in small increments so im sure of what
 
             <!--This section will describe the category and the difficulty for each question set in the quiz-->
             <div class="informationForQuestion">
-                <p id="category" class="center"></p>
+                <p id="category" class="center"></p>               
                 <p id="difficulty" class="center"></p>
             </div>
             <br />
 
             <!--This is where each question will be displayed-->
-
             <div class="question-container">
                 <p class="question"><span id="progress"></span></p>
                 <h3 id="question"></h3>
