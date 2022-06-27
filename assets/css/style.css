@@ -11,6 +11,7 @@ body {
     height: 100vw;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Styling for the welcome message using username*/
 #welcomeText {
     font-size: 1.1rem;
@@ -24,6 +25,7 @@ body {
     background-color: rgb(22, 1, 36);
     color: white;
 }
+
 /*Styling for the light/dark mode image*/
 .nightday {
     width: 50px;
@@ -32,28 +34,27 @@ body {
 }
 
 /*Image for the brain at thetop of page*/
-.brain {   
+.brain {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-   
 }
 
 /*Styling for the main heading on page*/
-.heading {    
+.heading {
     text-align: center;
     font-size: 2.5rem;
-    color: #e91e63;   
+    color: #e91e63;
     letter-spacing: 5px;
     font-family: 'Calistoga', cursive;
-    text-shadow: #fff 2px 2px 3px;   
+    text-shadow: #fff 2px 2px 3px;
 }
 
 /*styling for quick blurb introducing quiz*/
 .center-message {
     text-align: center;
-    width: 50%;   
+    width: 50%;
     font-size: 1.2rem;
     display: block;
     margin-left: auto;
@@ -69,7 +70,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 10px;   
+    margin-top: 10px;
 }
 
 #start-btn,
@@ -80,25 +81,25 @@ body {
     margin-right: auto;
     background-color: #e91e63;
     width: 120px;
-    height: 40px;   
+    height: 40px;
     font-size: 1rem;
     text-align: center;
     border-radius: 15px;
     border: 2px solid black;
     text-transform: uppercase;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 #start-btn:hover,
 #next-btn:hover {
-    background-color:  rgba(185, 19, 135, 0.4);
+    background-color: rgba(185, 19, 135, 0.4);
 }
 
 /*styling for any sundry text within the application*/
 .center {
     text-align: center;
-    width: 50%;    
-    font-size: 1.5rem;    
+    width: 50%;
+    font-size: 1.5rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -113,17 +114,25 @@ body {
     font-size: 1.3rem;
     padding: 10px;
     display: flex;
-    flex-direction:column;
-    margin-left: auto;
-    margin-right: auto;
+    flex-direction: column;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     vertical-align: middle;
     background-color: rgba(199, 181, 181, 0.3);
     align-content: center;
     margin-bottom: 10px;
-    justify-content: space-between; 
-   
+    justify-content: space-between;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+button {
+    display: block;
+
+    font: .75rem;
+    text-align: center;
 }
 
 .choice-container:hover {
@@ -149,7 +158,7 @@ body {
 /*styling for the information panel relating to the category and difficulty level to the game*/
 .informationForQuestion {
     background-color: rgba(185, 19, 135, 0.4);
-    height: 120px;
+    height: 110px;
     width: 340px;
     text-align: center;
     border: 5px solid white;
@@ -158,50 +167,32 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    font-weight: bold;    
+    font-weight: bold;
     line-height: 1.5;
 }
 
-#category, #difficulty {
+/*Styling for Text for Category and Difficulty in information for questions*/
+#category,
+#difficulty {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
-    text-transform: capitalize;    
+    text-transform: capitalize;
 }
 
- 
-
+/*Styling for the Question*/
 .question-container {
     text-align: center;
+    width: 50%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.score-area {
-    text-align: center;
-    font-size: 130%;
-    margin-bottom: 15px;
-}
-
-.footer {
-    text-align: center;
-    background-color: black;
-    height: 150px;
-    vertical-align: middle;
-    font-size: 180%;
-    letter-spacing: 10px;
-    padding: 50px;
-    margin-bottom: 0;
-}
-
-
-
-.button-link-close {
-    float: right;
-    margin-top: -45px;
-    padding: 5px;
-    margin-right: 15px;
-}
-
+/*Styling for showing the Correct Answer to the User*/
 #verify-answer {
     color: green;
     font-weight: Bold;
@@ -213,13 +204,21 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-    width: 40%;
+    width: 350px;
     height: 60px;
     margin-bottom: 10px;
     text-align: center;
-    
 }
 
+/*Styling for the Scoring section*/
+.score-area {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/*Styling for Modal Buttons*/
 .pink-buttons {
     margin-top: 10px;
     display: block;
@@ -263,52 +262,42 @@ body {
         transform: rotate(360deg);
     }
 }
-#choose {
-    margin-left: 10px;
-    display: inline-block;
-    background-color: #e91e63;
-    color: white;    
+
+/*Styling for the Modals*/
+.modal,
+.modal2 {
+    padding: 1em;
+    max-width: 50ch;
+    border: 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    background-color: rgb(230, 91, 230);
+    color: black;
+    opacity: 0.8;
 }
 
-
-
-.modal, .modal2 {
-     padding: 1em;
-    max-width: 50ch;
-     border: 0;
-     box-shadow: 0 0 1em rgb(0 0 0 / .3);
-     background-color: rgb(230, 91, 230);
-     color: black;
-     opacity: 0.8;
-} 
-   
-  
-  .modal::backdrop {
+.modal::backdrop {
     background: rgb(0 0 0 / 0.4);
-  }
-  
-  /* extra styling */
-  
+}
 
-label::after{
+/*Fix for aligment of items in radio buttons*/
+label::after {
     content: '\a';
     white-space: pre;
-  }
+}
 
+/*Styling for Closing message, which shows the result and a supportive comment*/
 .closing {
     background-color: white;
     height: 130px;
-    width: 400px;    
-    font-weight: bold;
+    width: 400px;
     border-radius: 15px;
     font-size: 1.4rem;
-    margin-left: 5px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: #e91e63;
-    letter-spacing: 5px;    
+    letter-spacing: 5px;
     margin-bottom: 10px;
     font-family: 'Arima Madurai', cursive;
     font-weight: bold;
@@ -318,5 +307,15 @@ label::after{
     font: 1rem sans-serif;
 }
 
-
-
+/*Styling for the footer*/
+.footer {
+    text-align: center;
+    background-color: black;
+    height: 100px;
+    vertical-align: middle;
+    font-size: 2rem;
+    letter-spacing: 10px;
+    padding: 50px;
+    width: 100%;
+    margin-bottom: 0;
+}
