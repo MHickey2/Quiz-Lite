@@ -47,18 +47,22 @@ closeModal2.addEventListener("click", () => {
     modal2.close();
 });
 
+var image = document.getElementById('daynight');
+
+image.addEventListener('click', function () {
+    myFunction();
+});
 
 //function to choose dark-mode
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
-
 // Save data to sessionStorage
 localStorage.setItem('element', 'dark-mode');
 let theme = localStorage.getItem('element');
 
-myFunction();
+
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
@@ -311,7 +315,7 @@ function getUserName() {
 //function to get category
 function getCategory() {
     let categorylevel = document.forms[0];
-    let category;
+    category;
     let i;
 
     for (i = 0; i < categorylevel.length; i++) {

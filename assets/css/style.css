@@ -16,9 +16,12 @@ body {
 #welcomeText {
     font-size: 1.1rem;
     font-weight: 800;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     font-family: 'Arima Madurai', cursive;
+    text-align: center;
 }
+
+
 
 /*If dark mode is chosen the colour scheme of the webpage changes*/
 .dark-mode {
@@ -64,6 +67,13 @@ body {
     padding: 20px;
     border: 5px solid white;
 }
+
+.wrapper {
+    text-align: center;
+    display: block;
+      
+    
+  }
 
 /*Styling for the start button, that starts the game*/
 .controls {
@@ -113,16 +123,14 @@ body {
     border-radius: 15px;
     font-size: 1.3rem;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    /*box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);*/
+   /* display: flex;*/
     cursor: pointer;
     vertical-align: middle;
     background-color: rgba(199, 181, 181, 0.3);
-    align-content: center;
+   
     margin-bottom: 10px;
     justify-content: space-between;
-    text-align: center;
+    
     margin-left: auto;
     margin-right: auto;
 
@@ -317,4 +325,5 @@ label::after {
     padding: 50px;
     width: 100%;
     margin-bottom: 0;
+    position: fixed;
 }
