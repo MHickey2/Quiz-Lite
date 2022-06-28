@@ -9,150 +9,160 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;800&family=Calistoga&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="assets/css/style.css">    
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+   <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css"> 
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>-->
+    
+
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>-->
     <title>Game - Play</title>
 </head>
 
-    <div id="page-container">
-        <div id="content-wrap">
-    <!--image for toggling between light and dark mode-->
-    <img id="daynight" onclick="changeColourScheme()" class="nightday" height="50px" width="50px"
-        src="assets/images/day-and-night.png" alt="night and day image" />
-    <p>Toggle dark-mode</p>
+<div id="page-container">
+    <div id="content-wrap">
+        <!--image for toggling between light and dark mode-->
+        <img id="daynight" onclick="changeColourScheme()" class="nightday" height="50px" width="50px"
+            src="assets/images/day-and-night.png" alt="day to night image" aria-label="Dark mode toggle switch"/>
+        <p>Toggle dark-mode</p>
 
 
-    <!--Main image on game page-->
-    <img id="seventyfive" class="brain" src="assets/images/brain.png" alt="brain" />
-    <h1 class="heading">Quiz-Lite</h1>
-    <p class="center-message">Welcome to the lite-weight Quiz. Test your brainpower in a
-        fun accessible bitesize Quiz, ready for a quick round quizzing sensation? Good Luck!</p>
+        <!--Main image on game page-->
+        <img id="seventyfive" class="brain" src="assets/images/brain.png" alt="brain" />
+        <h1 class="heading">Quiz-Lite</h1>
 
-    <!--This will be a welcome message for the user, after they have supplied their username-->
-    <h3 id="welcomeText"></h3>
+        <div id="hiddenStart">
+        <p class="center-message">Welcome to the lite-weight Quiz. Test your brainpower in a
+            fun accessible bitesize Quiz, ready for a quick round quizzing sensation? Good Luck!</p>
 
-    <div id="hiddenStart">
-        <div class="container">
-            <div class="button-wrapper">
-                <button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
-                <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>
+        
+
+        
+            <div class="container">
+                <div class="button-wrapper">
+                    <button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
+                    <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>
+                </div>
             </div>
+
+            <!--Modal Form to get the category of the quiz from the user-->
+            <dialog class="modal2" id="modal2" class="w3-modal">
+                <h2 class="center">Quiz-Lite Category Level Selection</h2>
+                <br />
+                <h3 style="color: purple; text-align: center;">Choose a Category level:</h3>
+                <section class="center" id="category-level">
+                    <form action="/action_page.php">
+                        <input type="radio" id="general" class="chooseCategory" name="categorylevel" value=9 />
+                        <label for="general">General</label>
+                        <input type="radio" id="movies" class="chooseCategory" name="categorylevel" value=11 />
+                        <label for="movies">Movies</label>
+                        <input type="radio" id="tv" class="chooseCategory" name="categorylevel" value=14 />
+                        <label for="tv">TV</label>
+                        <input type="radio" id="music" class="chooseCategory" name="categorylevel" value=12 />
+                        <label for="music">Music</label>
+                        <input type="radio" id="books" class="chooseCategory" name="categorylevel" value=10 />
+                        <label for="books">Books</label>
+                        <br />
+                        <input type="button" class="pink-buttons" onclick="getCategory()" type="submitCategory"
+                            value="Submit" />
+                        <input type="Text" id="resultsCategory">
+                    </form>
+                </section>
+                <button class="close-button2">Close Button</button>
+            </dialog>
+
+
+            <dialog class="modal" id="modal" class="w3-modal">
+                <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
+                <br />
+                <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
+                <section class="center" id="difficulty-level">
+                    <form action="/action_page.php">
+                        <input type="radio" id="easy-button" class="chooseDifficulty" name="difficultylevel"
+                            value="easy" />
+                        <label for="easy">Easy</label>
+                        <input type="radio" id="medium-button" class="chooseDifficulty" name="difficultylevel"
+                            value="medium" />
+                        <label for="medium">Medium</label>
+                        <input type="radio" id="hard-button" class="chooseDifficulty" name="difficultylevel"
+                            value="hard" />
+                        <label for="hard">Hard</label>
+                        <br />
+                        <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submitDifficulty"
+                            value="Submit" />
+                        <input type="Text" id="resultsDifficulty">
+                    </form>
+                </section>
+                <button class="close-button">Close Button</button>
+            </dialog>
         </div>
 
-        <!--Modal Form to get the category of the quiz from the user-->
-        <dialog class="modal2" id="modal2" class="w3-modal">
-            <h2 class="center">Quiz-Lite Category Level Selection</h2>
-            <br />
-            <h3 style="color: purple; text-align: center;">Choose a Category level:</h3>
-            <section class="center" id="category-level">
-                <form action="/action_page.php">
-                    <input type="radio" id="general" class="chooseCategory" name="categorylevel" value=9 />
-                    <label for="general">General</label>
-                    <input type="radio" id="movies" class="chooseCategory" name="categorylevel" value=11 />
-                    <label for="movies">Movies</label>
-                    <input type="radio" id="tv" class="chooseCategory" name="categorylevel" value=14 />
-                    <label for="tv">TV</label>
-                    <input type="radio" id="music" class="chooseCategory" name="categorylevel" value=12 />
-                    <label for="music">Music</label>
-                    <input type="radio" id="books" class="chooseCategory" name="categorylevel" value=10 />
-                    <label for="books">Books</label>
-                    <br />
-                    <input type="button" class="pink-buttons" onclick="getCategory()" type="submitCategory"
-                        value="Submit" />
-                    <input type="Text" id="resultsCategory">
-                </form>
-            </section>
-            <button class="close-button2">Close Button</button>
-        </dialog>
+        <!--This will be a welcome message for the user, after they have supplied their username-->
+        <h2 id="welcomeText"></h2>
+        <!--This is the start button for the Game, it will initilaze the game-->
+        <div class="controls">
+            <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
+        </div>
 
+        <!--The game elements will not be visible to the user until they press the start button-->
+        <div id="hidden">
 
-        <dialog class="modal" id="modal" class="w3-modal">
-            <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
-            <br />
-            <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
-            <section class="center" id="difficulty-level">
-                <form action="/action_page.php">
-                    <input type="radio" id="easy-button" class="chooseDifficulty" name="difficultylevel" value="easy" />
-                    <label for="easy">Easy</label>
-                    <input type="radio" id="medium-button" class="chooseDifficulty" name="difficultylevel"
-                        value="medium" />
-                    <label for="medium">Medium</label>
-                    <input type="radio" id="hard-button" class="chooseDifficulty" name="difficultylevel" value="hard" />
-                    <label for="hard">Hard</label>
-                    <br />
-                    <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submitDifficulty"
-                        value="Submit" />
-                    <input type="Text" id="resultsDifficulty">
-                </form>
-            </section>
-            <button class="close-button">Close Button</button>
-        </dialog>
-    </div>
-    <!--This is the start button for the Game, it will initilaze the game-->
-    <div class="controls">
-        <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
-    </div>
+            <!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
+                <h3 class="center">You have: <span id="time-keeper"></span> seconds remaining!</h3>
 
-    <!--The game elements will not be visible to the user until they press the start button-->
-    <div id="hidden">
-
-        <!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
-        <p class="center"><span class="center" id="progress"></span>
-            <p class="center">You have: <span id="time-keeper"></span> seconds remaining!</p>
-
-            <!--This section will describe the category and the difficulty for each question set in the quiz-->
-            <div class="informationForQuestion">
-                <p id="category" class="center"></p>
-                <p id="difficulty" class="center"></p>
-            </div>
-            <br />
-
-            <!--This is where each question will be displayed-->
-            <div class="question-container">
-                <p class="question"><span id="progress"></span></p>
-                <h3 id="question"></h3>
-            </div>
-            <br />
-            <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
+                <!--This section will describe the category and the difficulty for each question set in the quiz-->
+                <div class="informationForQuestion">
+                    <h3 id="category" class="center"></h3>
+                    <h3 id="difficulty" class="center"></h3>
+                </div>
+                <br />
+                <p class="center"><span class="center" id="progress"></span>
+                <!--This is where each question will be displayed-->
+                <div class="question-container">
+                    <p class="question"><span id="progress"></span></p>
+                    <h3 id="question"></h3>
+                </div>
+                <br />
+                <!--These are the different options for the quiz(4), for layout I created 2 main containers with 2 questions
 boxes in each-->
-            <div class="flex-container">
-                <button id="answer1" class="choice-container  option" name="answer"></button>
-                <button id="answer2" class="choice-container  option" name="answer"></button>
-                <button id="answer3" class="choice-container  option" name="answer"></button>
-                <button id="answer4" class="choice-container  option" name="answer"></button>
-            </div>
-            <section class="verify-answer">
-                <h1 id="verification" class="center">The correct answer is:</h1>
-                <br\><span id="verify-answer"></span>
-            </section>
-            <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
-            <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
+                <div class="flex-container">
+                    <button id="answer1" class="choice-container  option" name="answer"></button>
+                    <button id="answer2" class="choice-container  option" name="answer"></button>
+                    <button id="answer3" class="choice-container  option" name="answer"></button>
+                    <button id="answer4" class="choice-container  option" name="answer"></button>
+                </div>
+                <section class="verify-answer">
+                    <h1 id="verification" class="center">The correct answer is:</h1>
+                    <br\><span id="verify-answer"></span>
+                </section>
+                <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
+                <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 
-            <div class="score-area">
-                <p class="scores">Correct Answers: <span id="correct">0</span></p>
-                <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
-            </div>
+                <div class="score-area">
+                    <p class="scores">Correct Answers: <span id="correct">0</span></p>
+                    <p class="scores">Incorrect Answers: <span id="incorrect">0</span></p>
+                </div>
 
-            <!--This is closing section with the results and closing message for game end-->
-            <section class="closing" id="hiddenResults">
-                <p class="scores"><span id="scoreText"></span></p>
-                <h1 id="closing-message"></h1>
-            </section>
+                <!--This is closing section with the results and closing message for game end-->
+                <section class="closing" id="hiddenResults">
+                    <p class="scores"><span id="scoreText"></span></p>
+                    <h1 id="closing-message"></h1>
+                </section>
 
-            <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Restart</button>
-            <br />
-            
+                <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Restart</button>
+                <br />
+        </div>
+
     </div>
-
-
     <!--Audio snippets to add to game when correct and incorrect answer is chosen-->
     <!--<audio id="music1" src="audio/correct.mp3" preload="auto"></audio>
     <audio id="music2" src="audio/wrong.mp3" preload="auto"></audio>-->
-</div>
+
     <script src="assets/js/script.js"></script>
     <footer class="footer">
     </footer>
+
 </div>
 </body>
 

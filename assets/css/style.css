@@ -19,6 +19,7 @@ body {
     /*margin-left: 10px;*/
     font-family: 'Arima Madurai', cursive;
     text-align: center;
+   
 }
 
 
@@ -117,8 +118,8 @@ body {
 
 /*Each individual answer box for displaying the options to the user*/
 .choice-container {
-    height: 80px;
-    width: 410px;
+    height: 100px;
+    width: 380px;
     border: 5px solid white;
     border-radius: 15px;
     font-size: 1.3rem;
@@ -212,7 +213,7 @@ button {
     margin-right: auto;
     padding: 5px;
     width: 350px;
-    height: 60px;
+    height: 80px;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -344,18 +345,19 @@ label::after {
 
   #page-container {
     position: relative;
-    min-height: 250vh;
+    /*min-height: 220vh;*/
+    margin: 0 auto;
+    max-width: 1024px;
   }
   
   #content-wrap {
-    padding-bottom: 4rem;    /* Footer height */
+    padding-bottom: 4rem;    
   }
   
   .footer {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+   /* bottom: 0;*/
     height: 4rem; 
     background-color: black;
-              /* Footer height */
+    width: 100%;              
   }
