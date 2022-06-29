@@ -12,10 +12,10 @@
 Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set questions within the general category, which encompasses all categories. The difficulty level includes all levels of difficulty. The website application is fully responsive for Desktop and mobile screens.
 <br/>
 
-[]()  
+[Visit the Quiz-Lite Website]()  
 <br/>    
 
-[]()  
+[Visit the Quiz-Lite Repository]()  
 <br/>    
 
 # Table of Contents <a name="toc"></a>
@@ -56,31 +56,51 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
 ----
 
 ## UX Strategy <a name="uxstrategy"></a>
-
+The website was designed to provide a quick general knowledge Trivia Game. The website utilizes another site to provide the subject matter and functionality has been added to allow users to take the quiz, test their knowledge, try to get a good score. The goal is to provide an entertaining challenge and overtime the user can try to improve their mind and build their trivia knowledge. The challenge was to build a site while also encompassing a third party database to provide a greater range for user questions.
 <br/> 
 
-### The Business Goals: <a name="businessgoals"></a>
-
+### The Business Goals of the Website: <a name="businessgoals"></a>
+- No commercial goals, but the site's goal is to to provide entertainment and build the knowledge base of the users.
   <br/> 
 
-
 ### The Target Customer: <a name="targetcustomer"></a>
+- The audience of the site would encompass a number of age groups and there would generally not be any limitation on who could avail of the quiz.
+- Would probably require some access to digital technology.
+- May be useful for user who has spare time and who would like to test themselves with no judgement.
 
  <br/>  
 
  #### [Return to Table of Contents](#toc)
 ----
 ## User Stories  <a name="userstories"></a>
-### As a first time user to the site, I want to …..<a name="firsttimeuser"></a>
+### As a first time user to this site, I want to …..<a name="firsttimeuser"></a>
+- Understand what the website is offering.
+- Enter a username and be welcomed to the site.
+- Play the Quiz.
+- See the number of questions to be answered.
+- See the topic of the question to be asked.
+- Know the difficulty level of each question.
+- Know whether I get the right answer to each question.
+- Find out what is the correct answer if i guessed it wrong.
+- See a running total of my correct answers.
+- At the end of the Quiz I would like some eedback and know what my overall score is.
+- If I want to restart a Game, I want to be able to do this easily.
 
   <br/>
 
-### As a regular user of the site, I want to …...  <a name="regularuser"></a>
+### As a regular user of the site, I want to …...  <a name="regularuser"></a>  
+- I want to improve my scores.  
+- I want to try different categories.  
+- I want to try different levels of difficulty. 
+- I want to have an opportunity to answer a larger number of questions in the quiz. 
 
  <br/>
 
-
 ### As the site owner, I want to …..    <a name="siteowner"></a>
+- Add more features to the site to enhance the experience of the users.
+- Provide the user with ways that they can personalize their own quizzing experience.
+- Improve the social aspect, by allowing users to compare their scores with other users.
+- Recognise the achievement of users by providing incentives for top scores.
 
   <br/>  
 
@@ -98,7 +118,7 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
 Wireframes for Desktop, Medium Screens and Mobile Screens.<br/> 
 Wireframes were created in Figma. 
 
-
+</details>
 
 <details>
   <summary>1. Wireframe</summary>
@@ -197,13 +217,16 @@ The colour scheme
   
 - Multimedia:		&nbsp;  Sourced from [YouTube](https://www.youtube.com/)
 
-- Free Images:		&nbsp;    [Pixalbay](https://pixabay.com/), [Unsplash](https://unsplash.com/), [Pexels](https://www.pexels.com/)
+- Free Images:		&nbsp;    [Pixalbay](https://pixabay.com/)
   
 - Image Converter:  &nbsp;      [Convertio](https://convertio.co/)
 
 - Image Compression:  &nbsp;    [tinyPNG](https://tinyjpg.com/) 
 
-- Grammar and spelling: &nbsp; [Grammarly](https://app.grammarly.com/)  
+- Grammar and spelling: &nbsp; [Grammarly](https://app.grammarly.com/) 
+
+- Favicon Generator: &nbsp; [The Favicon Generator](https://www.ionos.com/tools/favicon-generator)
+
   
 <br/>
 

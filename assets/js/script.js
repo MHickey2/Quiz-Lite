@@ -20,29 +20,7 @@ let finalScore;
 let timer;
 let timeLeft = 60;
 
-/*(async () => {
-
-    const { value: username } = await Swal.fire({
-      title: 'Input username',
-      input: 'text',
-      inputLabel: 'Your username',
-      inputPlaceholder: 'Enter your username'
-    });
-    
-    if (username) {
-      Swal.fire(`Entered username: ${username}`);
-      // Save data to sessionStorage
-      sessionStorage.setItem('username', username);
-      document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
-    }
-    
-    })();*/
-
-    getUserName()
-
-
-//Function to get user name and welcome them personally to the game
-function getUserName() {
+/*function getUserName() {
     let username = prompt("Enter a username");
     if (username != '') {
         // Save data to sessionStorage
@@ -51,9 +29,25 @@ function getUserName() {
     } else {
         alert('Username cannot be blank!');
     }
+}*/
+//Function to get user name and welcome them personally to the game
+function getUserName() {
+    let username = '';
+    let alreadyShownPrompt = false;
+    if (!username) {
+        username = prompt('Enter your username:').trim().toLowerCase();
+        if (alreadyShownPrompt){
+            alert('username can not be blank!');
+            
+        }
+        alreadyShownPrompt = true
+    }
+    sessionStorage.setItem('username', username);
+    const welcomeText = document.getElementById('welcomeText');
+    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
 }
 
-
+getUserName();
 
 //Modal1 for categories
 openModal.addEventListener('click', () => {
@@ -140,9 +134,9 @@ async function getQuestions() {
     questions = await response.json();
 }
 
-//Function to get next question, but also test to see if there is a next question to get, if not the game is over
+//Function to get next question, but also test to see if there is a next question 
+//to get, if not the game is over
 function getNextQuestion() {
-
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener('click', getNextQuestion);
 
@@ -194,6 +188,8 @@ function startGame() {
         targetDiv.style.display = 'block';
         const targetDiv2 = document.getElementById('hiddenStart');
         targetDiv2.style.display = 'none';
+        const targetDiv3 = document.getElementById('hiddenResults');
+        targetDiv3.style.display = 'none';
     });
 }
 
@@ -308,7 +304,8 @@ nextButton.addEventListener('click', getNextQuestion => {
     reset();
 });
 
-//Scoring for the Game, increment score when there is a correct answer from the question asked
+//Scoring for the Game, increment score when there is a correct answer from 
+//the question asked
 function incrementScore() {
     let oldScoreR = parseInt(document.getElementById('correct').innerText);
     document.getElementById('correct').innerText = ++oldScoreR;
@@ -316,7 +313,8 @@ function incrementScore() {
     index++;
 }
 
-//Scoring for the Game, increments wrongscore when there is an incorrect answer from the question asked
+//Scoring for the Game, increments wrongscore when there is an incorrect answer 
+//from the question asked
 function incrementWrongAnswer() {
     let oldScoreW = parseInt(document.getElementById('incorrect').innerText);
     document.getElementById('incorrect').innerText = ++oldScoreW;
@@ -333,11 +331,15 @@ function hideButton() {
     }
 }
 
+const targetDiv3 = document.getElementById('hiddenResults');
+        
+        
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
     if (questionNumber > [questions.results.length]) {        
         //final scores to be displayed to user
+        targetDiv3.style.display = 'block';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
         if (finalScore == 0) {
@@ -361,11 +363,12 @@ sessionStorage.setItem('score', 'finalScore');
 showFinalScore();
 
 const restartButton = document.getElementById('restart-btn');
-categoryButton.addEventListener('click', getCategory);
+restartButton.addEventListener('click', replay);
 
 //Reloads the page, so the game can start again
 function replay() {
     location.reload();
+    console.log("Reload called")
 }
 
 
