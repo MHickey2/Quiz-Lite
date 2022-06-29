@@ -1,4 +1,3 @@
-
 //modals to get user categories and difficulty levels
 const modal = document.querySelector('#modal');
 const openModal = document.querySelector('.open-button');
@@ -6,23 +5,17 @@ const closeModal = document.querySelector('.close-button');
 const modal2 = document.querySelector('#modal2');
 const openModal2 = document.querySelector('.open-button2');
 const closeModal2 = document.querySelector('.close-button2');
-
+const maxQuestions = 10;
 let answers = [];
 let questions = [];
-//let quiz;
 let index = 0;
 let correctAnswer;
-//let selectedChoice;
-//let amount = 20;
 let currentQuestion;
-let category;
-let difficulty;
+var category;
+var difficulty;
 let questionNumber = 1;
-let maxQuestions = 10;
 //let soundcorrect = new Audio("/audio/correct.mp3");
 //let soundwrong = new Audio("/audio/wrong.mp3");
-//let lastQuestion = questions.length - 1;
-//let username;
 let finalScore;
 let timer;
 let timeLeft = 60;
@@ -80,6 +73,9 @@ closeModal2.addEventListener('click', () => {
     modal2.close();
 });
 
+const img =document.getElementById('daynight');
+img.addEventListener('click', changeColourScheme)
+
 //function to choose dark-mode
 function changeColourScheme() {
     var element = document.body;
@@ -92,11 +88,13 @@ changeColourScheme();
 localStorage.setItem('element', 'dark-mode');
 //let theme = localStorage.getItem('element');
 
+const categoryButton =document.getElementById('category-btn');
+categoryButton.addEventListener('click', getCategory);
 
 //function to get category
 function getCategory() {
     let categorylevel = document.forms[0];
-    category;
+    category='';
     let i;
 
     for (i = 0; i < categorylevel.length; i++) {
@@ -110,12 +108,13 @@ function getCategory() {
     document.getElementById("resultsCategory").value ='You have chosen:' + `${category}`;   
 }
 
-getCategory();
+const difficultyButton = document.getElementById('difficulty-btn');
+difficultyButton.addEventListener('click', getDifficultyLevel);
 
 //function to get difficulty level
 function getDifficultyLevel() {
-    let difficultylevel = document.forms[0];
-    let difficulty = '';
+    let difficultylevel = document.forms[1];
+    difficulty = '';
     let x;
 
     for (x = 0; x < difficultylevel.length; x++) {
@@ -129,18 +128,24 @@ function getDifficultyLevel() {
     document.getElementById("resultsDifficulty").value ='You have chosen, ' + `${difficulty}`;     
 }
 
-getDifficultyLevel();
-
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
 
+    getDifficultyLevel();
+    getCategory();
+
     //pass variable to question variable line2
-    //const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=hard&type=multiple`);
-    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
+  //const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
     questions = await response.json();
 }
+
 //Function to get next question, but also test to see if there is a next question to get, if not the game is over
 function getNextQuestion() {
+
+    const nextButton = document.getElementById('next-btn');
+    nextButton.addEventListener('click', getNextQuestion);
+
        if (questionNumber > [questions.results.length]) {
         if (confirm('Game Over!')) {
             showFinalScore();
@@ -216,7 +221,6 @@ async function init() {
 init();
 checkAnswers();
 
-
 //check if answers are correct or not
 function checkAnswers() {
     var button1 = document.getElementById('answer1');
@@ -227,7 +231,6 @@ function checkAnswers() {
             alert('you are correct');
             showCorrectAnswer();
             incrementScore();
-
         } else {
             button1.style.background = 'red';
             alert('you are incorrect');
@@ -333,8 +336,7 @@ function hideButton() {
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
-    if (questionNumber > [questions.results.length]) {
-        // openpopup();
+    if (questionNumber > [questions.results.length]) {        
         //final scores to be displayed to user
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
@@ -357,6 +359,9 @@ sessionStorage.setItem('score', 'finalScore');
 //let data = sessionStorage.getItem('score');
 
 showFinalScore();
+
+const restartButton = document.getElementById('restart-btn');
+categoryButton.addEventListener('click', getCategory);
 
 //Reloads the page, so the game can start again
 function replay() {

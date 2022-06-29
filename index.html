@@ -23,7 +23,7 @@
 <div id="page-container">
     <div id="content-wrap">
         <!--image for toggling between light and dark mode-->
-        <img id="daynight" onclick="changeColourScheme()" class="nightday" height="50px" width="50px"
+        <img id="daynight"  class="nightday" height="50px" width="50px"
             src="assets/images/day-and-night.png" alt="day to night image" aria-label="Dark mode toggle switch"/>
         <p>Toggle dark-mode</p>
 
@@ -51,25 +51,24 @@
                 <h3 style="color: purple; text-align: center;">Choose a Category level:</h3>
                 <section class="center" id="category-level">
                     <form action="/action_page.php">
-                        <input type="radio" id="general" class="chooseCategory" name="categorylevel" value=9 />
+                        <input type="radio" id="general" class="chooseCategory" name="categorylevel" value="9" />
                         <label for="general">General</label>
-                        <input type="radio" id="movies" class="chooseCategory" name="categorylevel" value=11 />
+                        <input type="radio" id="movies" class="chooseCategory" name="categorylevel" value="11" />
                         <label for="movies">Movies</label>
-                        <input type="radio" id="tv" class="chooseCategory" name="categorylevel" value=14 />
+                        <input type="radio" id="tv" class="chooseCategory" name="categorylevel" value="14" />
                         <label for="tv">TV</label>
-                        <input type="radio" id="music" class="chooseCategory" name="categorylevel" value=12 />
+                        <input type="radio" id="music" class="chooseCategory" name="categorylevel" value="12" />
                         <label for="music">Music</label>
-                        <input type="radio" id="books" class="chooseCategory" name="categorylevel" value=10 />
+                        <input type="radio" id="books" class="chooseCategory" name="categorylevel" value="10" />
                         <label for="books">Books</label>
                         <br />
-                        <input type="button" class="pink-buttons" onclick="getCategory()" type="submitCategory"
+                        <input type="button" id='category-btn'class="pink-buttons" type="submitCategory"
                             value="Submit" />
                         <input type="Text" id="resultsCategory">
                     </form>
                 </section>
                 <button class="close-button2">Close Button</button>
             </dialog>
-
 
             <dialog class="modal" id="modal" class="w3-modal">
                 <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
@@ -87,7 +86,7 @@
                             value="hard" />
                         <label for="hard">Hard</label>
                         <br />
-                        <input type="button" class="pink-buttons" onclick="getDifficultyLevel()" type="submitDifficulty"
+                        <input type="button" class="pink-buttons" id='difficulty-btn' type="submitDifficulty"
                             value="Submit" />
                         <input type="Text" id="resultsDifficulty">
                     </form>
@@ -100,7 +99,7 @@
         <h2 id="welcomeText"></h2>
         <!--This is the start button for the Game, it will initilaze the game-->
         <div class="controls">
-            <button id="start-btn" class="start-btn" onclick="startGame()" data-type="start">Start</button>
+            <button id="start-btn" class="start-btn" data-type="start">Start</button>
         </div>
 
         <!--The game elements will not be visible to the user until they press the start button-->
@@ -134,7 +133,7 @@ boxes in each-->
                     <h1 id="verification" class="center">The correct answer is:</h1>
                     <br\><span id="verify-answer"></span>
                 </section>
-                <button id="next-btn" class="next-btn" onclick="getNextQuestion()" data-type="Next">Next</button>
+                <button id="next-btn" class="next-btn" data-type="Next">Next</button>
                 <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 
                 <div class="score-area">
@@ -148,7 +147,7 @@ boxes in each-->
                     <h1 id="closing-message"></h1>
                 </section>
 
-                <button id="start-btn" class="start-btn" onclick="replay()" data-type="start">Restart</button>
+                <button id="restart-btn" class="restart-btn" data-type="start">Restart</button>
                 <br />
         </div>
 
@@ -158,9 +157,10 @@ boxes in each-->
     <audio id="music2" src="audio/wrong.mp3" preload="auto"></audio>-->
 
     <script src="assets/js/script.js"></script>
-    <footer class="footer"></footer>
-
+    
 </div>
+<footer class="footer"></footer>
+
 </body>
 
 </html>

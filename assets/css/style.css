@@ -2,10 +2,7 @@
 	margin: 0;
 	padding: 0;
 	border: none;
-	box-sizing: border-box;
-	max-width: 1500px;
-	margin-left: auto;
-	margin-right: auto;
+	box-sizing: border-box;	
 }
 
 /*styling for the body of the app*/
@@ -14,19 +11,18 @@ body {
     box-sizing: border-box;
     color: #313131;
     justify-content: center;
-    align-items: center;
-   /* width: 100vw;
-    height: 100vw;*/
+    align-items: center;   
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;    
 }
 
 /* Global */
-.container {
+/*.container {
 	width: 100%;
 	margin: auto;
 	height: fit-content;
-}
+}*/
 
 /*Header Section */
 
@@ -184,7 +180,7 @@ button {
 /*styling for the information panel relating to the category and difficulty level to the game*/
 .informationForQuestion {
     background-color: rgba(185, 19, 135, 0.4);
-    height: 110px;
+    height: 130px;
     width: 340px;
     text-align: center;
     border: 5px solid white;
@@ -315,7 +311,7 @@ label::after {
 .closing {
     background-color: white;
     height: 130px;
-    width: 400px;
+    width: 360px;
     border-radius: 15px;
     font-size: 1.4rem;
     display: block;
@@ -357,13 +353,12 @@ label::after {
     justify-content: center;
     align-items: center;
     height: 100%;    
-    margin-right:16px;
-    margin: 20px;
+    
   }
 
   #page-container {
     position: relative;
-    min-height: 220vh;
+   /* min-height: 220vh;*/
     margin: 0 auto;
     max-width: 1024px;
   }
@@ -378,6 +373,6 @@ label::after {
     bottom: 0;   
     width: 100vw;
     background-color: black;
-    height:10vh
+    height:40px;
                 
   }
