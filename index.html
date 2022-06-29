@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">    
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-   <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css"> 
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>-->
     
@@ -31,14 +31,12 @@
         <!--Main image on game page-->
         <img id="seventyfive" class="brain" src="assets/images/brain.png" alt="brain" />
         <h1 class="heading">Quiz-Lite</h1>
-
+        <!--DivTarget2 which initially shows, but is hidden when user starts the game-->
         <div id="hiddenStart">
         <p class="center-message">Welcome to the lite-weight Quiz. Test your brainpower in a
             fun accessible bitesize Quiz, ready for a quick round quizzing sensation? Good Luck!</p>
 
-        
-
-        
+        <!--Buttons for getting Category and Difficulty for the Game-->       
             <div class="container">
                 <div class="button-wrapper">
                     <button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
@@ -120,7 +118,7 @@
                 <p class="center"><span class="center" id="progress"></span>
                 <!--This is where each question will be displayed-->
                 <div class="question-container">
-                    <p class="question"><span id="progress"></span></p>
+                    <h3 class="question"><span id="progress"></span></h3>
                     <h3 id="question"></h3>
                 </div>
                 <br />
@@ -160,8 +158,7 @@ boxes in each-->
     <audio id="music2" src="audio/wrong.mp3" preload="auto"></audio>-->
 
     <script src="assets/js/script.js"></script>
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
 
 </div>
 </body>

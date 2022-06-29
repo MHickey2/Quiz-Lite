@@ -1,16 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*styling for the body of the app*/
 body {
-    /*  background-color: #280a30;*/
-    background-color: white;
     font-size: 0.75rem;
     box-sizing: border-box;
     color: #313131;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vw;
-    font-family: Arial, Helvetica, sans-serif;
+   /* width: 100vw;
+    height: 100vw;*/
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;    
 }
+
+/* Global */
+.container {
+	width: 100%;
+	margin: auto;
+	height: fit-content;
+}
+
+/*Header Section */
 
 /*Styling for the welcome message using username*/
 #welcomeText {
@@ -345,7 +363,7 @@ label::after {
 
   #page-container {
     position: relative;
-    /*min-height: 220vh;*/
+    min-height: 220vh;
     margin: 0 auto;
     max-width: 1024px;
   }
@@ -356,8 +374,10 @@ label::after {
   
   .footer {
     position: absolute;
-   /* bottom: 0;*/
-    height: 4rem; 
+    left: 0;
+    bottom: 0;   
+    width: 100vw;
     background-color: black;
-    width: 100%;              
+    height:10vh
+                
   }

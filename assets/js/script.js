@@ -34,18 +34,19 @@ let timeLeft = 60;
       input: 'text',
       inputLabel: 'Your username',
       inputPlaceholder: 'Enter your username'
-    })
+    });
     
     if (username) {
-      Swal.fire(`Entered username: ${username}`)
+      Swal.fire(`Entered username: ${username}`);
       // Save data to sessionStorage
       sessionStorage.setItem('username', username);
       document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
     }
     
-    })()*/
+    })();*/
 
-    
+    getUserName()
+
 
 //Function to get user name and welcome them personally to the game
 function getUserName() {
@@ -60,7 +61,6 @@ function getUserName() {
 }
 
 
-getUserName();
 
 //Modal1 for categories
 openModal.addEventListener('click', () => {
@@ -362,4 +362,8 @@ showFinalScore();
 function replay() {
     location.reload();
 }
+
+
+
+    
 
