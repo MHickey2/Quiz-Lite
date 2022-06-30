@@ -36,9 +36,9 @@ function getUserName() {
     let alreadyShownPrompt = false;
     while (!username) {
         username = prompt('Enter your username:').trim().toLowerCase();
-        if (alreadyShownPrompt){
+        if (alreadyShownPrompt) {
             alert('username can not be blank!');
-            
+
         }
         alreadyShownPrompt = true
     }
@@ -67,7 +67,7 @@ closeModal2.addEventListener('click', () => {
     modal2.close();
 });
 
-const img =document.getElementById('daynight');
+const img = document.getElementById('daynight');
 img.addEventListener('click', changeColourScheme)
 
 //function to choose dark-mode
@@ -82,13 +82,13 @@ changeColourScheme();
 localStorage.setItem('element', 'dark-mode');
 //let theme = localStorage.getItem('element');
 
-const categoryButton =document.getElementById('category-btn');
+const categoryButton = document.getElementById('category-btn');
 categoryButton.addEventListener('click', getCategory);
 
 //function to get category
 function getCategory() {
     let categorylevel = document.forms[0];
-    category='';
+    category = '';
     let i;
 
     for (i = 0; i < categorylevel.length; i++) {
@@ -98,9 +98,9 @@ function getCategory() {
     }
     // Save data to sessionStorage
     sessionStorage.setItem('category', category);
-   // document.getElementById("resultsCategory").value = "You have chosen:" + category;
-    document.getElementById("resultsCategory").value ='You have chosen:' + `${category}`;
-      
+    // document.getElementById("resultsCategory").value = "You have chosen:" + category;
+    document.getElementById("resultsCategory").value = 'You have chosen:' + `${category}`;
+
 }
 
 getCategory();
@@ -122,20 +122,25 @@ function getDifficultyLevel() {
     // Save data to sessionStorage
     sessionStorage.setItem('difficulty', difficulty);
     //document.getElementById('resultsDifficulty').value = 'You have chosen:' + difficulty;
-    document.getElementById("resultsDifficulty").value ='You have chosen, ' + `${difficulty}`;
-        
+    document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
+
 }
 
 getDifficultyLevel();
 
+/*function submitOptions() {
+    const criteriaButton = document.getElementById('submitCriteria');
+    criteriaButton.addEventListener('click', getQuestions);
+}*/
+
 // Fetch 10 questions from API from general knowledge category
-async function getQuestions() {       
+async function getQuestions() {
     console.log(category);
-    console.log(difficulty);  
+    console.log(difficulty);
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
-  //const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
+    //const response = await fetch(`https://opentdb.com/api.php?amount=10&category=11&difficulty=hard&type=multiple`);
     questions = await response.json();
 }
 
@@ -145,24 +150,24 @@ function getNextQuestion() {
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener('click', getNextQuestion);
 
-       if (questionNumber > [questions.results.length]) {
+    if (questionNumber > [questions.results.length]) {
         if (confirm('Game Over!')) {
             showFinalScore();
             hideButton();
         } else {
-            return;            
+            return;
         }
     }
 
     document.getElementById('progress').innerText = `Question ${questionNumber}/${maxQuestions}`;
     ++questionNumber;
     //getCurrent question
-    currentQuestion = questions.results[index];   
+    currentQuestion = questions.results[index];
     //put correct answers in list with incorrect answers
-    correctAnswer = questions.results[index].correct_answer;    
+    correctAnswer = questions.results[index].correct_answer;
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
     choices.sort();
-    
+
     document.getElementById('category').innerHTML = 'Category:' + currentQuestion.category;
     document.getElementById('difficulty').innerHTML = 'Difficulty:' + currentQuestion.difficulty;
     document.getElementById('question').innerHTML = 'Question:' + currentQuestion.question;
@@ -207,12 +212,14 @@ function choiceListeners() {
         //for each choice add a click event listener, pass the event to the callback function
         choice.addEventListener('click', event => {
             //event target is the one that is clicked 
-            var value = event.target.innerText;            
+            var value = event.target.innerText;
         });
     });
 }
 
-async function init() {     
+async function init() {
+    getCategory();
+    getDifficultyLevel();    
     await getQuestions();
     getNextQuestion(0);
     showFinalScore();
@@ -300,12 +307,12 @@ function reset() {
 
 //show the correct answer to the user, before moving to next question
 function showCorrectAnswer() {
-    document.getElementById('verify-answer').innerHTML = correctAnswer;   
+    document.getElementById('verify-answer').innerHTML = correctAnswer;
 }
 
 //The user can click on next to see the next question       
 let nextButton = document.getElementById('next-btn');
-nextButton.addEventListener('click', getNextQuestion => {   
+nextButton.addEventListener('click', getNextQuestion => {
     reset();
 });
 
@@ -337,12 +344,12 @@ function hideButton() {
 }
 
 const targetDiv3 = document.getElementById('hiddenResults');
-        
-        
+
+
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
-    if (questionNumber > [questions.results.length]) {        
+    if (questionNumber > [questions.results.length]) {
         //final scores to be displayed to user
         targetDiv3.style.display = 'block';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
@@ -375,8 +382,3 @@ function replay() {
     location.reload();
     console.log("Reload called")
 }
-
-
-
-    
-

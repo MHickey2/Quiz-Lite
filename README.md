@@ -133,7 +133,15 @@ Wireframes were created in Figma.
 
 ## Colour Scheme    <a name="colourscheme"></a>  
 
-The colour scheme   
+The colour scheme for the website has evolved over time and originally was dark purple, rgb(31, 3, 50) with secondary elements in pink and plum. But after researching options I was going to strip it back to a white background with colour only on secondary elements to simplify the interface and reduce distractions. Then I discovered a compromise option, where the user can decide what background they would prefer. There is a toggle switch on the top left side of the screen which allows the user to toggle between light and dark mode, there is therefore 2 different colour schemes on the site.
+
+### Light Mode:
+Plane white background, White as a background color ensures clarity and removes visual obstacles and clutter, allowing the user to focus on relevant elements and text. It also offers good contrast to aid readability and enhancethe user experience. The buttons are all uniform and are pink and stand out well from the white background.
+There is little in regards to imagery, with only 2 visual elements, one representative of brainpower and the toggle image which represents day and night mode.  
+
+### Dark Mode:  
+plane purple background,Dark mode may help to decrease eye strain/dry eyes for some people who spend lots of time looking at screens. There are studies that have concluded dark mode can be more economical and uses less energy at least on mobile screens. Dark mode is good in low light environments, it can also help people with cataracts or other related visual disorders. By adding white borders around certain elements, it helps them to stand out from the darker background. The buttons and headings still have good contrast on either background.
+
 <br/>
 <p align="center">
   <img src="" alt="" />
@@ -146,13 +154,18 @@ The colour scheme
 <br/>
 
 
-</br>  
-
-
+</br> 
 
 
 ## Fonts used on Site  <a name="fonts"></a>
 
+Merriweather was designed to be pleasant for screens.
+Roboto
+font-family: 'Roboto', sans-serif;
+font-weight: Light 400;
+font-weight: Bold 700;
+
+Used for the majority of the site, both for regular text and headings. Sans serif is the fallback font in case other font is not available. See below for example of font in use.
 
 <br/>
 <p align="center">
