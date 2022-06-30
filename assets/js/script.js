@@ -34,7 +34,7 @@ let timeLeft = 60;
 function getUserName() {
     let username = '';
     let alreadyShownPrompt = false;
-    if (!username) {
+    while (!username) {
         username = prompt('Enter your username:').trim().toLowerCase();
         if (alreadyShownPrompt){
             alert('username can not be blank!');
@@ -49,7 +49,7 @@ function getUserName() {
 
 getUserName();
 
-//Modal1 for categories
+//Modal for categories
 openModal.addEventListener('click', () => {
     modal.showModal();
 });
@@ -99,8 +99,11 @@ function getCategory() {
     // Save data to sessionStorage
     sessionStorage.setItem('category', category);
    // document.getElementById("resultsCategory").value = "You have chosen:" + category;
-    document.getElementById("resultsCategory").value ='You have chosen:' + `${category}`;   
+    document.getElementById("resultsCategory").value ='You have chosen:' + `${category}`;
+      
 }
+
+getCategory();
 
 const difficultyButton = document.getElementById('difficulty-btn');
 difficultyButton.addEventListener('click', getDifficultyLevel);
@@ -119,14 +122,16 @@ function getDifficultyLevel() {
     // Save data to sessionStorage
     sessionStorage.setItem('difficulty', difficulty);
     //document.getElementById('resultsDifficulty').value = 'You have chosen:' + difficulty;
-    document.getElementById("resultsDifficulty").value ='You have chosen, ' + `${difficulty}`;     
+    document.getElementById("resultsDifficulty").value ='You have chosen, ' + `${difficulty}`;
+        
 }
 
-// Fetch 10 questions from API from general knowledge category
-async function getQuestions() {
+getDifficultyLevel();
 
-    getDifficultyLevel();
-    getCategory();
+// Fetch 10 questions from API from general knowledge category
+async function getQuestions() {       
+    console.log(category);
+    console.log(difficulty);  
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
@@ -207,7 +212,7 @@ function choiceListeners() {
     });
 }
 
-async function init() {
+async function init() {     
     await getQuestions();
     getNextQuestion(0);
     showFinalScore();
