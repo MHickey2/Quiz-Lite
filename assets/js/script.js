@@ -122,21 +122,14 @@ function getDifficultyLevel() {
     // Save data to sessionStorage
     sessionStorage.setItem('difficulty', difficulty);
     //document.getElementById('resultsDifficulty').value = 'You have chosen:' + difficulty;
-    document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
-
+    document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;   
 }
 
-getDifficultyLevel();
+getDifficultyLevel(); 
 
-/*function submitOptions() {
-    const criteriaButton = document.getElementById('submitCriteria');
-    criteriaButton.addEventListener('click', getQuestions);
-}*/
 
 // Fetch 10 questions from API from general knowledge category
 async function getQuestions() {
-    console.log(category);
-    console.log(difficulty);
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
@@ -217,14 +210,14 @@ function choiceListeners() {
     });
 }
 
-async function init() {
-    getCategory();
-    getDifficultyLevel();    
+async function init() {    
     await getQuestions();
-    getNextQuestion(0);
-    showFinalScore();
     startGame();
+    getNextQuestion(0);
     choiceListeners();
+    showFinalScore();
+   
+    
 }
 init();
 checkAnswers();

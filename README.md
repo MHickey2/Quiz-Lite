@@ -142,6 +142,8 @@ There is little in regards to imagery, with only 2 visual elements, one represen
 ### Dark Mode:  
 plane purple background,Dark mode may help to decrease eye strain/dry eyes for some people who spend lots of time looking at screens. There are studies that have concluded dark mode can be more economical and uses less energy at least on mobile screens. Dark mode is good in low light environments, it can also help people with cataracts or other related visual disorders. By adding white borders around certain elements, it helps them to stand out from the darker background. The buttons and headings still have good contrast on either background.
 
+### Colour Combination
+
 <br/>
 <p align="center">
   <img src="" alt="" />
@@ -159,15 +161,21 @@ plane purple background,Dark mode may help to decrease eye strain/dry eyes for s
 
 ## Fonts used on Site  <a name="fonts"></a>
 
-Merriweather was designed to be pleasant for screens.
-Roboto
-font-family: 'Roboto', sans-serif;
-font-weight: Light 400;
-font-weight: Bold 700;
+Merriweather was used for the main heading for the site. It has a strong presence and was available in a bold font. It was a good format to apply some styling to allow it to have a greater impace. Merriweather font was designed to be pleasant for screens and so is ideal for the user.
 
-Used for the majority of the site, both for regular text and headings. Sans serif is the fallback font in case other font is not available. See below for example of font in use.
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+Used for the majority of the site, both for regular text and headings. Sans serif is the fallback font in case other fonts are not available. See below for example of font in use.
+
+Shadows into Light was used to add some personalised touches to the site, used when interacting with the users 
+i.e. The welcoming text and the closing message to the user when the final score is shown.This font is a neat handwriting font which adds a human element to the interface.
+
+In relation to the color, I gave the main font the color #313131(when in light mode), it can aid in preventing eye strain and can be used in a multitude of situations. I wanted to enable good user experience throughout the site where possible.
 
 <br/>
+<p align="center">
+  <img src="" alt="" />
+</p>
+
 <p align="center">
   <img src="" alt="" />
 </p>
@@ -187,7 +195,7 @@ Used for the majority of the site, both for regular text and headings. Sans seri
 
 
 ## Structure <a name="structure"></a>    
-
+The Application has gone through a number of transitions. Originally it was 2 pages, an introduction page and a gaming page, but it was later simplified so that only 1 page is used. The introductory section consists of an intoductory blurb, a welcome message and a start button. When the Start button is pressed the introductory blurb is hidden and the main quiz interface is shown. When the game is complete a closing message screen is shown. This way the whole website is never shown in full to the user. Additional information can be inputted with the use of a prompt screen and a couple of modals.  The site itself grew out of another site, horror-quiz which was my experimental repository, the intention initially was to create a horror quiz using my own question set but I then changed to the Fetch from an API concept. The original Repository can be [found here](https://github.com/MHickey2/Horror-Quiz) 
 
 
 
@@ -225,6 +233,7 @@ Used for the majority of the site, both for regular text and headings. Sans seri
 - Wireframes:  &nbsp;   [Figma](https://www.figma.com/)
   
 - Testing    &nbsp;     [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/)
+             &nbsp;     [Js Hint](https://jshint.com/)
   
 - Social Media Icons:	&nbsp;	  [Font Awesome](https://fontawesome.com/)
   
@@ -310,7 +319,7 @@ This Template has been provided by the Code Institute and includes a number of t
 2. Using the 'add file' dropdown, choose 'Create new File'.
 3. In the presented filed name, type 404.html/404.md. In my case I chose 404.html.
 4. You can then add a meaningful message that describe the changes you made.
-5. You can add the commit to current branch or new branch. I chose to commit to main branch and clicked to propose the new file.    
+5. You can add the commit to current branch or new branch. I chose to commit to main branch and clicked to propose the new file. There were no links on the present application so did not include a 404 page.   
 <br/>  
 
 
@@ -353,7 +362,7 @@ I used the documentation and template provided by the Code Institute to provide 
 ### Media
 
 ### Code
-e.
+
 
 ### Sources
 Sites that I have consulted when there was issues with the site:<br/>
