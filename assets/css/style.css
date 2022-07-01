@@ -1,8 +1,8 @@
 * {
-	margin: 0;
-	padding: 0;
-	border: none;
-	box-sizing: border-box;	
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
 }
 
 /*styling for the body of the app*/
@@ -11,35 +11,26 @@ body {
     box-sizing: border-box;
     color: #313131;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
     scroll-behavior: smooth;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: relative;    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
 }
-
-/* Global */
-/*.container {
-	width: 100%;
-	margin: auto;
-	height: fit-content;
-}*/
-
-/*Header Section */
 
 /*Styling for the welcome message using username*/
 #welcomeText {
     font-size: 1.3rem;
-    font-weight: 800;
-    /*margin-left: 10px;*/
+    font-weight: 400;    
     font-family: 'Shadows Into Light', cursive;
     text-align: center;
     display: block;
     margin-left: auto;
-    margin-right: auto; 
-    padding: 15px;  
+    margin-right: auto;
+    padding: 15px;
 }
 
-/*If dark mode is chosen the colour scheme of the webpage changes*/
+/*If dark mode is chosen the colour scheme of the webpage changes the background 
+colour and the text*/
 .dark-mode {
     background-color: rgb(31, 3, 50);
     color: white;
@@ -49,7 +40,9 @@ body {
 .nightday {
     width: 50px;
     height: 50px;
-    margin-left: 15px;
+    position: absolute;
+    left: 20px;
+    top:20px;
 }
 
 /*Image for the brain at thetop of page*/
@@ -57,25 +50,26 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    padding: 20px;
 }
 
 /*Styling for the main heading on page*/
 .heading {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #e91e63;
-    letter-spacing: 6px;    
+    letter-spacing: 6px;
     font-family: 'Merriweather', serif;
     text-shadow: #fff 2px 2px 3px;
     font-weight: 800;
+    margin-bottom: 15px;
 }
 
 /*styling for quick blurb introducing quiz*/
 .center-message {
     text-align: center;
     width: 60%;
-    font-size: 1.2rem;   
+    font-size: 1.2rem;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(88, 5, 64, 0.4);
@@ -86,8 +80,8 @@ body {
 
 .wrapper {
     text-align: center;
-    display: block;    
-  }
+    display: block;
+}
 
 /*Styling for the start button, that starts the game*/
 .controls {
@@ -138,14 +132,12 @@ body {
     border-radius: 15px;
     font-weight: bold;
     font-size: 1rem;
-    padding: 10px;
-   /* display: flex;*/
-    cursor: pointer;
-    /*vertical-align: middle;*/
-    background-color: rgb(125, 124, 125);   
+    padding: 10px;   
+    cursor: pointer;    
+    background-color: rgb(125, 124, 125);
     margin-bottom: 10px;
     justify-content: space-between;
-    display: block;    
+    display: block;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -204,7 +196,7 @@ button {
 /*Styling for the Question*/
 .question-container {
     text-align: center;
-    width: 50%;
+    width: 70%;
     font-weight: bold;
     font-size: 1.1rem;
     display: block;
@@ -253,50 +245,19 @@ button {
     width: 100px;
 }
 
-/*Styling for the loader*/
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid pink;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 /*Styling for the Modals*/
 .modal,
 .modal2 {
     padding: 1em;
     max-width: 50ch;
     border: 0;
-    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    box-shadow: 0 0 1em rgb(0 0 0 / .4);
     background-color: rgb(230, 91, 230);
     color: black;
     opacity: 0.8;
-    text-align: center;
+    text-align: center;   
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .modal::backdrop {
@@ -332,59 +293,28 @@ label::after {
     font-size: 1rem;
 }
 
-/*Styling for the footer*/
-/*.footer {
-   /* text-align: center;
-    
-    vertical-align: middle;
-    font-size: 2rem;
-    letter-spacing: 10px;
-    padding: 50px;    
-   
-    margin-bottom: 0;
-    background-color: black;
-    height: 100px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
-} */
-
 .button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;        
-  }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
 
-  /*#page-container {
-    position: relative;
-   /* min-height: 220vh;
-    margin: 0 auto;
-    max-width: 1024px;
-  }
-  
-  #content-wrap {
-    padding-bottom: 4rem;    
-  }*/
-  
-  .footer {
+.footer {
     position: absolute;
     left: 0;
-    bottom: 0;   
+    bottom: 0;
     width: 100vw;
     background-color: black;
-    height:10px;
-                
-  }
+    height: 10px;
 
-  /* *******************For small screen sizes 800px and down *************************************************/
+}
+
+/* *******************For small screen sizes 800px and down *************************************************/
 
 @media screen and (max-width: 600px) {
     .choice-container {
         width: 80%;
-        height: 140px;
-        font-size: .9rem;
-}
+        height: 80px;
+        font-size: .75rem;
+    }
 }

@@ -4,43 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">        
-    <link rel="stylesheet" href="assets/css/style.css">    
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-    <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css"> 
-    <script src="sweetalert2/dist/sweetalert2.min.js"></script>-->
-    
-
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>    
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"/>    
     <title>Game - Play</title>
 </head>
 
 <div id="page-container">
     <div id="content-wrap">
         <!--image for toggling between light and dark mode-->
-        <img id="daynight"  class="nightday" height="" width=""
-            src="assets/images/day-and-night.webp" alt="day to night image" aria-label="Dark mode toggle switch"/>
+        <img id="daynight"  class="nightday" 
+            src="assets/images/day-and-night.webp" alt="day to night image Toggle" aria-label="Switch to dark mode/Switch to light mode"/>
         <p>Toggle dark-mode</p>
 
-
         <!--Main image on game page-->
-        <img id="seventyfive" class="brain" src="assets/images/brain.webp" alt="brain and question" />
+        <img id="brainwork" class="brain" src="assets/images/brain.webp" alt="brain and question" />
         <h1 class="heading">Quiz-Lite</h1>
         <!--DivTarget2 which initially shows, but is hidden when user starts the game-->
         <div id="hiddenStart">
-        <p class="center-message">Welcome to the lite-weight Quiz. Test your brainpower in a
-            fun accessible bitesize Quiz, ready for a quick round quizzing sensation? Good Luck!</p>
+        <p class="center-message">Welcome to the Quiz-Lite Application. Test your brainpower in a
+            fun accessible bite-size Quiz, ready for a quick round quizzing sensation? Best of Luck!</p>
 
         <!--Buttons for getting Category and Difficulty for the Game-->       
             <div class="container">
                 <div class="button-wrapper">
-                    <button class="open-button2 w3-button w3-pink" id="choosecategory">Categories</button>
-                    <button class="open-button w3-button w3-pink" id="choosedifficulty">Difficulty</button>
-                   
+                    <h2 class="center">Choose the Following Options:</h2>
+                    <button class="open-button2 pink-buttons" id="choosecategory">Categories</button>
+                    <button class="open-button pink-buttons" id="choosedifficulty">Difficulty</button>                   
                 </div>
             </div>
             
@@ -129,11 +122,12 @@ boxes in each-->
                     <button id="answer3" class="choice-container  option" name="answer"></button>
                     <button id="answer4" class="choice-container  option" name="answer"></button>
                 </div>
-                <section class="verify-answer">
+                <button id="next-btn" class="next-btn" data-type="Next">Next</button>
+                <section id="verify-answer" class="verify-answer">
                     <h1 id="verification" class="center">The correct answer is:</h1>
                     <br\><span id="verify-answer"></span>
                 </section>
-                <button id="next-btn" class="next-btn" data-type="Next">Next</button>
+                
                 <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 
                 <div class="score-area">

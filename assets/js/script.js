@@ -229,12 +229,12 @@ function checkAnswers() {
 
         if (button1.innerHTML === correctAnswer) {
             button1.style.background = 'green';
-            alert('you are correct');
+            //alert('you are correct');
             showCorrectAnswer();
             incrementScore();
         } else {
             button1.style.background = 'red';
-            alert('you are incorrect');
+           // alert('you are incorrect');
             showCorrectAnswer();
             incrementWrongAnswer();
         }
@@ -245,12 +245,12 @@ function checkAnswers() {
 
         if (button2.innerHTML === correctAnswer) {
             button2.style.background = 'green';
-            alert('you are correct');
+            //alert('you are correct');
             showCorrectAnswer();
             incrementScore();
         } else {
             button2.style.background = 'red';
-            alert('you are incorrect');
+            //alert('you are incorrect');
             showCorrectAnswer();
             incrementWrongAnswer();
         }
@@ -261,12 +261,12 @@ function checkAnswers() {
 
         if (button3.innerHTML === correctAnswer) {
             button3.style.background = 'green';
-            alert('you are correct');
+            //alert('you are correct');
             showCorrectAnswer();
             incrementScore();
         } else {
             button3.style.background = 'red';
-            alert('you are incorrect');
+            //alert('you are incorrect');
             showCorrectAnswer();
             incrementWrongAnswer();
         }
@@ -277,12 +277,12 @@ function checkAnswers() {
 
         if (button4.innerHTML === correctAnswer) {
             button4.style.background = 'green';
-            alert('you are correct');
+           // alert('you are correct');
             showCorrectAnswer();
             incrementScore();
         } else {
             button4.style.background = 'red';
-            alert('you are incorrect');
+           // alert('you are incorrect');
             showCorrectAnswer();
             incrementWrongAnswer();
         }
@@ -326,17 +326,19 @@ function incrementWrongAnswer() {
     index++;
 }
 
+
 //hide next button when there are no questions left in the game
 function hideButton() {
-    document.getElementById('nextButton');
+    document.getElementById('nextButton');    
     if (questionNumber >= 10) {
-        nextButton.style.display = 'none';
+        nextButton.style.display = 'none';       
     } else {
-        nextButton.style.display = 'block';
+        nextButton.style.display = 'block';        
     }
 }
 
 const targetDiv3 = document.getElementById('hiddenResults');
+const targetDiv4 = document.getElementById('verify-answer');
 
 
 //When the quiz is over the score is shown to the user  
@@ -344,7 +346,8 @@ const targetDiv3 = document.getElementById('hiddenResults');
 function showFinalScore() {
     if (questionNumber > [questions.results.length]) {
         //final scores to be displayed to user
-        targetDiv3.style.display = 'block';
+        targetDiv3.style.display = 'block';        
+        targetDiv4.style.display = 'none';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
         if (finalScore == 0) {
