@@ -18,7 +18,7 @@
         <!--image for toggling between light and dark mode-->
         <img id="daynight"  class="nightday" 
             src="assets/images/day-and-night.webp" alt="day to night image Toggle" aria-label="Switch to dark mode/Switch to light mode"/>
-        <p>Toggle dark-mode</p>
+        <p class="descriptor">Toggle dark-mode</p>
 
         <!--Main image on game page-->
         <img id="brainwork" class="brain" src="assets/images/brain.webp" alt="brain and question" />
@@ -31,7 +31,7 @@
         <!--Buttons for getting Category and Difficulty for the Game-->       
             <div class="container">
                 <div class="button-wrapper">
-                    <h2 class="center">Choose the Following Options:</h2>
+                    <h2 class="center">Choose the Following Options(Optional):</h2>
                     <button class="open-button2 pink-buttons" id="choosecategory">Categories</button>
                     <button class="open-button pink-buttons" id="choosedifficulty">Difficulty</button>                   
                 </div>
@@ -123,10 +123,11 @@ boxes in each-->
                     <button id="answer4" class="choice-container  option" name="answer"></button>
                 </div>
                 <button id="next-btn" class="next-btn" data-type="Next">Next</button>
-                <section id="verify-answer" class="verify-answer">
+                <section class="verify-answer" id="verify-answer">
                     <h1 id="verification" class="center">The correct answer is:</h1>
-                    <br\><span id="verify-answer"></span>
+                    <br\><span id="verification-answer"></span>
                 </section>
+                
                 
                 <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
 

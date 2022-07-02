@@ -1,4 +1,5 @@
 const img = document.getElementById('daynight');
+const welcomeText = document.getElementById('welcomeText');
 const modal = document.querySelector('#modal');
 const openModal = document.querySelector('.open-button');
 const closeModal = document.querySelector('.close-button');
@@ -7,8 +8,7 @@ const openModal2 = document.querySelector('.open-button2');
 const closeModal2 = document.querySelector('.close-button2');
 const categoryButton = document.getElementById('category-btn');
 const difficultyButton = document.getElementById('difficulty-btn');
-const targetDiv3 = document.getElementById('hiddenResults');
-const targetDiv4 = document.getElementById('verify-answer');
+
 const restartButton = document.getElementById('restart-btn');
 const maxQuestions = 10;
 
@@ -40,10 +40,9 @@ function getUserName() {
         if (alreadyShownPrompt) {
             alert('username can not be blank!');
         }
-        alreadyShownPrompt = true
+        alreadyShownPrompt = true;
     }
-    sessionStorage.setItem('username', username);
-    const welcomeText = document.getElementById('welcomeText');
+    sessionStorage.setItem('username', username);    
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
 }
 
@@ -58,6 +57,25 @@ function changeColourScheme() {
 }
 
 changeColourScheme();
+
+//Modal for categories
+openModal.addEventListener('click', () => {
+    modal.showModal();
+});
+
+closeModal.addEventListener('click', () => {
+    modal.close();
+});
+
+//Modal2 for difficulty
+openModal2.addEventListener('click', () => {
+    modal2.showModal();
+});
+
+closeModal2.addEventListener('click', () => {
+    modal2.close();
+});
+
 
 //function to get category for the fetch API request
 function getCategory() {
@@ -96,6 +114,7 @@ function getDifficultyLevel() {
 }
 
 getDifficultyLevel();
+
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
 //and difficulty levels, catch all (default setting).
 async function getQuestions() {
@@ -110,7 +129,7 @@ function getNextQuestion() {
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener('click', getNextQuestion);
     if (questionNumber > [questions.results.length]) {
-        if (confirm('Game Over!')) {
+        if (confirm('Game Over!')) {           
             showFinalScore();
             hideButton();
         } else {
@@ -162,6 +181,8 @@ function startGame() {
         //hides the final result screen till the game is over
         const targetDiv3 = document.getElementById('hiddenResults');
         targetDiv3.style.display = 'none';
+        const targetDiv4 = document.getElementById('verify-answer');
+        targetDiv4.style.display = 'block';
     });
 }
 
@@ -250,7 +271,7 @@ function checkAnswers() {
 
 //The answer choices and correct answer are removed in order to display new choices
 function reset() {
-    document.getElementById('verify-answer').innerHTML = '';
+    document.getElementById('verification-answer').innerHTML = '';
     var elements = document.getElementsByClassName('option'); // get all elements
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = 'grey';
@@ -259,7 +280,7 @@ function reset() {
 
 //show the correct answer to the user, before moving to next question
 function showCorrectAnswer() {
-    document.getElementById('verify-answer').innerHTML = correctAnswer;
+    document.getElementById('verification-answer').innerHTML = correctAnswer;
 }
 
 //The user can click on next to see the next question       
@@ -288,23 +309,27 @@ function incrementWrongAnswer() {
 //hides next button when there are no questions left in the game
 function hideButton() {
     document.getElementById('nextButton');
+    
     if (questionNumber >= 10) {
         nextButton.style.display = 'none';
     } else {
         nextButton.style.display = 'block';
     }
 }
+const targetDiv3 = document.getElementById('hiddenResults');
+const targetDiv4 = document.getElementById('verify-answer');
+
 
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
     if (questionNumber > [questions.results.length]) {
-        //final scores to be displayed to user
+        //final scores to be displayed to user                  
         targetDiv3.style.display = 'block';
-        targetDiv4.style.display = 'none';
+        targetDiv4.style.display = 'none';             
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
-        if (finalScore == 0) {
+        if (finalScore < 1) {
             closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
         } else if (finalScore < 3) {
             closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
@@ -326,27 +351,9 @@ showFinalScore();
 
 //Reloads the page, so the game can start again
 function replay() {
-    location.reload();
-    console.log("Reload called")
+    location.reload();    
 }
 
-//Modal for categories
-openModal.addEventListener('click', () => {
-    modal.showModal();
-});
-
-closeModal.addEventListener('click', () => {
-    modal.close();
-});
-
-//Modal2 for difficulty
-openModal2.addEventListener('click', () => {
-    modal2.showModal();
-});
-
-closeModal2.addEventListener('click', () => {
-    modal2.close();
-});
 
 /*function getUserName() {
     let username = prompt("Enter a username");
