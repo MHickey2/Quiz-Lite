@@ -20,8 +20,8 @@ let questionNumber = 1;
 let finalScore;
 let timer;
 let timeLeft = 60;
-let category;
-let difficulty;
+var category;
+var difficulty;
 
 img.addEventListener('click', changeColourScheme);
 categoryButton.addEventListener('click', getCategory);
@@ -33,17 +33,11 @@ function getUserName() {
     let username = '';
     //let alreadyShownPrompt = false;
     if (!username) {
-        username = prompt('Enter your username:').trim().toLowerCase();
-        if (username == "null" || username == null || username == ""); {
-            alert('username can not be blank!');
-            username = prompt('Please, need a name to start the Game').trim().toLowerCase();
-        }
+        username = prompt('Enter your username:').trim().toLowerCase();        
     }
     sessionStorage.setItem('username', username);
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
 }
-
-
 
 getUserName();
 
@@ -114,7 +108,7 @@ getDifficultyLevel();
 
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
 //and difficulty levels, catch all (default setting).
-async function getQuestions() {
+async function getQuestions() {   
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
@@ -188,7 +182,9 @@ function choiceListeners() {
     });
 }
 
-async function init() {
+async function init() {  
+    //getCategory();
+    //getDifficultyLevel();  
     await getQuestions();
     startGame();
     getNextQuestion(0);

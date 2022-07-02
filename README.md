@@ -184,7 +184,7 @@ In relation to the color, I gave the main font the color #313131(when in light m
 
 ## Icons used on site <a name="icons"></a>
 
- 
+I used an Icon as the brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons in the footer element. 
 
 <br/>
 <p align="center">
@@ -207,7 +207,12 @@ The Application has gone through a number of transitions. Originally it was 2 pa
  #### [Return to Table of Contents](#toc)
 ----
  
+## Features
 
+### Index Page
+
+
+<br/>
 #### User Experience related to common elements on each page
 
 
