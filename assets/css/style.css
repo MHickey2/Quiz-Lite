@@ -20,7 +20,7 @@ body {
 /*Styling for the welcome message using username*/
 #welcomeText {
     font-size: 1.3rem;
-    font-weight: 400;    
+    font-weight: 400;
     font-family: 'Shadows Into Light', cursive;
     text-align: center;
     display: block;
@@ -37,17 +37,16 @@ colour and the text*/
 }
 
 /*Styling for the light/dark mode image*/
-.nightday {    
+.nightday {
     position: absolute;
     left: 23px;
-    top:25px;
+    top: 25px;
 }
 
 .descriptor {
     position: absolute;
     left: 12px;
-    top:5px;
-
+    top: 5px;
 }
 
 /*Image for the brain at thetop of page*/
@@ -123,7 +122,7 @@ colour and the text*/
 .center {
     text-align: center;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -137,8 +136,8 @@ colour and the text*/
     border-radius: 15px;
     font-weight: bold;
     font-size: 1rem;
-    padding: 10px;   
-    cursor: pointer;    
+    padding: 10px;
+    cursor: pointer;
     background-color: rgb(125, 124, 125);
     margin-bottom: 10px;
     justify-content: space-between;
@@ -166,7 +165,6 @@ button {
 /*Used to hide the gaming area before the user presses the start button*/
 #hidden {
     display: none;
-    
 }
 
 /*styling for the information panel relating to the category and difficulty level to the game*/
@@ -182,7 +180,8 @@ button {
     margin-right: auto;
     padding: 10px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1;
+    margin-top: 15px;
 }
 
 /*Styling for Text for Category and Difficulty in information for questions*/
@@ -201,16 +200,16 @@ button {
 /*Styling for the Question*/
 .question-container {
     text-align: center;
-    width: 70%;
+    width: 65%;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 /*Styling for showing the Correct Answer to the User*/
-#verify-answer {   
+#verify-answer {
     background-color: white;
     border-radius: 15px;
     display: block;
@@ -220,7 +219,6 @@ button {
     width: 350px;
     height: 80px;
     position: relative;
-          
 }
 
 #verification-answer {
@@ -231,10 +229,10 @@ button {
     font-weight: Bold;
     font-size: 1rem;
     text-transform: uppercase;
-    text-align: center;  
+    text-align: center;
     position: absolute;
     top: 20px;
-    left: 70px;      
+    left: 70px;
 }
 
 /*Styling for the Scoring section*/
@@ -247,7 +245,6 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 /*Styling for Modal Buttons*/
@@ -274,7 +271,7 @@ button {
     background-color: rgb(230, 91, 230);
     color: black;
     opacity: 0.8;
-    text-align: center;   
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
@@ -315,18 +312,39 @@ label::after {
 .button-wrapper {
     display: block;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
 }
 
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    background-color: black;
-    height: 10px;
-
+footer {
+    height: 140px;
+    background-color: #927397;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
 }
+
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 130%;
+    padding: 5px;
+}
+
+.social-networks {
+    text-align: center;
+}
+
+.social-networks>li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 140%;
+    margin: 2%;
+    color: #fff;
+}
+
 
 /* *******************For small screen sizes 800px and down *************************************************/
 
@@ -335,5 +353,5 @@ label::after {
         width: 80%;
         height: 80px;
         font-size: .75rem;
-    }    
+    }
 }

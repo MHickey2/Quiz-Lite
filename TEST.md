@@ -22,7 +22,7 @@
   The site was tested on a Lenovo Laptop, an Acer Aspire Netbook and older iphone5(limited functionality).  
 
   Appearance and Functionality appeared consistent in all browsers on the Desktop, but on the older iPhone5
-  the WebP images could not be seen, on this older model, Safari does not support these images but in September 2020 onward, WebP support was added in Safari version 14.  
+  the WebP images could not be seen, on this older model, Safari does not support these images but in September 2020 onward, WebP support was added in Safari version 14. I have been testing on simulated versions online, but it hard to gauge on an actual working model. 
 <br/>
 
 #### [Return to Table of Contents](#toc)
@@ -30,7 +30,7 @@
 ----
 ## Responsive Testing<a name="responsivetesting"></a>
 
-   I regularly tested the responsiveness of the site using Google Chrome Developer tools, information on this can be found [here](https://developer.chrome.com/docs/devtools/). I also used Window Resizer and a Responsive Design Tester Application available in the Google Chrome Store. The devices I tested for are in the image below.  
+   I regularly tested the responsiveness of the site using Google Chrome Developer tools, information on this can be found [here](https://developer.chrome.com/docs/devtools/). I also used Window Resizer and a Responsive Design Tester Application available in the Google Chrome Store. The devices I tested for are in the image below. As I was focusing on grasping the javascript I kept the elements fairly centred on the page and that could be easily adapted for all screens. So used minimal media queries and used rem for fonts and did not use many images, so as to keep the interface as simple as possible. The main work was on adapting the size of elements for the smaller screens. 
 
    <br/>
    <p align ="center">      
@@ -60,7 +60,7 @@
 
 - W3C Validator <a name="w3c"></a>
 
-Using [https://validator.w3.org/](https://validator.w3.org/)  Ther are more issues in the Bug section in the [README.md](README.md). The results of the HTML validation can be seen below:
+Using [https://validator.w3.org/](https://validator.w3.org/)  The main issues that came up were in relations to using various headings to display information from the API. I changed these elements to <p></p> and it worked out the issues. There were also some empty headings, were content alone was being displayed, and these were changed to spans. There are more issues in the Bug section in the [README.md](README.md). The results of the HTML validation can be seen below:
 
 
 <br/>
@@ -82,7 +82,7 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 - Lighthouse  <a name="lighthouse"></a>
 
-Used the Lighthouse Testing in Google Developer Tools and the plan was to share screenshots, but have been having issues getting accurate scores from the site, 
+Used the Lighthouse Testing in Google Developer Tools and the plan was to share screenshots, but have been having issues getting accurate scores from the site. The lighthouse is also picking up issues from the console log, which is affecting the overall score. 
 
 See image below for Lighthouse scores for all pages in Desktop and Mobile.  
 

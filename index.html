@@ -8,11 +8,19 @@
     <meta name="description" content="Quiz-Lite, a light weight quiz to test your knowledge"/>
     <meta name="keywords" content="Quiz, Questions, API, Brainpower, Challenge, Fun"/>
     <meta name="author" content="Quiz-Lite" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css"/> 
+    <!-- Google Fonts --> 
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>    
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"/>    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>       
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"/> 
+    <!--Font Awesome-->
+    <!--font awesome script-->    
+    <link rel="dns-prefetch" href="https://use.fontawesome.com">
+    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+      
     <title>Game - Play</title>
 </head>
 
@@ -97,22 +105,18 @@
         <!--The game elements will not be visible to the user until they press the start button-->
         <div id="hidden">
 
-            <!--This is the basic timer element, for when the user starts to play the game, the timer will be set-->
-                <h3 class="center">You have: <span id="time-keeper"></span> seconds remaining!</h3>
-
                 <!--This section will describe the category and the difficulty for each question set in the quiz-->
                 <div class="informationForQuestion">
                     <p id="category" class="center"></p>
                     <p id="difficulty" class="center"></p>
                 </div>
-                <br />
+                <br/>
                 <p class="center"><span class="center" id="progress"></span>
                 <!--This is where each question will be displayed-->
-                <div class="question-container">
-                   <!-- <p class="question"><span id="progress"></span></p>-->
+                <div class="question-container">                  
                     <p id="question"></p>
                 </div>
-                <br />
+                <br/>
                 <!--These are the different options for the quiz(4)-->
                 <div class="flex-container">
                     <button id="answer1" class="choice-container  option" name="answer"></button>
@@ -148,9 +152,34 @@
     <audio id="music2" src="audio/wrong.mp3" preload="auto"></audio>-->
 
     <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/19b8bbb0d6.js" crossorigin="anonymous"></script> 
     
 </div>
-<footer class="footer"></footer>
+<footer class="footer">
+    <ul class="social-networks">
+        <li>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit us at our facebook page (opens in a new tab)">
+            <i class="fa-brands fa-facebook-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit us at our twitter page (opens in a new tab)">
+            <i class="fa-brands fa-twitter-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
+            <i class="fa-brands fa-youtube-square"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
+            <i class="fa-brands fa-instagram-square"></i>
+          </a>
+        </li>
+      </ul>
+      <p>Quiz-Lite, Copyright &copy; 2022</p>
+</footer>
 
 </body>
 </html>

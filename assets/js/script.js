@@ -17,8 +17,6 @@ let index = 0;
 let correctAnswer;
 let currentQuestion;
 let questionNumber = 1;
-//let soundcorrect = new Audio('/audio/correct.mp3');
-//let soundwrong = new Audio('/audio/wrong.mp3');
 let finalScore;
 let timer;
 let timeLeft = 60;
@@ -33,17 +31,19 @@ restartButton.addEventListener('click', replay);
 //Function to get user name and welcome them personally to the game
 function getUserName() {
     let username = '';
-    let alreadyShownPrompt = false;
-    while (!username) {
+    //let alreadyShownPrompt = false;
+    if (!username) {
         username = prompt('Enter your username:').trim().toLowerCase();
-        if (alreadyShownPrompt) {
+        if (username == "null" || username == null || username == ""); {
             alert('username can not be blank!');
+            username = prompt('Please, need a name to start the Game').trim().toLowerCase();
         }
-        alreadyShownPrompt = true;
     }
-    sessionStorage.setItem('username', username);    
+    sessionStorage.setItem('username', username);
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
 }
+
+
 
 getUserName();
 
@@ -52,7 +52,7 @@ function changeColourScheme() {
     var element = document.body;
     element.classList.toggle('dark-mode');
     // Save data to sessionStorage
-    localStorage.setItem('element', 'dark-mode');    
+    localStorage.setItem('element', 'dark-mode');
 }
 
 changeColourScheme();
@@ -88,7 +88,7 @@ function getCategory() {
         }
     }
     // Save data to sessionStorage
-    sessionStorage.setItem('category', category);    
+    sessionStorage.setItem('category', category);
     document.getElementById("resultsCategory").value = 'You have chosen:' + `${category}`;
 }
 
@@ -106,7 +106,7 @@ function getDifficultyLevel() {
         }
     }
     // Save data to sessionStorage
-    sessionStorage.setItem('difficulty', difficulty);   
+    sessionStorage.setItem('difficulty', difficulty);
     document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
 }
 
@@ -126,7 +126,7 @@ function getNextQuestion() {
     const nextButton = document.getElementById('next-btn');
     nextButton.addEventListener('click', getNextQuestion);
     if (questionNumber > [questions.results.length]) {
-        if (confirm('Game Over!')) {           
+        if (confirm('Game Over!')) {
             showFinalScore();
             hideButton();
         } else {
@@ -150,16 +150,6 @@ function getNextQuestion() {
     document.getElementById('answer2').innerHTML = choices[1];
     document.getElementById('answer3').innerHTML = choices[2];
     document.getElementById('answer4').innerHTML = choices[3];
-
-    //Functions dealing with the timer for the Quiz    
-    timer = setInterval(updateTimer, 1000);
-    updateTimer();
-
-    function updateTimer() {
-        timeLeft = timeLeft - 1;
-        if (timeLeft >= 0)
-            document.getElementById('time-keeper').innerHTML = timeLeft;
-    }
 }
 
 //function to show the full game interface and hides the previous options and introductory text
@@ -169,7 +159,7 @@ function startGame() {
     startButton.classList.add('hide');
     document.getElementById('scoreText').innerText = '';
     startButton.addEventListener('click', startGame => {
-       //shows the game itself
+        //shows the game itself
         const targetDiv = document.getElementById('hidden');
         targetDiv.style.display = 'block';
         //hides earlier section but keeps the welcome text
@@ -180,6 +170,7 @@ function startGame() {
         targetDiv3.style.display = 'none';
         const targetDiv4 = document.getElementById('verify-answer');
         targetDiv4.style.display = 'block';
+        startButton.style.display = 'none';
     });
 }
 
@@ -306,7 +297,7 @@ function incrementWrongAnswer() {
 //hides next button when there are no questions left in the game
 function hideButton() {
     document.getElementById('nextButton');
-    
+
     if (questionNumber >= 10) {
         nextButton.style.display = 'none';
     } else {
@@ -323,7 +314,7 @@ function showFinalScore() {
     if (questionNumber > [questions.results.length]) {
         //final scores to be displayed to user                  
         targetDiv3.style.display = 'block';
-        targetDiv4.style.display = 'none';             
+        targetDiv4.style.display = 'none';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
         if (finalScore < 1) {
@@ -348,8 +339,7 @@ showFinalScore();
 
 //Reloads the page, so the game can start again
 function replay() {
-    location.reload();    
+    location.reload();
 }
 
 replay();
-
