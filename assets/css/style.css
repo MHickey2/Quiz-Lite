@@ -55,7 +55,7 @@ colour and the text*/
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
+    padding: 15px;
 }
 
 /*Styling for the main heading on page*/
@@ -166,7 +166,7 @@ button {
 /*Used to hide the gaming area before the user presses the start button*/
 #hidden {
     display: none;
-    visibility: none;
+    
 }
 
 /*styling for the information panel relating to the category and difficulty level to the game*/
@@ -241,11 +241,13 @@ button {
 .score-area {
     text-align: center;
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 /*Styling for Modal Buttons*/
@@ -254,10 +256,12 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #e91e63;
+    background-color: #f50958;
     color: white;
+    font-size: 1rem;
     height: 40px;
-    width: 100px;
+    width: 110px;
+    text-transform: uppercase;
 }
 
 /*Styling for the Modals*/
@@ -331,5 +335,5 @@ label::after {
         width: 80%;
         height: 80px;
         font-size: .75rem;
-    }
+    }    
 }

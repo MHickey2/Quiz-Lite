@@ -8,7 +8,6 @@ const openModal2 = document.querySelector('.open-button2');
 const closeModal2 = document.querySelector('.close-button2');
 const categoryButton = document.getElementById('category-btn');
 const difficultyButton = document.getElementById('difficulty-btn');
-
 const restartButton = document.getElementById('restart-btn');
 const maxQuestions = 10;
 
@@ -18,13 +17,13 @@ let index = 0;
 let correctAnswer;
 let currentQuestion;
 let questionNumber = 1;
-//let soundcorrect = new Audio("/audio/correct.mp3");
-//let soundwrong = new Audio("/audio/wrong.mp3");
+//let soundcorrect = new Audio('/audio/correct.mp3');
+//let soundwrong = new Audio('/audio/wrong.mp3');
 let finalScore;
 let timer;
 let timeLeft = 60;
-var category;
-var difficulty;
+let category;
+let difficulty;
 
 img.addEventListener('click', changeColourScheme);
 categoryButton.addEventListener('click', getCategory);
@@ -43,7 +42,7 @@ function getUserName() {
         alreadyShownPrompt = true;
     }
     sessionStorage.setItem('username', username);    
-    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
+    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
 }
 
 getUserName();
@@ -89,8 +88,7 @@ function getCategory() {
         }
     }
     // Save data to sessionStorage
-    sessionStorage.setItem('category', category);
-    // document.getElementById("resultsCategory").value = "You have chosen:" + category;
+    sessionStorage.setItem('category', category);    
     document.getElementById("resultsCategory").value = 'You have chosen:' + `${category}`;
 }
 
@@ -108,8 +106,7 @@ function getDifficultyLevel() {
         }
     }
     // Save data to sessionStorage
-    sessionStorage.setItem('difficulty', difficulty);
-    //document.getElementById('resultsDifficulty').value = 'You have chosen:' + difficulty;
+    sessionStorage.setItem('difficulty', difficulty);   
     document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
 }
 
@@ -330,15 +327,15 @@ function showFinalScore() {
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
         if (finalScore < 1) {
-            closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku";
+            closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku?";
         } else if (finalScore < 3) {
-            closingMessage.innerHTML = "ahem....well, a little practise and you'll soon get there";
+            closingMessage.innerHTML = "ahem...well, just a little practise needed.";
         } else if (finalScore < 6) {
-            closingMessage.innerHTML = "Better luck next time, I'm rooting for you";
+            closingMessage.innerHTML = "Better luck next time, I'm rooting for you!";
         } else if (finalScore < 9) {
-            closingMessage.innerHTML = 'So close, but no cigar, next time you will be the winner';
+            closingMessage.innerHTML = 'So close, but no cigar, you will be a winner!';
         } else if (finalScore == 10) {
-            closingMessage.innerHTML = 'You have achieved greatness, well done';
+            closingMessage.innerHTML = 'You have achieved greatness, well done!';
         }
     }
 }
@@ -354,14 +351,5 @@ function replay() {
     location.reload();    
 }
 
+replay();
 
-/*function getUserName() {
-    let username = prompt("Enter a username");
-    if (username != '') {
-        // Save data to sessionStorage
-        sessionStorage.setItem('username', username);
-        document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite';
-    } else {
-        alert('Username cannot be blank!');
-    }
-}*/
