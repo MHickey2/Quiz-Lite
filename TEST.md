@@ -82,13 +82,13 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 - Lighthouse  <a name="lighthouse"></a>
 
-Used the Lighthouse Testing in Google Developer Tools and the plan was to share screenshots, but have been having issues getting accurate scores from the site. The lighthouse is also picking up issues from the console log, which is affecting the overall score. 
+Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. 
 
 See image below for Lighthouse scores for all pages in Desktop and Mobile.  
 
 <br/>
 <p align ="center">      
-     <img src="assets/images/readme/lighthouse.png"  alt="lighthouse results" />   
+     <img src="assets/images/readme/lighthousedesktop.jpg"  alt="lighthouse results desktop" />   
 </p>
 
 
@@ -129,16 +129,9 @@ The Following table, shows the manual tests that were done within the site and r
 </p>
 <br/>
 
-    
-      
-<br/>
-
 
 <br/>
-<p align ="center">      
-     <img src="assets/images/readme/testbuttons.png"  alt="test buttons"/>
-</p>
-<br/>
+
 
 #### [Return to Table of Contents](#toc)
 
@@ -151,30 +144,71 @@ The Following table, shows the manual tests that were done within the site and r
 ## As a first time user to the site
 
 - Understand what the website is offering.
+
+The application has an intro blurb, which explains what the quiz is and invites the player to try it.
+
 - Enter a username and be welcomed to the site.
+
+The user is requested to enter a username, and this is used to welcome them to the site. Even if they do not enter a username they can play the game as an anonymous player, they will still be welcomed to the game.
+
 - Play the Quiz.
+
+The user can play the game, if they cancel out of the prompt, they will be unable to play, but a quick refresh and they can try again.
+
 - See the number of questions to be answered.
+
+When they play start in the game, they will see they are viewing the 1st question of a maximum of 10 questions.
+
 - See the topic of the question to be asked.
 - Know the difficulty level of each question.
+
+There is a category and difficulty information panel which has information on difficulty on category for each individual question.
+
 - Know whether I get the right answer to each question.
+
+When the user choses an option, the button will turn green if correct and red if wrong. 
+
 - Find out what is the correct answer if i guessed it wrong.
+
+There is a verification Panel below the answers and this will supply the user with the correct answer everytime. this also helps people who have problems with colour vision to see the wording of the correct answer.
+
 - See a running total of my correct answers.
-- At the end of the Quiz I would like some eedback and know what my overall score is.
+
+There is a Tally under the answers, keeping check on right and wrong answer count.
+
+- At the end of the Quiz I would like some feedback and know what my overall score is.
+
+When the game is over, an alert is shown telling the user, the game is over and there will be a closing message under the game, with their final score and an accompanying message.
+
 - If I want to restart a Game, I want to be able to do this easily.
+
+The Restart button is shown below the closing message, and the user will be able to repeat the game.
 
 ## As a regular user of the site
 
-- I want to improve my scores.  
+- I want to improve my scores. 
 - I want to try different categories.  
 - I want to try different levels of difficulty. 
-- I want to have an opportunity to answer a larger number of questions in the quiz. 
+- I want to have an opportunity to answer a larger number of questions in the quiz.
+
+With modifications in future iterations, there will be opportunities to expand the capacity of the application to build complexity in the game and provide a range of difficulty and category levels. The game can also provide a bigger pool of quiz questions.
+
 
 ## As the site owner
 
 - Add more features to the site to enhance the experience of the users.
 - Provide the user with ways that they can personalize their own quizzing experience.
+
+With modifications in future iterations, there will be opportunities to expand the capacity of the application to build complexity in the game and provide a range of difficulty and category levels. 
+
+
 - Improve the social aspect, by allowing users to compare their scores with other users.
+
+There are hopes to introduce a social element to the game with the use of social media and possibly the addition of a social platform within the site itself.
+
 - Recognise the achievement of users by providing incentives for top scores.
+
+There may opportunities for users to create their own avator to personalise their gaming experience further. With the inclusion of names and stored scores, a leaderboard could be created to keep track of high scorers.
 
  
 

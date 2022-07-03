@@ -18,10 +18,8 @@ let correctAnswer;
 let currentQuestion;
 let questionNumber = 1;
 let finalScore;
-let timer;
-let timeLeft = 60;
-var category;
-var difficulty;
+let category;
+let difficulty;
 
 img.addEventListener('click', changeColourScheme);
 categoryButton.addEventListener('click', getCategory);
@@ -108,7 +106,9 @@ getDifficultyLevel();
 
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
 //and difficulty levels, catch all (default setting).
-async function getQuestions() {   
+async function getQuestions() { 
+    //getCategory();
+    //getDifficultyLevel();  
 
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
@@ -183,8 +183,8 @@ function choiceListeners() {
 }
 
 async function init() {  
-    //getCategory();
-    //getDifficultyLevel();  
+    getCategory();
+    getDifficultyLevel();  
     await getQuestions();
     startGame();
     getNextQuestion(0);
