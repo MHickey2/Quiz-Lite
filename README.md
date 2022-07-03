@@ -12,10 +12,10 @@
 Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set questions within the general category, which encompasses all categories. The difficulty level includes all levels of difficulty. The website application is fully responsive for Desktop and mobile screens.
 <br/>
 
-[Visit the Quiz-Lite Website]()  
+[Visit the Quiz-Lite Website](https://mhickey2-quizlite-nbv0bohfrie.ws-eu47.gitpod.io/)  
 <br/>    
 
-[Visit the Quiz-Lite Repository]()  
+[Visit the Quiz-Lite Repository](https://github.com/MHickey2/Quiz-Lite)  
 <br/>    
 
 # Table of Contents <a name="toc"></a>
@@ -35,7 +35,7 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
     5. [Structure](#structure)
     6. [Final Webpages](#webpages)
 4.  [Features](#features)
-    1. [Index Page](#gamepage)    
+    1. [Index Page](#indexpage)    
 5.  [Future](#future)
 6.  [Tools and Technology](#Technology)
 7.  [Testing Information](TEST.md)
@@ -231,24 +231,31 @@ Although not strictly on the page, the prompt is the first interactive element o
 
 #### Intro Section:    
 
-The Intro Section consists of the Logo, which is a brainpower Icon and a main heading and there is also an intro to the game panel. Content is simple and to the point, it is just a quick quiz, so felt the opening should be brief.  
+The Intro Section consists of the Logo, which is a brainpower Icon and a main heading and there is also an intro to the game panel. Content is simple and to the point, it is just a quick quiz, so felt the opening should be brief.     
+
+
+
 
 <p align="center">
-  <img src="assets/images/readme/IntroSection.jpg" alt="introSection" />
+  <img src="assets/images/readme/IntroSection.jpg" alt="introSection" />  
 </p>
 
 #### Light/Dark Toggle:
 
-The original concept was that the website would be a dark colour and all elements would be conducive with this colour scheme, but as the site progressed, I wanted to strip the colour back and try a lighter theme, on further research I managed to do both. Initially there were some issues, in that I had font colours within many of the body elements, so the toggle was not as affective, but when I stripped out the colours and left the body take over that responsibility, the light and dark mode was effectively accomplished. There are still some alternative font colours but that is where I wanted these fonts to be distinguisable and they had to work with both the dark and light mode.  
+The original concept was that the website would be a dark colour and all elements would be conducive with this colour scheme, but as the site progressed, I wanted to strip the colour back and try a lighter theme, on further research I managed to do both. Initially there were some issues, in that I had font colours within many of the body elements, so the toggle was not as affective, but when I stripped out the colours and left the body take over that responsibility, the light and dark mode was effectively accomplished. There are still some alternative font colours but that is where I wanted these fonts to be distinguisable and they had to work with both the dark and light mode.     
+
+
 
 <p align="center">
   <img src="assets/images/readme/toggledark.jpg" alt="ToggleDarkMode" />  
-  <img src="assets/images/readme/togglelight.jpg" alt="ToggleLightMode" />
+  <img src="assets/images/readme/togglelight.jpg" alt="ToggleLightMode" />  
 </p>
 
 #### Category and Difficulty Section:
 
-When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved (See bugs). Images below.
+When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved (See bugs). Images below.  
+
+
 
 <p align="center">
   <img src="assets/images/readme/catDifSection.jpg" alt="CategoryAndDifficultySection" />
@@ -256,42 +263,58 @@ When using the API, I wanted to introduce more interactivity and allow the user 
 
 <p align="center">
   <img src="assets/images/readme/modal1.jpg" alt="CategoryModal" />  
-  <img src="assets/images/readme/modal2.jpg" alt="DifficultyModal" />
+  <img src="assets/images/readme/modal2.jpg" alt="DifficultyModal" />  
 </p>
 
 #### Start Button:
 
+The Start Button is the last element on the initial screen view (besides the footer, which will relocate when button is pressed) and it will when pressed show the full game interface, and it will also remove any unnecessary elements. The Introductory section and option buttons will be removed, but the welcome text will remain. 
+
+
 
 <p align="center">
-  <img src="assets/images/readme/startbtn.jpg" alt="StartButton" />
+  <img src="assets/images/readme/startbtn.jpg" alt="StartButton" />  
 </p>
 
-<p align="center">
-  <img src="assets/images/readme/gameInterface.jpg" alt="gameInterface" />
-</p>
+### The Game Interface:
+
+This will consist of a panel with the difficulty and category panel with information on each question asked and a question number which will help the user understand their progress level in the game and the required number of questions to be asked.  
+
+
 
 <p align="center">
-  <img src="assets/images/readme/answersAndNext.jpg" alt="answersAndNextButtons" />
+  <img src="assets/images/readme/gameInterface.jpg" alt="gameInterface" />  
 </p>
 
-<p align="center">
-  <img src="assets/images/readme/endsection.jpg" alt="endSection" />
-</p>
+### Answer Section and Next Button:
+
+The answers will be displayed in a series of buttons. When the right button is selected, it will turn green and if the selection is incorrect it will turn red. The next Button allows the user to chose the next question. Initially there was going to be a timer for the quiz, but this has since been removed, so there presently is no constraint on the time taken in the quiz. The next button allows the user time to ponder each question.  
+
+
 
 <p align="center">
-  <img src="assets/images/readme/gameover.jpg" alt="gameover" />
+  <img src="assets/images/readme/answersAndNext.jpg" alt="answersAndNextButtons" />  
 </p>
+
+### End Section:
+
+There is a verification answer panel, which shows the user the correct answer for each question. There is also a running total of correct and incorrect scores. When the game has completed its cycle, an alert button is displayed to the user.  
+
+
+
+<p align="center">
+  <img src="assets/images/readme/gameover.jpg" alt="gameover" />  
+</p>
+
+### Closing Message and Restart Button
+
+When the game is over, the verification answer panel will be hidden and a closing message panel will be shown. This will show the final Score to the user, and a parting comment on how well they did on the Quiz. If the user wants to repeat the game, they can do this by pressing the Restart Button, which will refresh the game and they will be presented with the opening page again, where they have option to repeat the opening process.  
+
+
 
 <p align="center">
   <img src="assets/images/readme/endmessage.jpg" alt="endMessage" />
 </p>
-
-
-
-
-
-
-
 
 <br/>
 
@@ -304,7 +327,14 @@ When using the API, I wanted to introduce more interactivity and allow the user 
 
 ## Future <a name="future"></a>  
 
+There were a number of features that were trialed within this application and they would be included in future iterations including:
 
+- A more rebust functionality for requesting usernames that will ensure a username would need to be supplied by the user, this would be important when user scores could be saved at the end of the game and could be a good way to introduce a level of competition with other quiz players on the site.
+- An extra level of complexity, would be to add a timer element, where the game would end after a certain level of time has been surpassed.
+- I had intended to introduce sound, when there was a correct and incorrect answer, but I didn't in the end, but may add a celebratory tone, when a high score is achieved at the end of a game.
+- I would probably allow users to choose the number of questions they want to answer, and this would involve changing the final messages to accomodate different the starting question sets. Maybe introduce a percentile instead of a number count, as this could be utilised according to the different question load.
+- At the moment session storage is being used, but with introducing scores, it would open up needs for long term storage. Competitors could test their scores, against existing high scorers, and different challenges could encourage more complexity.
+- In relation to interactivity, there could be an element of social interactivity. Present social media sites could be used to encourage fellow competitors to communicate within these channels, or a dedicated forum on the site itself could be a great platform.
 
 #### [Return to Table of Contents](#toc)
 ----
@@ -435,6 +465,8 @@ More information is available at [https://docs.github.com/en](https://docs.githu
 
 ### Unresolved Issues  <a name="unresolved"></a>
 
+The username prompt is a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with this [site](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects.
+
 <br/>
 
 
@@ -448,6 +480,13 @@ More information is available at [https://docs.github.com/en](https://docs.githu
 I used the documentation and template provided by the Code Institute to provide the structure of the README file and referred to the GitHub documention as the basis of my Deployment section.
 
 ### Media
+
+- [Trivia API](https://www.youtube.com/watch?v=SgJ_femmsfg)
+- [Build a Quix App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k)
+- [How to make a Quiz App](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=3120s)
+- [Build a Quiz App](https://www.youtube.com/watch?v=rFWbAj40JrQ&t=6s)
+- [Create a Multiple Choice Quiz](https://www.youtube.com/watch?v=49pYIMygIcU&t=2137s)
+- [Building a Multiple Choice Quiz](https://www.youtube.com/watch?v=LQGTb112N_c&t=320s)
 
 ### Code
 
