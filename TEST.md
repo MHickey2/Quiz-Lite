@@ -94,11 +94,11 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
 
   - Contrast Checker  <a name="contrastchecker"></a>
   
-  Using [https://color.a11y.com/](https://color.a11y.com/)  See images Below.
+  Using [https://color.a11y.com/](https://color.a11y.com/)  There was a couple of issues initially, with colour and font on buttons, but tested other colours and changed font size and it passed contrast checks. See images Below.
 
 <br/>
   <p align ="center">      
-     <img src="assets/images/readme/contrastindex.png" height="146" width="889" alt="contrast index result"/>   
+     <img src="assets/images/readme/contrast.jpg" height="" width="" alt="contrast index result"/>   
   </p>
   
   
