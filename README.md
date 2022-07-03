@@ -35,7 +35,7 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
     5. [Structure](#structure)
     6. [Final Webpages](#webpages)
 4.  [Features](#features)
-    1. [Home Page](#homepage)    
+    1. [Index Page](#gamepage)    
 5.  [Future](#future)
 6.  [Tools and Technology](#Technology)
 7.  [Testing Information](TEST.md)
@@ -182,13 +182,15 @@ In relation to the color, I gave the main font the color #313131(when in light m
 
 <br/>
 
-## Icons used on site <a name="icons"></a>
+## Icons and Favicon used on site <a name="icons"></a>
 
 I used an Icon as the brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons in the footer element. 
 
 <br/>
-<p align="center">
-  <img src="" alt="" />
+<p float="center">
+  <img src="assets/images/brain.webp"   alt="Icon used in cojunction with heading for site" />  
+  <img src="assets/images/day-and-night.webp" alt="Day and Night Toggle Switch Image" />
+  <img src="assets/images/favicon.png"   alt="Favicon image for site" /> 
 </p>
        
 <br/>
@@ -207,19 +209,100 @@ The Application has gone through a number of transitions. Originally it was 2 pa
  #### [Return to Table of Contents](#toc)
 ----
  
-## Features
+## Features  <a name="features"></a>
 
-### Index Page
+### Index Page <a name="indexpage"></a>
+
+The entire application is based in 1 page, with different sections showing when needed and other hidden elements are hidden when no longer needed.      
+
+
+#### Username Prompt
+
+Although not strictly on the page, the prompt is the first interactive element on the page and is presented to the user on opening the page. The username prompt had been stricter, but did not want to impede the player from partaking in the game. The prompt is presented to the user, they can enter something in the field and this will be attributed to their username in the game and they will be presented with a welcome message. If they dont enter anything and press ok, they will be permitted to play the game. If the user presses cancel, the game will not proceed. I had put in measures to ensure this field could not be blank, but this proved restrictive and I did not want the player to not avail of the game, if they didn't enter a name. In future iterations, stricter measures would be introduced. This would include a second prompt window, as future tweaking would avail of allowing users to save their scores and this would require some identification to be valid. I had looked into personalising the prompt, and this again would be introduced in a future iteration.
+
+<br/>
+<p align="center">
+  <img src="assets/images/readme/prompt.jpg" alt="prompt_for_username" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/welcometogame.jpg" alt="WelcomeMessage" />
+</p>
+
+#### Intro Section:    
+
+The Intro Section consists of the Logo, which is a brainpower Icon and a main heading and there is also an intro to the game panel. Content is simple and to the point, it is just a quick quiz, so felt the opening should be brief.  
+
+<p align="center">
+  <img src="assets/images/readme/IntroSection.jpg" alt="introSection" />
+</p>
+
+#### Light/Dark Toggle:
+
+The original concept was that the website would be a dark colour and all elements would be conducive with this colour scheme, but as the site progressed, I wanted to strip the colour back and try a lighter theme, on further research I managed to do both. Initially there were some issues, in that I had font colours within many of the body elements, so the toggle was not as affective, but when I stripped out the colours and left the body take over that responsibility, the light and dark mode was effectively accomplished. There are still some alternative font colours but that is where I wanted these fonts to be distinguisable and they had to work with both the dark and light mode.  
+
+<p align="center">
+  <img src="assets/images/readme/toggledark.jpg" alt="ToggleDarkMode" />  
+  <img src="assets/images/readme/togglelight.jpg" alt="ToggleLightMode" />
+</p>
+
+#### Category and Difficulty Section:
+
+When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved (See bugs). Images below.
+
+<p align="center">
+  <img src="assets/images/readme/catDifSection.jpg" alt="CategoryAndDifficultySection" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/modal1.jpg" alt="CategoryModal" />  
+  <img src="assets/images/readme/modal2.jpg" alt="DifficultyModal" />
+</p>
+
+#### Start Button:
+
+
+<p align="center">
+  <img src="assets/images/readme/startbtn.jpg" alt="StartButton" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/gameInterface.jpg" alt="gameInterface" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/answersAndNext.jpg" alt="answersAndNextButtons" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/endsection.jpg" alt="endSection" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/gameover.jpg" alt="gameover" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/endmessage.jpg" alt="endMessage" />
+</p>
+
+
+
+
+
+
 
 
 <br/>
+
 #### User Experience related to common elements on each page
 
+#### [Return to Table of Contents](#toc)
+----
 
 <br/>
 
-
-## The Next Page <a name="nextpage"></a>  
+## Future <a name="future"></a>  
 
 
 
