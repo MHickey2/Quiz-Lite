@@ -66,7 +66,7 @@ Using [https://validator.w3.org/](https://validator.w3.org/)  The main issues th
 <br/>
 
 <p align ="center">      
-     <img src="assets/images/readme/htmlchecker.png"  alt="HTML check results"/>   
+     <img src="assets/images/readme/"  alt="HTML check results"/>   
 </p>
 <br/>  
   
@@ -76,7 +76,7 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 <br/>
 <p align ="center">      
-     <img src="assets/images/readme/cssvalid.png"  alt="CSS Validation results"/>   
+     <img src="assets/images/readme/"  alt="CSS Validation results"/>   
 </p>
 <br/>
 
@@ -100,19 +100,8 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
   <p align ="center">      
      <img src="assets/images/readme/contrastindex.png" height="146" width="889" alt="contrast index result"/>   
   </p>
-  <p align ="center">      
-     <img src="assets/images/readme/contrastlifestyle.png" height="146" width="889" alt="contrast lifestyle result"/>   
-  </p>
-  <p align ="center">      
-     <img src="assets/images/readme/contrastnext.png" height="146" width="889" alt="contrast next result"/>   
-  </p>
-  <p align ="center">      
-     <img src="assets/images/readme/contrastconfirmation.png" height="146" width="889" alt="contrast confirmation result"/>   
-  </p>
-  <p align ="center">      
-     <img src="assets/images/readme/contrast404.png" height="146" width="889" alt="contrast 404 result"/>   
-  </p>
-  <br/>
+  
+  
 
 - Wave (Web Accesability Evaluation tool)   <a name="wave"></a>
   
@@ -159,12 +148,34 @@ The Following table, shows the manual tests that were done within the site and r
 
  <br/>
 
-
 ## As a first time user to the site
 
+- Understand what the website is offering.
+- Enter a username and be welcomed to the site.
+- Play the Quiz.
+- See the number of questions to be answered.
+- See the topic of the question to be asked.
+- Know the difficulty level of each question.
+- Know whether I get the right answer to each question.
+- Find out what is the correct answer if i guessed it wrong.
+- See a running total of my correct answers.
+- At the end of the Quiz I would like some eedback and know what my overall score is.
+- If I want to restart a Game, I want to be able to do this easily.
 
+## As a regular user of the site
 
-  
+- I want to improve my scores.  
+- I want to try different categories.  
+- I want to try different levels of difficulty. 
+- I want to have an opportunity to answer a larger number of questions in the quiz. 
+
+## As the site owner
+
+- Add more features to the site to enhance the experience of the users.
+- Provide the user with ways that they can personalize their own quizzing experience.
+- Improve the social aspect, by allowing users to compare their scores with other users.
+- Recognise the achievement of users by providing incentives for top scores.
+
  
 
 #### [Return to Table of Contents](#toc)

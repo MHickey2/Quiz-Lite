@@ -1,18 +1,19 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-#Quiz-Lite: Milestone 2 Project
+# Quiz-Lite: Milestone 2 Project
 
 <p align ="center">      
-     <img src=""  alt="" />    
+     <img src="assets/images/readme/amiresponsive.jpg"  alt="image from amIresponsive site" />    
 </p>
 <br/>  
 
  
 ## Introduction <a name="introduction"></a>
 Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set questions within the general category, which encompasses all categories. The difficulty level includes all levels of difficulty. The website application is fully responsive for Desktop and mobile screens.
+
 <br/>
 
-[Visit the Quiz-Lite Website](https://mhickey2-quizlite-nbv0bohfrie.ws-eu47.gitpod.io/)  
+[Visit the Quiz-Lite Website](https://mhickey2.github.io/Quiz-Lite/)  
 <br/>    
 
 [Visit the Quiz-Lite Repository](https://github.com/MHickey2/Quiz-Lite)  
@@ -57,10 +58,12 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
 
 ## UX Strategy <a name="uxstrategy"></a>
 The website was designed to provide a quick general knowledge Trivia Game. The website utilizes another site to provide the subject matter and functionality has been added to allow users to take the quiz, test their knowledge, try to get a good score. The goal is to provide an entertaining challenge and overtime the user can try to improve their mind and build their trivia knowledge. The challenge was to build a site while also encompassing a third party database to provide a greater range for user questions.
+
 <br/> 
 
 ### The Business Goals of the Website: <a name="businessgoals"></a>
 - No commercial goals, but the site's goal is to to provide entertainment and build the knowledge base of the users.
+  
   <br/> 
 
 ### The Target Customer: <a name="targetcustomer"></a>
@@ -135,25 +138,25 @@ Wireframes were created in Figma.
 
 The colour scheme for the website has evolved over time and originally was dark purple, rgb(31, 3, 50) with secondary elements in pink and plum. But after researching options I was going to strip it back to a white background with colour only on secondary elements to simplify the interface and reduce distractions. Then I discovered a compromise option, where the user can decide what background they would prefer. There is a toggle switch on the top left side of the screen which allows the user to toggle between light and dark mode, there is therefore 2 different colour schemes on the site.
 
+
 ### Light Mode:
 Plane white background, White as a background color ensures clarity and removes visual obstacles and clutter, allowing the user to focus on relevant elements and text. It also offers good contrast to aid readability and enhancethe user experience. The buttons are all uniform and are pink and stand out well from the white background.
 There is little in regards to imagery, with only 2 visual elements, one representative of brainpower and the toggle image which represents day and night mode.  
 
+
 ### Dark Mode:  
 plane purple background,Dark mode may help to decrease eye strain/dry eyes for some people who spend lots of time looking at screens. There are studies that have concluded dark mode can be more economical and uses less energy at least on mobile screens. Dark mode is good in low light environments, it can also help people with cataracts or other related visual disorders. By adding white borders around certain elements, it helps them to stand out from the darker background. The buttons and headings still have good contrast on either background.
 
-### Colour Combination
+
+### Colour Combination in site:
+
+The main colours on the site, the background will be entirely white in light mode but colours tend to be a lighter variation in light mode.
+
 
 <br/>
 <p align="center">
-  <img src="" alt="" />
+  <img src="assets/images/readme/cupcakes.jpg" alt="Colour combination in cupcake form" />
 </p>
-<br/>
-<br/>
-<p align="center">
-  <img src="" alt="" />
-</p>
-<br/>
 
 
 </br> 
@@ -171,6 +174,7 @@ i.e. The welcoming text and the closing message to the user when the final score
 
 In relation to the color, I gave the main font the color #313131(when in light mode), it can aid in preventing eye strain and can be used in a multitude of situations. I wanted to enable good user experience throughout the site where possible.
 
+
 <br/>
 <p align="center">
   <img src="" alt="" />
@@ -178,6 +182,10 @@ In relation to the color, I gave the main font the color #313131(when in light m
 
 <p align="center">
   <img src="" alt="" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/313131.png" alt="value of font #313131" />
 </p>
 
 <br/>
@@ -190,7 +198,7 @@ I used an Icon as the brain above the heading, I did not want an overbearing ima
 <p float="center">
   <img src="assets/images/brain.webp"   alt="Icon used in cojunction with heading for site" />  
   <img src="assets/images/day-and-night.webp" alt="Day and Night Toggle Switch Image" />
-  <img src="assets/images/favicon.png"   alt="Favicon image for site" /> 
+  <img src="assets/images/readme/favicon.png"   alt="Favicon image for site" /> 
 </p>
        
 <br/>
@@ -199,7 +207,7 @@ I used an Icon as the brain above the heading, I did not want an overbearing ima
 ## Structure <a name="structure"></a>    
 The Application has gone through a number of transitions. Originally it was 2 pages, an introduction page and a gaming page, but it was later simplified so that only 1 page is used. The introductory section consists of an intoductory blurb, a welcome message and a start button. When the Start button is pressed the introductory blurb is hidden and the main quiz interface is shown. When the game is complete a closing message screen is shown. This way the whole website is never shown in full to the user. Additional information can be inputted with the use of a prompt screen and a couple of modals.  The site itself grew out of another site, horror-quiz which was my experimental repository, the intention initially was to create a horror quiz using my own question set but I then changed to the Fetch from an API concept. The original Repository can be [found here](https://github.com/MHickey2/Horror-Quiz) 
 
-
+<br/>
 
 ## Final Application Page  <a name="webpages"></a>
 
@@ -213,7 +221,9 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 
 ### Index Page <a name="indexpage"></a>
 
-The entire application is based in 1 page, with different sections showing when needed and other hidden elements are hidden when no longer needed.      
+
+The entire application is based in 1 page, with different sections showing when needed and other hidden elements are hidden when no longer needed.     
+
 
 
 #### Username Prompt
@@ -335,6 +345,7 @@ There were a number of features that were trialed within this application and th
 - I would probably allow users to choose the number of questions they want to answer, and this would involve changing the final messages to accomodate different the starting question sets. Maybe introduce a percentile instead of a number count, as this could be utilised according to the different question load.
 - At the moment session storage is being used, but with introducing scores, it would open up needs for long term storage. Competitors could test their scores, against existing high scorers, and different challenges could encourage more complexity.
 - In relation to interactivity, there could be an element of social interactivity. Present social media sites could be used to encourage fellow competitors to communicate within these channels, or a dedicated forum on the site itself could be a great platform.
+  
 
 #### [Return to Table of Contents](#toc)
 ----
@@ -493,6 +504,7 @@ I used the documentation and template provided by the Code Institute to provide 
 
 ### Sources
 Sites that I have consulted when there was issues with the site:<br/>
+
 - [W3Schools](https://www.w3schools.com/html/html5_svg.asp)
 - [https://stackoverflow.com/](https://stackoverflow.com/)
 
@@ -500,6 +512,7 @@ Sites that I have consulted when there was issues with the site:<br/>
 
 ----
 ## Acknowledgements <a name="acknowledgements"></a>
+
 Thank you to the staff of the Code Institute for their support.
 
 ----
