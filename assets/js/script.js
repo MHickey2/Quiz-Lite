@@ -1,13 +1,5 @@
 const img = document.getElementById('daynight');
 const welcomeText = document.getElementById('welcomeText');
-const modal = document.querySelector('#modal');
-const openModal = document.querySelector('.open-button');
-const closeModal = document.querySelector('.close-button');
-const modal2 = document.querySelector('#modal2');
-const openModal2 = document.querySelector('.open-button2');
-const closeModal2 = document.querySelector('.close-button2');
-const categoryButton = document.getElementById('category-btn');
-const difficultyButton = document.getElementById('difficulty-btn');
 const restartButton = document.getElementById('restart-btn');
 const maxQuestions = 10;
 
@@ -18,15 +10,9 @@ let correctAnswer;
 let currentQuestion;
 let questionNumber = 1;
 let finalScore;
-let category;
-let difficulty;
 
 img.addEventListener('click', changeColourScheme);
-//categoryButton.addEventListener('click', getCategory);
-//difficultyButton.addEventListener('click', getDifficultyLevel);
 restartButton.addEventListener('click', replay);
-
-
 
 //function to choose dark-mode
 function changeColourScheme() {
@@ -38,70 +24,12 @@ function changeColourScheme() {
 
 changeColourScheme();
 
-//Modal for categories
-/*openModal.addEventListener('click', () => {
-    modal.showModal();
-});
-
-closeModal.addEventListener('click', () => {
-    modal.close();
-});
-
-//Modal2 for difficulty
-openModal2.addEventListener('click', () => {
-    modal2.showModal();
-});
-
-closeModal2.addEventListener('click', () => {
-    modal2.close();
-});
-
-//function to get category for the fetch API request
-function getCategory() {
-    let categorylevel = document.forms[0];
-    category = '';
-    let i;
-
-    for (i = 0; i < categorylevel.length; i++) {
-        if (categorylevel[i].checked) {
-            category = categorylevel[i].value;
-        }
-    }
-    // Save data to sessionStorage
-    //console.log(category);
-    sessionStorage.setItem('category', category);
-    document.getElementById("resultsCategory").value = 'You have chosen:' + `${category}`;
-    return category;
-}
-
-getCategory();
-
-//function to get difficulty level for the fetch API request
-function getDifficultyLevel() {
-    let difficultylevel = document.forms[1];
-    difficulty = '';
-    let x;
-
-    for (x = 0; x < difficultylevel.length; x++) {
-        if (difficultylevel[x].checked) {
-            difficulty = difficultylevel[x].value;
-        }
-    }
-    // Save data to sessionStorage
-    //console.log(difficulty)
-    sessionStorage.setItem('difficulty', difficulty);
-    document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
-    return difficulty;
-}
-
-getDifficultyLevel();*/
-
 //Function to get user name and welcome them personally to the game
 function getUserName() {
     let username = '';
     //let alreadyShownPrompt = false;
     if (!username) {
-        username = prompt('Enter your username:').trim().toLowerCase();        
+        username = prompt('Enter your username:').trim().toLowerCase();
     }
     sessionStorage.setItem('username', username);
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
@@ -111,12 +39,11 @@ getUserName();
 
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
 //and difficulty levels, catch all (default setting).
-async function getQuestions() { 
-        
+async function getQuestions() {
+
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=&difficulty=&type=multiple`);
     questions = await response.json();
-    
 }
 //Function to get next question, but also test to see if there is a next question 
 //to get, if not the game is over, and the next button is hidden
@@ -132,9 +59,9 @@ function getNextQuestion() {
         }
     }
     //lets the user knows what question they are on and how many questions are being asked (max:10)
-    document.getElementById('progress').innerText = `Question ${questionNumber}/${maxQuestions}`;   
+    document.getElementById('progress').innerText = `Question ${questionNumber}/${maxQuestions}`;
     ++questionNumber;
-    
+
     //getCurrent question
     currentQuestion = questions.results[index];
     //put correct answers in list with incorrect answers
@@ -187,7 +114,7 @@ function choiceListeners() {
     });
 }
 
-    async function init() {     
+async function init() {
     await getQuestions();
     startGame();
     getNextQuestion(0);
@@ -316,7 +243,7 @@ function showFinalScore() {
         targetDiv4.style.display = 'none';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
-        if (finalScore < 1) {
+        if (finalScore == 0) {
             closingMessage.innerHTML = "Maybe quizzing is not your forte, have you tried Sudoku?";
         } else if (finalScore < 3) {
             closingMessage.innerHTML = "ahem...well, just a little practise needed.";
