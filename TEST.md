@@ -46,9 +46,9 @@
    </p>
    <br/>
 
-   Should be responsive down to 320px screen, but any smaller and there will be issues. In regard to bigger screens it should be good to ?px. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway.
+   Should be responsive down to 320px screen, but any smaller and there will be issues. In regard to bigger screens it should be good to ?px. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application.
 
-   The Media Query Breakpoints I used were:
+   The Media Query Breakpoints I used was:
    - 600px width and below;
   
 <br/>
@@ -117,15 +117,15 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
 ----
 ## Manual Testing<a name="manualtesting"></a>
 
-The Following table, shows the manual tests that were done within the site and refers to all the same elements on each page.
+The Following table, shows the manual tests that were done within the site. 
 
 
 <br/>
 <p align ="center">      
-     <img src="assets/images/readme/mantest.png"  alt="manual test part 1" />
+     <img src="assets/images/readme/"  alt="manual test part 1" />
 </p>
 <p align ="center">      
-     <img src="assets/images/readme/mantest1.png" alt="manual test part 2" />
+     <img src="assets/images/readme/" alt="manual test part 2" />
 </p>
 <br/>
 

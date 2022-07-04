@@ -27,7 +27,7 @@ difficultyButton.addEventListener('click', getDifficultyLevel);
 restartButton.addEventListener('click', replay);
 
 //Function to get user name and welcome them personally to the game
-/*function getUserName() {
+function getUserName() {
     let username = '';
     //let alreadyShownPrompt = false;
     if (!username) {
@@ -37,7 +37,7 @@ restartButton.addEventListener('click', replay);
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
 }
 
-getUserName();*/
+getUserName();
 
 //function to choose dark-mode
 function changeColourScheme() {
