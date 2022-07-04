@@ -132,8 +132,9 @@ function getNextQuestion() {
         }
     }
     //lets the user knows what question they are on and how many questions are being asked (max:10)
-    document.getElementById('progress').innerText = `Question ${questionNumber}/${maxQuestions}`;
+    document.getElementById('progress').innerText = `Question ${questionNumber}/${maxQuestions}`;   
     ++questionNumber;
+    
     //getCurrent question
     currentQuestion = questions.results[index];
     //put correct answers in list with incorrect answers
