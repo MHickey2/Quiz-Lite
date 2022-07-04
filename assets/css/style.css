@@ -4,8 +4,8 @@
     border: none;
     box-sizing: border-box;
     max-width: 1500px;
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*styling for the body of the app*/
@@ -18,18 +18,6 @@ body {
     scroll-behavior: smooth;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
-}
-
-/*Styling for the welcome message using username*/
-#welcomeText {
-    font-size: 1.4rem;
-    font-weight: 400;
-    font-family: 'Shadows Into Light', cursive;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
 }
 
 /*If dark mode is chosen the colour scheme of the webpage changes the background 
@@ -46,6 +34,18 @@ colour and the text*/
     top: 25px;
 }
 
+/*Styling for the welcome message using username*/
+#welcomeText {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+}
+/*Descriptor for Toggle Image*/
 .descriptor {
     position: absolute;
     left: 12px;
@@ -98,6 +98,7 @@ colour and the text*/
     margin-top: 10px;
 }
 
+/*Styling for Buttons*/
 #start-btn,
 #next-btn,
 #restart-btn {
@@ -151,17 +152,18 @@ colour and the text*/
     color: white;
 }
 
+.choice-container:hover {
+    border: 8px solid rgb(233, 123, 233);
+    background-color: rgb(194, 95, 201);
+}
+
 button {
     display: block;
     font: .75rem;
     text-align: center;
 }
 
-.choice-container:hover {
-    border: 8px solid rgb(233, 123, 233);
-    background-color: rgb(194, 95, 201);
-}
-
+/*Style for when you want to hide an element*/
 .hide {
     display: none;
 }
@@ -212,7 +214,7 @@ button {
     margin-right: auto;
 }
 
-/*Styling for showing the Correct Answer to the User*/
+/*Styling for the display area showing the Correct Answer to the User*/
 #verify-answer {
     color: green;
     font-weight: Bold;
@@ -313,12 +315,14 @@ label::after {
     font-size: 1rem;
 }
 
+/*Styling for Button area with category and difficullty Button*/
 .button-wrapper {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+/*Styling for the footer*/
 footer {
     height: 140px;
     background-color: #8e399b;
@@ -349,11 +353,11 @@ footer p {
     color: #fff;
 }
 
+/*Styling for the 404 page*/
 #error-message {
     display: block;
     margin-left: auto;
-    margin-right: auto; 
-    
+    margin-right: auto;
 }
 
 .error {
@@ -363,6 +367,7 @@ footer p {
     text-align: center;
     margin-bottom: 20px;
 }
+
 .dog {
     margin-top: 40px;
     display: block;

@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Quiz-Lite, a light weight quiz to test your knowledge"/>
-    <meta name="keywords" content="Quiz, Questions, API, Brainpower, Challenge, Fun"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quiz-Lite, a light weight quiz to test your knowledge" />
+    <meta name="keywords" content="Quiz, Questions, API, Brainpower, Challenge, Fun" />
     <meta name="author" content="Quiz-Lite" />
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css"/> 
-    <!-- Google Fonts --> 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>       
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Merriweather:wght@700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
     <!--Font Awesome-->
-    <!--font awesome script-->    
+    <!--font awesome script-->
     <link rel="dns-prefetch" href="https://use.fontawesome.com">
-    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>      
+    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
     <title>Game - Play</title>
 </head>
 
 <div id="page-container">
     <div id="content-wrap">
         <!--image for toggling between light and dark mode-->
-        <img id='daynight'  class='nightday' src='assets/images/day-and-night.webp' alt='day to night image Toggle' 
-        aria-label="Switch to dark mode/Switch to light mode"/>
+        <img id='daynight' class='nightday' src='assets/images/day-and-night.webp' alt='day to night image Toggle'
+            aria-label="Switch to dark mode/Switch to light mode" />
         <p class="descriptor">Toggle dark-mode</p>
 
         <!--Main image on game page-->
@@ -35,24 +36,22 @@
         <h1 class="heading">Quiz-Lite</h1>
         <!--DivTarget2 which initially shows, but is hidden when user starts the game-->
         <div id="hiddenStart">
-        <p class="center-message">Welcome to the Quiz-Lite Application. Test your brainpower in a
-            fun accessible bite-size Quiz, ready for a quick round quizzing sensation? Best of Luck!</p>
+            <p class="center-message">Welcome to the Quiz-Lite Application. Test your brainpower in a
+                fun accessible bite-size Quiz, ready for a quick round quizzing sensation? Best of Luck!</p>
 
-        <!--Buttons for getting Category and Difficulty for the Game-->       
-            <div class="container">
+            <!--Buttons for getting Category and Difficulty for the Game-->
+            <!--<div class="container">
                 <div class="button-wrapper">
                     <h2 class="center">Choose the Following Options(Optional):</h2>
                     <button class="open-button2 pink-buttons" id="choosecategory">Category</button>
-                    <button class="open-button pink-buttons" id="choosedifficulty">Difficulty</button> 
-                                    
-                
+                    <button class="open-button pink-buttons" id="choosedifficulty">Difficulty</button>
                 </div>
-            </div>
-            
-            <!--Modal Form to get the category of the quiz from the user-->
+            </div>-->
+
+            <!--Modal Form to get the category of the quiz from the user
             <dialog class="modal2 w3-modal" id="modal2">
                 <h2 class="center">Quiz-Lite Category Level Selection</h2>
-                <br/>
+                <br />
                 <h3 style="color: purple; text-align: center;">Choose a Category level:</h3>
                 <div class="center" id="categorylevel">
                     <form action="/action_page.php">
@@ -67,22 +66,20 @@
                         <input type="radio" id="books" class="chooseCategory" name="categorylevel" value="10" />
                         <label for="books">Books</label>
                         <br />
-                        <input type='button' id='category-btn' class="pink-buttons" value="Submit"/>
+                        <input type='button' id='category-btn' class="pink-buttons" value="Submit" />
                         <label for="resultsCategory">Category</label>
                         <input type="Text" id="resultsCategory">
-                        
                     </form>
                 </div>
                 <button class="close-button2">Close Button</button>
             </dialog>
 
-            <dialog class="modal w3-modal" id="modal" >
+            <dialog class="modal w3-modal" id="modal">
                 <h2 class="center">Quiz-Lite Difficulty Level Selection</h2>
-                <br/>
+                <br />
                 <h3 style="color: purple; text-align: center;">Choose a difficulty level:</h3>
                 <div class="center" id="difficultylevel">
                     <form action="/action_page.php">
-
                         <input type="radio" id="easy" class="chooseDifficulty" name="difficultylevel" value="easy" />
                         <label for="easy">Easy</label>
                         <input type="radio" id="medium" class="chooseDifficulty" name="difficultylevel" value="medium" />
@@ -91,14 +88,12 @@
                         <label for="hard">Hard</label>
                         <br />
                         <input type='button' class='pink-buttons' id='difficulty-btn' value="Submit" />
-                        <label for="resultsDifficulty">Difficulty</label> 
+                        <label for="resultsDifficulty">Difficulty</label>
                         <input type="Text" id="resultsDifficulty">
-                                              
                     </form>
                 </div>
                 <button class="close-button">Close Button</button>
-            </dialog>
-            
+            </dialog>-->
         </div>
 
         <!--This will be a welcome message for the user, after they have supplied their username-->
@@ -107,22 +102,21 @@
         <div class="controls">
             <button id="start-btn" class="start-btn" data-type="start">Start</button>
         </div>
-
         <!--The game elements will not be visible to the user until they press the start button-->
         <div id="hidden">
 
-                <!--This section will describe the category and the difficulty for each question set in the quiz-->
-                <div class="informationForQuestion">
-                    <p id="category" class="center"></p>
-                    <p id="difficulty" class="center"></p>
-                </div>
-                <br/>
-                <p class="center"><span class="center" id="progress"></span>
+            <!--This section will describe the category and the difficulty for each question set in the quiz-->
+            <div class="informationForQuestion">
+                <p id="category" class="center"></p>
+                <p id="difficulty" class="center"></p>
+            </div>
+            <br />
+            <p class="center"><span class="center" id="progress"></span>
                 <!--This is where each question will be displayed-->
-                <div class="question-container">                  
+                <div class="question-container">
                     <p id="question"></p>
                 </div>
-                <br/>
+                <br />
                 <!--These are the different options for the quiz(4)-->
                 <div class="flex-container">
                     <button id="answer1" class="choice-container  option" name="answer"></button>
@@ -131,17 +125,16 @@
                     <button id="answer4" class="choice-container  option" name="answer"></button>
                 </div>
                 <button id="next-btn" class="next-btn" data-type="Next">Next</button>
-                <br/>
+                <br />
                 <div class="verify-answer" id="verify-answer">
-                    <p id="verification" class="center">Correct Answer:</p>                   
+                    <p id="verification" class="center">Correct Answer:</p>
                     <span id="verification-answer"></span>
-                </div>                
-                
+                </div>
                 <!--This is the scoring area, with seperate slots for correct and incorrect answer scores-->
                 <div class="score-area">
                     <h3 class="scores">Correct Answers: <span id="correct">0</span></h3>
                     <h3 class="scores">Incorrect Answers: <span id="incorrect">0</span></h3>
-                </div>                
+                </div>
                 <!--This is closing section with the results and closing message for game end-->
                 <div class="closing" id="hiddenResults">
                     <p class="scores"><span id="scoreText"></span></p>
@@ -149,40 +142,41 @@
                 </div>
                 <!--This allows the user to refresh the page and start the game again-->
                 <button id="restart-btn" class="restart-btn" data-type="start">Restart</button>
-                <br/>
+                <br />
         </div>
-
     </div>
-    
+
     <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/19b8bbb0d6.js" crossorigin="anonymous"></script> 
-    
+    <script src="https://kit.fontawesome.com/19b8bbb0d6.js" crossorigin="anonymous"></script>
 </div>
-<footer class="footer">
+<footer>
     <ul class="social-networks">
         <li>
-          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit us at our facebook page (opens in a new tab)">
-            <i class="fa-brands fa-facebook-square"></i>
-          </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener"
+                aria-label="Visit us at our facebook page (opens in a new tab)">
+                <i class="fa-brands fa-facebook-square"></i>
+            </a>
         </li>
         <li>
-          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit us at our twitter page (opens in a new tab)">
-            <i class="fa-brands fa-twitter-square"></i>
-          </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+                aria-label="Visit us at our twitter page (opens in a new tab)">
+                <i class="fa-brands fa-twitter-square"></i>
+            </a>
         </li>
         <li>
-          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)">
-            <i class="fa-brands fa-youtube-square"></i>
-          </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener"
+                aria-label="Visit our YouTube page (opens in a new tab)">
+                <i class="fa-brands fa-youtube-square"></i>
+            </a>
         </li>
         <li>
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
-            <i class="fa-brands fa-instagram-square"></i>
-          </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener"
+                aria-label="Visit our Instagram page (opens in a new tab)">
+                <i class="fa-brands fa-instagram-square"></i>
+            </a>
         </li>
-      </ul>
-      <p>Quiz-Lite, Copyright &copy; 2022</p>
+    </ul>
+    <p>Quiz-Lite, Copyright &copy; 2022</p>
 </footer>
-
 </body>
 </html>

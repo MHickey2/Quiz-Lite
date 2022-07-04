@@ -66,7 +66,7 @@ Using [https://validator.w3.org/](https://validator.w3.org/)  The main issues th
 <br/>
 
 <p align ="center">      
-     <img src="assets/images/readme/"  alt="HTML check results"/>   
+     <img src="assets/images/readme/htmlcheck.jpg"  alt="HTML Validation results"/>   
 </p>
 <br/>  
   
@@ -76,7 +76,7 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 <br/>
 <p align ="center">      
-     <img src="assets/images/readme/"  alt="CSS Validation results"/>   
+     <img src="assets/images/readme/csscheck.jpg"  alt="CSS Validation results"/>   
 </p>
 <br/>
 
@@ -122,12 +122,20 @@ The Following table, shows the manual tests that were done within the site.
 
 <br/>
 <p align ="center">      
-     <img src="assets/images/readme/"  alt="manual test part 1" />
+     <img src="assets/images/readme/manualtesting1.jpg"  alt="manual test part 1" />
 </p>
 <p align ="center">      
-     <img src="assets/images/readme/" alt="manual test part 2" />
+     <img src="assets/images/readme/manualtesting2.jpg" alt="manual test part 2" />
 </p>
 <br/>
+
+### Notes on Manual Testing:
+
+* The Prompt is not ideal and in a future model there will be more constraints on username requesting, but in the interest of testing, it was stripped back to basics. If the user enters a name, they are welcomed by name to the game. If they do not enter a name and press yes, they can start the game, and the welcome will have no username. At the moment if you cancel out of the prompt, the game will not start, and to play the game you will need to refresh the game.
+
+* The coloured boxes contain the testing that was done for features no longer within the scope of the project. But they have been included throughout the project and they were subject to a lot of testing, therefore for future iterations, I hope to build on the work carried out throughout this project to inject more control for the user on what categories are shown and which difficulty level they want to achieve.  Building on from this, the number of questions would also be chosen by the user in future applications.
+
+
 
 
 <br/>

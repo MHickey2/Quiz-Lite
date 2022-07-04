@@ -22,8 +22,8 @@ let category;
 let difficulty;
 
 img.addEventListener('click', changeColourScheme);
-categoryButton.addEventListener('click', getCategory);
-difficultyButton.addEventListener('click', getDifficultyLevel);
+//categoryButton.addEventListener('click', getCategory);
+//difficultyButton.addEventListener('click', getDifficultyLevel);
 restartButton.addEventListener('click', replay);
 
 
@@ -39,7 +39,7 @@ function changeColourScheme() {
 changeColourScheme();
 
 //Modal for categories
-openModal.addEventListener('click', () => {
+/*openModal.addEventListener('click', () => {
     modal.showModal();
 });
 
@@ -94,7 +94,7 @@ function getDifficultyLevel() {
     return difficulty;
 }
 
-getDifficultyLevel();
+getDifficultyLevel();*/
 
 //Function to get user name and welcome them personally to the game
 function getUserName() {
@@ -114,7 +114,7 @@ getUserName();
 async function getQuestions() { 
         
     //pass variable to question variable line2
-    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10&category=&difficulty=&type=multiple`);
     questions = await response.json();
     
 }
