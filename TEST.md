@@ -42,7 +42,7 @@
 
    <br/>
    <p align ="center">      
-     <img src="assets/images/readme/amiresp1.png"  alt="Am I responsive results"/>   
+     <img src="assets/images/readme/amiresponsive.jpg"  alt="Am I responsive results"/>   
    </p>
    <br/>
 
