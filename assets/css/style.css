@@ -258,6 +258,7 @@ button {
     border-radius: 15px;
     border: 1px solid black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
 }
 
 .pink-buttons:hover {
@@ -346,6 +347,28 @@ footer p {
     font-size: 1.3rem;
     margin: 2%;
     color: #fff;
+}
+
+#error-message {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+
+.error {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.dog {
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 15px;
 }
 
 /* *******************For small screen sizes 800px and down *************************************************/

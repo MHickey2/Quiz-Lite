@@ -26,18 +26,7 @@ categoryButton.addEventListener('click', getCategory);
 difficultyButton.addEventListener('click', getDifficultyLevel);
 restartButton.addEventListener('click', replay);
 
-//Function to get user name and welcome them personally to the game
-function getUserName() {
-    let username = '';
-    //let alreadyShownPrompt = false;
-    if (!username) {
-        username = prompt('Enter your username:').trim().toLowerCase();        
-    }
-    sessionStorage.setItem('username', username);
-    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
-}
 
-getUserName();
 
 //function to choose dark-mode
 function changeColourScheme() {
@@ -67,7 +56,6 @@ closeModal2.addEventListener('click', () => {
     modal2.close();
 });
 
-
 //function to get category for the fetch API request
 function getCategory() {
     let categorylevel = document.forms[0];
@@ -80,8 +68,10 @@ function getCategory() {
         }
     }
     // Save data to sessionStorage
+    //console.log(category);
     sessionStorage.setItem('category', category);
     document.getElementById("resultsCategory").value = 'You have chosen:' + `${category}`;
+    return category;
 }
 
 getCategory();
@@ -98,21 +88,35 @@ function getDifficultyLevel() {
         }
     }
     // Save data to sessionStorage
+    //console.log(difficulty)
     sessionStorage.setItem('difficulty', difficulty);
     document.getElementById("resultsDifficulty").value = 'You have chosen, ' + `${difficulty}`;
+    return difficulty;
 }
 
 getDifficultyLevel();
 
+//Function to get user name and welcome them personally to the game
+function getUserName() {
+    let username = '';
+    //let alreadyShownPrompt = false;
+    if (!username) {
+        username = prompt('Enter your username:').trim().toLowerCase();        
+    }
+    sessionStorage.setItem('username', username);
+    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
+}
+
+getUserName();
+
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
 //and difficulty levels, catch all (default setting).
 async function getQuestions() { 
-    //getCategory();
-    //getDifficultyLevel();  
-
+        
     //pass variable to question variable line2
     const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
     questions = await response.json();
+    
 }
 //Function to get next question, but also test to see if there is a next question 
 //to get, if not the game is over, and the next button is hidden
@@ -182,9 +186,7 @@ function choiceListeners() {
     });
 }
 
-async function init() {  
-    getCategory();
-    getDifficultyLevel();  
+    async function init() {     
     await getQuestions();
     startGame();
     getNextQuestion(0);

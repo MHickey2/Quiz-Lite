@@ -465,9 +465,17 @@ More information is available at [https://docs.github.com/en](https://docs.githu
 
 ## Bugs and Issues <a name="bugs"></a>
 
+
+
 <br/>  
 
 ### Resolved Issues <a name="resolved"></a>  
+
+The first issue was trying to get information from the API to the webpage, The Code Institute module was the first place I looked at, and it was a great starting point for working with APIs. I used a variety of Tutorials online, which are mentioned in the media section, and I used Tutor support to resolve some early issues. 
+
+The API itself sends the answers in a specific format and another issue was tring to sort the answers so that the right answer was not always in the number 1 position, I used the sort method to resolve this issue.
+
+I used information from the Love Maths module to learn how to increment the scores, but had an issue with showing final scores for the game, which was resolved with storing the variable in session storage, which I used for a number of variables.
 
 <br/>
 
@@ -479,6 +487,8 @@ More information is available at [https://docs.github.com/en](https://docs.githu
 The username prompt is a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with this [site](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects.
 
 <br/>
+
+Another unfixed bug relates to user giving inputs that will change the criteria in the API Fetch Request, I managed to create 2 modal forms, which were taking user input and assigning the answers to session stoarage, the plan was to use the inputted choices in literal strings in the fetch request, despite multiple sessions in resolving this issues, at the eleventh hour, the choice was made to remove these options. The fetch api was still fetching request before utilizing the user inputs, this would be an issue to be fixed in future iterations, however it is present for a great deal of the project and there are some information on these elements throughout the README.md and TEST.md, to explain the reasoning of the plan and the execution, despite no resolution being found at this time.
 
 
 
@@ -501,12 +511,17 @@ I used the documentation and template provided by the Code Institute to provide 
 
 ### Code
 
+I didn't use code, but did refer to it when compiling functions, from no one tutorial, but different concepts from different video tutorials were integrated into the application on an ongoing basis. I did add a loader at one point, but didn't keep it, because it was difficult to refactor it, without knowing more about the animation aspect.
+
 
 ### Sources
 Sites that I have consulted when there was issues with the site:<br/>
 
 - [W3Schools](https://www.w3schools.com/html/html5_svg.asp)
 - [https://stackoverflow.com/](https://stackoverflow.com/)
+
+- Tutor Support
+- Code Institute Slack Channel
 
 
 
