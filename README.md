@@ -112,13 +112,10 @@ The website was designed to provide a quick general knowledge Trivia Game. The w
 
 ## Wireframes <a name="wireframes"></a>
 
-<details>
-<summary>Wireframes for Site</summary>
+
 
 Wireframes for Desktop, Medium Screens and Mobile Screens.<br/> 
 Wireframes were created in Figma. The design of the final site has changed since the wireframe stage. No wireframe was created for the 404.page as it was such a simple layout.
-
-</details>
 
 <details>
   <summary>1. Wireframe</summary>
@@ -205,7 +202,24 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 
 ## Final Application Page  <a name="webpages"></a>
 
-
+<details>
+  <summary>1. Intro Screen</summary>
+  <p align="center">
+     <img src="assets/images/readme/introscreen.png"  alt="Intro Screen for site" />    
+</p>
+</details>
+<details>
+<summary>2. Game Screen</summary>
+  <p align="center">
+     <img src="assets/images/readme/gamescreen.png"  alt="Game Screen for site" />    
+</p>
+</details>
+<details>
+<summary>3 End Screen</summary>
+  <p align="center">
+     <img src="assets/images/readme/endscreen.png"  alt="End Screen for site" />    
+</p>
+</details>
 <br/>
 
  #### [Return to Table of Contents](#toc)
