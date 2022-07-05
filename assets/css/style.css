@@ -45,7 +45,7 @@ colour and the text*/
 }
 
 input[type=text] {
-    width: 15%;
+    width: 35%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -290,31 +290,6 @@ button {
     background-color: #47032b;
 }
 
-/*Styling for the Modals*/
-.modal,
-.modal2 {
-    padding: 1em;
-    max-width: 50ch;
-    border: 0;
-    box-shadow: 0 0 1em rgb(0 0 0 / .4);
-    background-color: rgb(230, 91, 230);
-    color: black;
-    opacity: 0.8;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.modal::backdrop {
-    background: rgb(0 0 0 / 0.4);
-}
-
-/*Fix for aligment of items in radio buttons*/
-label::after {
-    content: '\a';
-    white-space: pre;
-}
-
 /*Styling for Closing message, which shows the result and a supportive comment*/
 .closing {
     background-color: white;
@@ -376,7 +351,7 @@ footer p {
     color: #fff;
 }
 
-/*Styling for the 404 page*/
+/*****************************Styling for the 404 page*************************/
 #error-message {
     display: block;
     margin-left: auto;
@@ -399,12 +374,22 @@ footer p {
     border: 15px;
 }
 
-/* *******************For small screen sizes 800px and down *************************************************/
+/* *******************For small screen sizes 600px and down *************************************************/
 
 @media screen and (max-width: 600px) {
+
+    .informationForQuestion {
+        width: 80%;        
+        font-size: .75rem;
+    }
+
     .choice-container {
         width: 80%;
         height: 80px;
         font-size: .75rem;
+    }
+
+    .closing {
+        width: 80%;
     }
 }

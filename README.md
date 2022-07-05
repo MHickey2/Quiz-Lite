@@ -382,6 +382,8 @@ There were a number of features that were trialed within this application and th
 
 - Favicon Generator: &nbsp; [The Favicon Generator](https://www.ionos.com/tools/favicon-generator)
 
+- Icons: &nbsp; [https://www.flaticon.com/]
+
   
 <br/>
 
@@ -561,9 +563,10 @@ Sites that I have consulted when there was issues with the site:<br/>
 
 Thank you to my mentor Brian Macharia for his guidance and support.
 
+Thank you Kenan Wright and Harry Dhillon for your contributions.
+
 Thank you to the staff of the Code Institute for their support.
 
-Thank you Kenan Wright and Harry Dhillon for your contributions, 
 
 ----
 

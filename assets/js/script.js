@@ -12,6 +12,7 @@ let currentQuestion;
 let questionNumber = 1;
 let finalScore;
 
+//Event Listeners
 img.addEventListener('click', changeColourScheme);
 inputButton.addEventListener('click', getUserName);
 restartButton.addEventListener('click', replay);
@@ -26,10 +27,12 @@ function changeColourScheme() {
 
 changeColourScheme();
 
+//Function to get the username from the user for use in the welcome message and it will be
+//stored in session
 function getUserName() {
-    let username = document.querySelector("#username").value.trim();
-    //let welcomeText = document.querySelector("#welcomeText");      
+    let username = document.querySelector("#username").value.trim();       
     sessionStorage.setItem('username', username);
+    //Welcome message to the user, if username not given it still welcomes the user
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';   
 }
 
@@ -66,7 +69,8 @@ function getNextQuestion() {
     correctAnswer = questions.results[index].correct_answer;
     let choices = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
     choices.sort();
-
+    
+    //populates with information from the API fetch
     document.getElementById('category').innerHTML = 'Category:' + currentQuestion.category;
     document.getElementById('difficulty').innerHTML = 'Difficulty:' + currentQuestion.difficulty;
     document.getElementById('question').innerHTML = 'Question:' + currentQuestion.question;
@@ -181,7 +185,8 @@ function checkAnswers() {
     });
 }
 
-//The answer choices and correct answer are removed in order to display new choices
+//The answer choices and correct answer are removed in order to display new choices reset to 
+//original colour
 function reset() {
     document.getElementById('verification-answer').innerHTML = '';
     var elements = document.getElementsByClassName('option'); // get all elements
@@ -194,7 +199,6 @@ function reset() {
 function showCorrectAnswer() {
     document.getElementById('verification-answer').innerHTML = correctAnswer;
 }
-
 //The user can click on next to see the next question       
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', getNextQuestion => {
@@ -231,12 +235,11 @@ function hideButton() {
 const targetDiv3 = document.getElementById('hiddenResults');
 const targetDiv4 = document.getElementById('verify-answer');
 
-
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
     if (questionNumber > [questions.results.length]) {
-        //final scores to be displayed to user                  
+        //final scores and message is displayed to the user                  
         targetDiv3.style.display = 'block';
         targetDiv4.style.display = 'none';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
@@ -257,7 +260,6 @@ function showFinalScore() {
 
 // Save data to sessionStorage
 sessionStorage.setItem('score', 'finalScore');
-//let data = sessionStorage.getItem('score');
 
 showFinalScore();
 
