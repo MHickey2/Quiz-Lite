@@ -1,5 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
 # Quiz-Lite: Milestone 2 Project
 
 <p align ="center">      
@@ -9,12 +7,11 @@
 
  
 ## Introduction <a name="introduction"></a>
-Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set questions within the general category, which encompasses all categories. The difficulty level includes all levels of difficulty. The website application is fully responsive for Desktop and mobile screens.
+Quiz-Lite is a General Trivia Quiz that utilises questions generated within the [Open Trivia Database](https://opentdb.com/). It provides users with a set of 10 questions within the general category, which encompasses all known categories. The difficulty level comprises all levels of complexity. The website application is fully responsive for Desktop and mobile screens.
 
 <br/>
 
 [Visit the Quiz-Lite Website](https://mhickey2.github.io/Quiz-Lite/)  
-<br/>    
 
 [Visit the Quiz-Lite Repository](https://github.com/MHickey2/Quiz-Lite)  
 <br/>    
@@ -57,7 +54,7 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
 ----
 
 ## UX Strategy <a name="uxstrategy"></a>
-The website was designed to provide a quick general knowledge Trivia Game. The website utilizes another site to provide the subject matter and functionality has been added to allow users to take the quiz, test their knowledge, try to get a good score. The goal is to provide an entertaining challenge and overtime the user can try to improve their mind and build their trivia knowledge. The challenge was to build a site while also encompassing a third party database to provide a greater range for user questions.
+The website was designed to provide a quick general knowledge Trivia Game. The website utilizes another site to provide the subject areas, and functionality has been added to allow users to partake in the quiz, test their knowledge, and try to get a good score. The goal is to provide an entertaining challenge and over time the user can build up their trivia knowledge. The challenge was to build a site encompassing a third party database which will provide a wide range of question topics.
 
 <br/> 
 
@@ -67,9 +64,9 @@ The website was designed to provide a quick general knowledge Trivia Game. The w
   <br/> 
 
 ### The Target Customer: <a name="targetcustomer"></a>
-- The audience of the site would encompass a number of age groups and there would generally not be any limitation on who could avail of the quiz.
+- The audience of the site could encompass a number of age groups and there would generally not be any limitation on who could avail of the quiz.
 - Would probably require some access to digital technology.
-- May be useful for user who has spare time and who would like to test themselves with no judgement.
+- May be useful for a user who has spare time and who would like to test themselves with no judgement or long term commitment.
 
  <br/>  
 
@@ -136,21 +133,19 @@ Wireframes were created in Figma.
 
 ## Colour Scheme    <a name="colourscheme"></a>  
 
-The colour scheme for the website has evolved over time and originally was dark purple, rgb(31, 3, 50) with secondary elements in pink and plum. But after researching options I was going to strip it back to a white background with colour only on secondary elements to simplify the interface and reduce distractions. Then I discovered a compromise option, where the user can decide what background they would prefer. There is a toggle switch on the top left side of the screen which allows the user to toggle between light and dark mode, there is therefore 2 different colour schemes on the site.
+The colour scheme for the website has evolved over time and originally was dark purple, rgb(31, 3, 50) with secondary elements in pink and plum. But after researching other options I was going to strip it back to a white background with colour only on secondary elements to simplify the interface and reduce distractions. Then I discovered a compromise option, where the user can decide what background they would prefer. There is a toggle switch on the top left side of the screen which allows the user to toggle between light and dark mode, there is therefore 2 different colour schemes on the site.
 
 
 ### Light Mode:
-Plane white background, White as a background color ensures clarity and removes visual obstacles and clutter, allowing the user to focus on relevant elements and text. It also offers good contrast to aid readability and enhancethe user experience. The buttons are all uniform and are pink and stand out well from the white background.
-There is little in regards to imagery, with only 2 visual elements, one representative of brainpower and the toggle image which represents day and night mode.  
+Plain white background, White as a background color ensures clarity and manages to remove visual obstacles and clutter, allowing the user to focus on relevant elements and text. It also offers good contrast to aid readability and enhance the user experience overall. The buttons are all uniform and are pink and stand out well from the white background. There is little in regards to imagery, with only 2 visual elements, one representative of brainpower and the toggle image which represents day and night mode. There is also an image in the 404 page. 
 
 
 ### Dark Mode:  
-plane purple background,Dark mode may help to decrease eye strain/dry eyes for some people who spend lots of time looking at screens. There are studies that have concluded dark mode can be more economical and uses less energy at least on mobile screens. Dark mode is good in low light environments, it can also help people with cataracts or other related visual disorders. By adding white borders around certain elements, it helps them to stand out from the darker background. The buttons and headings still have good contrast on either background.
+Plain purple background, dark-mode may help to decrease eye strain/dry eyes for some people who spend lots of time looking at screens. There are studies that have concluded dark mode can be more economical and uses less energy at least on mobile screens. Dark-mode is good in low light environments, it can also help people with cataracts or other related visual disorders. By adding white borders around certain elements, it helps them to stand out from the darker background. The buttons and headings still have good contrast in either background.
 
 
 ### Colour Combination in site:
-
-The main colours on the site, the background will be entirely white in light mode but colours tend to be a lighter variation in light mode.
+The main colours on the site, the background will be entirely white in light mode but colours tend to be a lighter variation in light mode. The following shows the main colours within the site, not included the textual colours: #47032b   #81044d   #e91e63   #8e399b
 
 
 <br/>
@@ -164,24 +159,25 @@ The main colours on the site, the background will be entirely white in light mod
 
 ## Fonts used on Site  <a name="fonts"></a>
 
-Merriweather was used for the main heading for the site. It has a strong presence and was available in a bold font. It was a good format to apply some styling to allow it to have a greater impace. Merriweather font was designed to be pleasant for screens and so is ideal for the user.
+Merriweather was used for the main heading for the site. It has a strong presence and was available in a bold serif type font. It was a good format to apply some styling, to allow it to have a greater visual impact in dark-mode. Merriweather font was designed to be pleasant for screens and so is ideal for the user.
 
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-Used for the majority of the site, both for regular text and headings. Sans serif is the fallback font in case other fonts are not available. See below for example of font in use.
+
+This font family was used for the majority of the site, both for regular text and headings. Sans serif is the fallback font in case other fonts are not available. 
 
 Shadows into Light was used to add some personalised touches to the site, used when interacting with the users 
-i.e. The welcoming text and the closing message to the user when the final score is shown.This font is a neat handwriting font which adds a human element to the interface.
+i.e. The welcoming text and the closing message to the user when the final score is shown.This font is a neat handwriting font which adds a human element to the application interface.
 
 In relation to the color, I gave the main font the color #313131(when in light mode), it can aid in preventing eye strain and can be used in a multitude of situations. I wanted to enable good user experience throughout the site where possible.
 
 
 <br/>
 <p align="center">
-  <img src="" alt="" />
+  <img src="assets/images/readme/welcometogame.jpg" alt="Welcoming Font" />
 </p>
 
 <p align="center">
-  <img src="" alt="" />
+  <img src="assets/images/readme/endmessage.jpg" alt="End Message Font" />
 </p>
 
 <p align="center">
@@ -192,7 +188,7 @@ In relation to the color, I gave the main font the color #313131(when in light m
 
 ## Icons and Favicon used on site <a name="icons"></a>
 
-I used an Icon as the brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons in the footer element. 
+I used an Icon of a brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons within the footer element. 
 
 <br/>
 <p float="center">
@@ -205,7 +201,7 @@ I used an Icon as the brain above the heading, I did not want an overbearing ima
 
 
 ## Structure <a name="structure"></a>    
-The Application has gone through a number of transitions. Originally it was 2 pages, an introduction page and a gaming page, but it was later simplified so that only 1 page is used. The introductory section consists of an intoductory blurb, a welcome message and a start button. When the Start button is pressed the introductory blurb is hidden and the main quiz interface is shown. When the game is complete a closing message screen is shown. This way the whole website is never shown in full to the user. Additional information can be inputted with the use of a prompt screen and a couple of modals.  The site itself grew out of another site, horror-quiz which was my experimental repository, the intention initially was to create a horror quiz using my own question set but I then changed to the Fetch from an API concept. The original Repository can be [found here](https://github.com/MHickey2/Horror-Quiz) 
+The Application has gone through a number of transitions. Originally it was 2 pages, an introduction page and a gaming page, but it was later simplified so that only 1 page is used. The introductory section consists of an intoductory blurb, username interput, a welcome message and a start button. When the Start button is pressed the introductory elements are hidden and the main quiz interface is shown. When the game is complete a closing message display is shown. This way the whole website is never shown in full to the user. The site itself grew out of another site, horror-quiz which was my experimental repository, the intention initially was to create a horror quiz using my own question set but I then changed to the Fetch from an API concept. The original Repository can be [found here](https://github.com/MHickey2/Horror-Quiz) 
 
 <br/>
 
@@ -222,13 +218,14 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 ### Index Page <a name="indexpage"></a>
 
 
-The entire application is based in 1 page, with different sections showing when needed and other hidden elements are hidden when no longer needed.     
-
+The entire application is based in 1 page, with different Elements showing when needed and others are hidden when no longer needed.   
 
 
 #### Username Prompt
 
 Although not strictly on the page, the prompt is the first interactive element on the page and is presented to the user on opening the page. The username prompt had been stricter, but did not want to impede the player from partaking in the game. The prompt is presented to the user, they can enter something in the field and this will be attributed to their username in the game and they will be presented with a welcome message. If they dont enter anything and press ok, they will be permitted to play the game. If the user presses cancel, the game will not proceed. I had put in measures to ensure this field could not be blank, but this proved restrictive and I did not want the player to not avail of the game, if they didn't enter a name. In future iterations, stricter measures would be introduced. This would include a second prompt window, as future tweaking would avail of allowing users to save their scores and this would require some identification to be valid. I had looked into personalising the prompt, and this again would be introduced in a future iteration.
+
+Note: This prompt has been replaced at latter stage of the project, and has now been included in the introductory screen as a simple input submit button. You can play as an anonymous Player, as security measures have not been implemented at this stage.
 
 <br/>
 <p align="center">
