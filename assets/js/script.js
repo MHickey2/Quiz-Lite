@@ -2,6 +2,7 @@ const img = document.getElementById('daynight');
 const welcomeText = document.getElementById('welcomeText');
 const restartButton = document.getElementById('restart-btn');
 const inputButton = document.getElementById('input-btn')
+
 const maxQuestions = 10;
 
 let answers = [];
@@ -259,7 +260,6 @@ function showFinalScore() {
 sessionStorage.setItem('score', 'finalScore');
 //let data = sessionStorage.getItem('score');
 
-showFinalScore();
 
 //Reloads the page, so the game can start again
 function replay() {
