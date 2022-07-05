@@ -116,14 +116,14 @@ The website was designed to provide a quick general knowledge Trivia Game. The w
 <summary>Wireframes for Site</summary>
 
 Wireframes for Desktop, Medium Screens and Mobile Screens.<br/> 
-Wireframes were created in Figma. 
+Wireframes were created in Figma. The design of the final site has changed since the wireframe stage. No wireframe was created for the 404.page as it was such a simple layout.
 
 </details>
 
 <details>
   <summary>1. Wireframe</summary>
   <p align="center">
-     <img src="" height="" width="" alt="" />    
+     <img src="assets/images/readme/wireframes.jpg"  alt="Wireframes for site" />    
 </p>
 </details>
 
@@ -191,10 +191,8 @@ In relation to the color, I gave the main font the color #313131(when in light m
 I used an Icon of a brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons within the footer element. 
 
 <br/>
-<p float="center">
-  <img src="assets/images/brain.webp"   alt="Icon used in cojunction with heading for site" />  
-  <img src="assets/images/day-and-night.webp" alt="Day and Night Toggle Switch Image" />
-  <img src="assets/images/readme/favicon.png"   alt="Favicon image for site" /> 
+<p align="center">
+  <img src="assets/images/readme/images.jpg"   alt="Images in the site" />   
 </p>
        
 <br/>
@@ -219,28 +217,27 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 
 
 The entire application is based in 1 page, with different Elements showing when needed and others are hidden when no longer needed.   
+<br/>
 
 
-#### Username Prompt
+#### Username Prompt (See note about replacement)
 
 Although not strictly on the page, the prompt is the first interactive element on the page and is presented to the user on opening the page. The username prompt had been stricter, but did not want to impede the player from partaking in the game. The prompt is presented to the user, they can enter something in the field and this will be attributed to their username in the game and they will be presented with a welcome message. If they dont enter anything and press ok, they will be permitted to play the game. If the user presses cancel, the game will not proceed. I had put in measures to ensure this field could not be blank, but this proved restrictive and I did not want the player to not avail of the game, if they didn't enter a name. In future iterations, stricter measures would be introduced. This would include a second prompt window, as future tweaking would avail of allowing users to save their scores and this would require some identification to be valid. I had looked into personalising the prompt, and this again would be introduced in a future iteration.
 
-Note: This prompt has been replaced at latter stage of the project, and has now been included in the introductory screen as a simple input submit button. You can play as an anonymous Player, as security measures have not been implemented at this stage.
+Note: This prompt has been replaced at latter stage of the project, and has now been included in the introductory screen as a simple input submit button. You can play as an anonymous Player, as security measures have not been implemented at this stage of development.
 
 <br/>
 <p align="center">
-  <img src="assets/images/readme/prompt.jpg" alt="prompt_for_username" />
+  <img src="assets/images/readme/username.jpg" alt="prompt_for_username" />
 </p>
 
-<p align="center">
-  <img src="assets/images/readme/welcometogame.jpg" alt="WelcomeMessage" />
-</p>
+
 
 #### Intro Section:    
 
-The Intro Section consists of the Logo, which is a brainpower Icon and a main heading and there is also an intro to the game panel. Content is simple and to the point, it is just a quick quiz, so felt the opening should be brief.     
+The Intro Section consists of the Logo, which is a brainpower Icon and a main heading and there is also an intro to the game central message. It now also includes the username request section (see above). Content is simple and to the point, it is just a quick quiz, so felt the opening should be brief.     
 
-
+<br/>
 
 
 <p align="center">
@@ -249,7 +246,8 @@ The Intro Section consists of the Logo, which is a brainpower Icon and a main he
 
 #### Light/Dark Toggle:
 
-The original concept was that the website would be a dark colour and all elements would be conducive with this colour scheme, but as the site progressed, I wanted to strip the colour back and try a lighter theme, on further research I managed to do both. Initially there were some issues, in that I had font colours within many of the body elements, so the toggle was not as affective, but when I stripped out the colours and left the body take over that responsibility, the light and dark mode was effectively accomplished. There are still some alternative font colours but that is where I wanted these fonts to be distinguisable and they had to work with both the dark and light mode.     
+The original concept was that the website would be a dark colour and all elements would be conducive with this colour scheme, but as the site progressed, I wanted to strip the colour back and try a lighter theme, on further research I managed to do both. Initially there were some issues, in that I had font colours within many of the body elements, so the toggle was not working as affectively as it should, but when I stripped out the colours and left the body take over that responsibility, the light and dark mode was effectively accomplished. There are still some alternative font colours but that is where I wanted these fonts to be distinguisable and these had to have good contrast with both the dark and light mode.    
+<br/> 
 
 
 
@@ -258,26 +256,13 @@ The original concept was that the website would be a dark colour and all element
   <img src="assets/images/readme/togglelight.jpg" alt="ToggleLightMode" />  
 </p>
 
-#### Category and Difficulty Section:
 
-When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved (See bugs). Images below.  
-
-
-
-<p align="center">
-  <img src="assets/images/readme/catDifSection.jpg" alt="CategoryAndDifficultySection" />
-</p>
-
-<p align="center">
-  <img src="assets/images/readme/modal1.jpg" alt="CategoryModal" />  
-  <img src="assets/images/readme/modal2.jpg" alt="DifficultyModal" />  
-</p>
 
 #### Start Button:
 
-The Start Button is the last element on the initial screen view (besides the footer, which will relocate when button is pressed) and it will when pressed show the full game interface, and it will also remove any unnecessary elements. The Introductory section and option buttons will be removed, but the welcome text will remain. 
+The Start Button is the last element on the initial screen view (besides the footer, which will relocate when button is pressed) and it will when pressed show the full game interface. The Introductory section will be removed, but the welcome text will remain. 
 
-
+<br/>
 
 <p align="center">
   <img src="assets/images/readme/startbtn.jpg" alt="StartButton" />  
@@ -285,9 +270,9 @@ The Start Button is the last element on the initial screen view (besides the foo
 
 ### The Game Interface:
 
-This will consist of a panel with the difficulty and category panel with information on each question asked and a question number which will help the user understand their progress level in the game and the required number of questions to be asked.  
+This will consist of a panel with the difficulty and category panel with information on each question asked and a question number which will help the user understand their progress level in the game and it will indicate the number of questions to be asked, and the questions to be asked themselves.
 
-
+<br/>
 
 <p align="center">
   <img src="assets/images/readme/gameInterface.jpg" alt="gameInterface" />  
@@ -295,9 +280,9 @@ This will consist of a panel with the difficulty and category panel with informa
 
 ### Answer Section and Next Button:
 
-The answers will be displayed in a series of buttons. When the right button is selected, it will turn green and if the selection is incorrect it will turn red. The next Button allows the user to chose the next question. Initially there was going to be a timer for the quiz, but this has since been removed, so there presently is no constraint on the time taken in the quiz. The next button allows the user time to ponder each question.  
+The answers will be displayed in a series of buttons. When the right button is selected, it will turn green and if the selection is incorrect it will turn red. The next Button allows the user to chose the next question. Initially there was going to be a timer for the quiz, but this has since been removed, so there presently is no constraint on the time taken in the quiz. The next button allows the user time to ponder each question, and clears the fields of the colour changes that have occured.  
 
-
+<br/>
 
 <p align="center">
   <img src="assets/images/readme/answersAndNext.jpg" alt="answersAndNextButtons" />  
@@ -305,19 +290,22 @@ The answers will be displayed in a series of buttons. When the right button is s
 
 ### End Section:
 
-There is a verification answer panel, which shows the user the correct answer for each question. There is also a running total of correct and incorrect scores. When the game has completed its cycle, an alert button is displayed to the user.  
+There is a verification answer panel, which shows the user the correct answer for each question. There is also a running total of correct and incorrect scores. When the game has completed its cycle, an alert button is displayed to the user.(Will probably be replaced by a modal, but ran out of time).  
 
-
+<br/>
 
 <p align="center">
   <img src="assets/images/readme/gameover.jpg" alt="gameover" />  
 </p>
 
-### Closing Message and Restart Button
+<br/>
 
-When the game is over, the verification answer panel will be hidden and a closing message panel will be shown. This will show the final Score to the user, and a parting comment on how well they did on the Quiz. If the user wants to repeat the game, they can do this by pressing the Restart Button, which will refresh the game and they will be presented with the opening page again, where they have option to repeat the opening process.  
+### Closing Message and Restart Button:   
 
 
+When the game is over, the verification answer panel will be hidden and a closing message panel will be shown. This will show the final Score to the user, and a parting comment on how well they did on the Quiz. If the user wants to repeat the game, they can do this by pressing the Restart Button, which will refresh the game and they will be presented with the opening page again, where they have the option to repeat the opening process.  
+
+<br/>
 
 <p align="center">
   <img src="assets/images/readme/endmessage.jpg" alt="endMessage" />
@@ -325,28 +313,33 @@ When the game is over, the verification answer panel will be hidden and a closin
 
 <br/>
 
-#### User Experience related to common elements on each page
 
 #### [Return to Table of Contents](#toc)
 ----
 
 <br/>
 
-## Future <a name="future"></a>  
+## Future <a name="future"></a> 
+<br/>
+
 
 There were a number of features that were trialed within this application and they would be included in future iterations including:
 
 - A more rebust functionality for requesting usernames that will ensure a username would need to be supplied by the user, this would be important when user scores could be saved at the end of the game and could be a good way to introduce a level of competition with other quiz players on the site.
 - An extra level of complexity, would be to add a timer element, where the game would end after a certain level of time has been surpassed.
-- I had intended to introduce sound, when there was a correct and incorrect answer, but I didn't in the end, but may add a celebratory tone, when a high score is achieved at the end of a game.
-- I would probably allow users to choose the number of questions they want to answer, and this would involve changing the final messages to accomodate different the starting question sets. Maybe introduce a percentile instead of a number count, as this could be utilised according to the different question load.
-- At the moment session storage is being used, but with introducing scores, it would open up needs for long term storage. Competitors could test their scores, against existing high scorers, and different challenges could encourage more complexity.
-- In relation to interactivity, there could be an element of social interactivity. Present social media sites could be used to encourage fellow competitors to communicate within these channels, or a dedicated forum on the site itself could be a great platform.
+- I had intended to introduce sound, when there was a correct and incorrect answer, but I didn't in the end, but may add a celebratory tone, when a high score is achieved at the end of a game. The key to sound is to use sparingly if at all.
+- I would probably allow users to choose the number of questions they want to answer, and this would involve changing the final messages to accomodate different question sets. Maybe introduce a percentile instead of a number count, as this could be better able to deal with scale.
+- At the moment session storage is being used, but with introducing scores, it would open up needs for long term storage. Competitors could test their scores, against existing high scorers. This may require a database to hold scores long term.
+- In relation to interactivity, there could be an element of social interactivity. Present social media sites could be used to encourage fellow competitors to communicate within these channels, or a dedicated forum on the site itself could be a great platform to encourage communication.
   
+ <br/> 
 
 #### [Return to Table of Contents](#toc)
 ----
+
 ## Tools and Technologies Used <a name="technology"></a>
+
+<br/>
 
 - Programming Languages: &nbsp;	[HTML5](https://en.wikipedia.org/wiki/HTML5)	&nbsp; [CSS3](https://en.wikipedia.org/wiki/CSS)
   
@@ -383,12 +376,16 @@ There were a number of features that were trialed within this application and th
 ----
 ## Deployment  <a name="deployment"></a>
 
+<br/>
+
 The Website was developed within Gitpod and was pushed to GitHub using the git commands:
 Git add .	Which added all files
 
 Git commit -m “Various Messages”   which commited these files and the message indicated what these files related to i.e “Working on styling for the Navigation”
 
-Git push	Which pushed these files into the GitHub Repository.    
+Git push	Which pushed these files into the GitHub Repository.
+
+<br/>   
 
 
 ### Create a GitHub Repository for your site <a name="githubrepository"></a> 
@@ -397,6 +394,7 @@ Git push	Which pushed these files into the GitHub Repository.
 3. You can choose the visibility of the site, in this case public was chosen.
 4. You can then initialize the site with a README.
 5. You can now click the create repository button.
+   
    <br/>  
 
 
@@ -415,7 +413,9 @@ Git push	Which pushed these files into the GitHub Repository.
 2. Navigate to your GitHub Repository, there will be a green Gitpod button available now, you can use this and your code will be used to build a workspace which you can use to work locally.
 3. The first time you do this, you need to login with GitHub so click to authorize.
 4. Within the Code Institute website there is a GitPod button which will allow you to access your workspaces dashboard or you can use a shortcut on your computer to allow you to access these workspaces independently.
+   
 <br/>     
+
 
 
 ### How to make a local Clone <a name="clone"></a>
@@ -445,7 +445,7 @@ This Template has been provided by the Code Institute and includes a number of t
 2. Using the 'add file' dropdown, choose 'Create new File'.
 3. In the presented filed name, type 404.html/404.md. In my case I chose 404.html.
 4. You can then add a meaningful message that describe the changes you made.
-5. You can add the commit to current branch or new branch. I chose to commit to main branch and clicked to propose the new file. There were no links on the present application so did not include a 404 page.   
+5. You can add the commit to current branch or new branch. I chose to commit to main branch and clicked to propose the new file.   
 <br/>  
 
 
@@ -454,6 +454,7 @@ More information is available at [https://docs.github.com/en](https://docs.githu
 
  #### [Return to Table of Contents](#toc)
 ----
+
 ## Testing <a name="TEST.md">
 
 [SEE TESTING on TEST.md Page](TEST.md)
@@ -474,6 +475,9 @@ The API itself sends the answers in a specific format and another issue was trin
 
 I used information from the Love Maths module to learn how to increment the scores, but had an issue with showing final scores for the game, which was resolved with storing the variable in session storage, which I used for a number of variables.
 
+The prompt has been replaced and it is mentioned in the features section)
+The username prompt was a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with this [site](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects. 
+
 <br/>
 
 
@@ -481,13 +485,29 @@ I used information from the Love Maths module to learn how to increment the scor
 
 ### Unresolved Issues  <a name="unresolved"></a>
 
-The username prompt is a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with this [site](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects.
+
 
 <br/>
 
-Another unfixed bug relates to user giving inputs that will change the criteria in the API Fetch Request, I managed to create 2 modal forms, which were taking user input and assigning the answers to session stoarage, the plan was to use the inputted choices in literal strings in the fetch request, despite multiple sessions in resolving this issues, at the eleventh hour, the choice was made to remove these options. The fetch api was still fetching request before utilizing the user inputs, this would be an issue to be fixed in future iterations, however it is present for a great deal of the project and there are some information on these elements throughout the README.md and TEST.md, to explain the reasoning of the plan and the execution, despite no resolution being found at this time.
+One unfixed bug relates to user giving inputs that will change the criteria in the API Fetch Request, I managed to create 2 modal forms, which were taking user input and assigning the answers to session stoarage, the plan was to use the inputted choices in literal strings in the fetch request, despite multiple sessions in resolving this issue, at the eleventh hour, the choice was made to remove these options. The fetch api was still fetching request before utilizing the user inputs, this would be an issue to be fixed in future iterations, however it is present for a great deal of the project and there is some information on these elements in the TEST.md, to explain the reasoning of the plan and the execution, despite no resolution being found at this time.
+
+#### Category and Difficulty Section: (Formerly a feature, but now outside project scope)
+
+When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved. (See images below).
+
+<br/>
 
 
+<p align="center">
+  <img src="assets/images/readme/catDifSection.jpg" alt="CategoryAndDifficultySection" />
+</p>
+
+<p align="center">
+  <img src="assets/images/readme/modal1.jpg" alt="CategoryModal" />  
+  <img src="assets/images/readme/modal2.jpg" alt="DifficultyModal" />  
+</p>
+
+Another bug exists in that more than one option can be selected in the answers, this would need to be refactored so that you can only choose one button, and would probably be better utilized in a loop. The present set up will work, but can cause erroneous scores, if not played in the right way.
 
 #### [Return to Table of Contents](#toc)
 ----
@@ -508,7 +528,7 @@ I used the documentation and template provided by the Code Institute to provide 
 
 ### Code
 
-I didn't use code, but did refer to it when compiling functions, from no one tutorial, but different concepts from different video tutorials were integrated into the application on an ongoing basis. I did add a loader at one point, but didn't keep it, because it was difficult to refactor it, without knowing more about the animation aspect.
+I did refer to a variety of Tutorials when compiling functions, different concepts from different video tutorials were integrated into the application on an ongoing basis. 
 
 
 ### Sources
@@ -525,7 +545,11 @@ Sites that I have consulted when there was issues with the site:<br/>
 ----
 ## Acknowledgements <a name="acknowledgements"></a>
 
+Thank you to my mentor Brian Macharia for his guidance and support.
+
 Thank you to the staff of the Code Institute for their support.
+
+Thank you Kenan Wright and Harry Dhillon for your contributions, 
 
 ----
 

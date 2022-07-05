@@ -44,6 +44,19 @@ colour and the text*/
     padding: 10px;
 }
 
+input[type=text] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(125, 76, 145);    
+  }
+  
+  input[type=text]:focus {
+    border: 3px solid rgb(72, 66, 75);
+  }
+  
+
 /*Styling for the welcome message using username*/
 #welcomeText {
     font-size: 1.4rem;
