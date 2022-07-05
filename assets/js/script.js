@@ -1,6 +1,7 @@
 const img = document.getElementById('daynight');
 const welcomeText = document.getElementById('welcomeText');
 const restartButton = document.getElementById('restart-btn');
+const inputButton = document.getElementById('input-btn')
 const maxQuestions = 10;
 
 let answers = [];
@@ -12,6 +13,7 @@ let questionNumber = 1;
 let finalScore;
 
 img.addEventListener('click', changeColourScheme);
+inputButton.addEventListener('click', getUserName);
 restartButton.addEventListener('click', replay);
 
 //function to choose dark-mode
@@ -24,15 +26,11 @@ function changeColourScheme() {
 
 changeColourScheme();
 
-//Function to get user name and welcome them personally to the game
 function getUserName() {
-    let username = '';
-    //let alreadyShownPrompt = false;
-    if (!username) {
-        username = prompt('Enter your username:').trim().toLowerCase();
-    }
+    let username = document.querySelector("#username").value.trim();
+    //let welcomeText = document.querySelector("#welcomeText");      
     sessionStorage.setItem('username', username);
-    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';
+    document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';   
 }
 
 getUserName();
