@@ -49,13 +49,13 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid rgb(125, 76, 145);    
-  }
-  
-  input[type=text]:focus {
+    border: 2px solid rgb(125, 76, 145);
+}
+
+input[type=text]:focus {
     border: 3px solid rgb(72, 66, 75);
-  }
-  
+}
+
 
 /*Styling for the welcome message using username*/
 #welcomeText {
@@ -68,6 +68,7 @@ input[type=text] {
     margin-right: auto;
     padding: 15px;
 }
+
 /*Descriptor for Toggle Image*/
 .descriptor {
     position: absolute;
@@ -360,7 +361,7 @@ footer p {
 
 .error {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
@@ -374,13 +375,14 @@ footer p {
     border: 15px;
 }
 
-/* *******************For small screen sizes 600px and down *************************************************/
+/***********************************Media Queries************************************************/
+/* *******************For small screen sizes 600px and down *************************************/
 
 @media screen and (max-width: 600px) {
 
     .informationForQuestion {
         align-items: center;
-        width: 80%;        
+        width: 80%;
         font-size: .75rem;
     }
 
@@ -390,7 +392,36 @@ footer p {
         font-size: .75rem;
     }
 
+    #verify-answer {
+        width: 80%;
+    }
+
     .closing {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .informationForQuestion {
+        align-items: center;
+        width: 70%;
+        font-size: .70rem;
+    }
+
+    .choice-container {
+        width: 70%;
+        height: 70px;
+        font-size: .70rem;
+    }
+
+    #verify-answer {
+        width: 70%;
+        font-size: .70rem
+    }
+
+    .closing {
+        width: 70%;
+        font-size: .70rem
     }
 }

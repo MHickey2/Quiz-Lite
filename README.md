@@ -32,9 +32,10 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
     4. [Icons](#icons)
     5. [Structure](#structure)
     6. [Final Webpages](#webpages)
-       1. [Intro Screen]
-       2. [Game Screen]
-       3. [End Screen]
+         1. [Intro Screen](#introscreen)
+         2. [Game Screen](#gamescreen)
+         3. [End Screen](#endscreen)
+         4. [404.html](404page)
 4.  [Features](#features)
     1. [Index Page](#indexpage)    
 5.  [Future](#future)
@@ -86,7 +87,7 @@ The website was designed to provide a quick general knowledge Trivia Game. The w
 - Know whether I get the right answer to each question.
 - Find out what is the correct answer if i guessed it wrong.
 - See a running total of my correct answers.
-- At the end of the Quiz I would like some eedback and know what my overall score is.
+- At the end of the Quiz I would like some feedback and know what my overall score is.
 - If I want to restart a Game, I want to be able to do this easily.
 
   <br/>
@@ -121,7 +122,7 @@ Wireframes for Desktop, Medium Screens and Mobile Screens.<br/>
 Wireframes were created in Figma. The design of the final site has changed since the wireframe stage. No wireframe was created for the 404.page as it was such a simple layout.
 
 <details>
-  <summary>1. Wireframe</summary>
+  <summary>1. Wireframes</summary>
   <p align="center">
      <img src="assets/images/readme/wireframes.jpg"  alt="Wireframes for site" />    
 </p>
@@ -206,21 +207,27 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 ## Final Application Page  <a name="webpages"></a>
 
 <details>
-  <summary>1. Intro Screen</summary>
+  <summary>1. Intro Screen</summary>  <a name="introscreen"></a>
   <p align="center">
      <img src="assets/images/readme/introscreen.png"  alt="Intro Screen for site" />    
 </p>
 </details>
 <details>
-<summary>2. Game Screen</summary>
+<summary>2. Game Screen</summary>   <a name="gamescreen"></a>
   <p align="center">
      <img src="assets/images/readme/gamescreen.png"  alt="Game Screen for site" />    
 </p>
 </details>
 <details>
-<summary>3 End Screen</summary>
+<summary>3 End Screen</summary>   <a name="endscreen"></a>
   <p align="center">
      <img src="assets/images/readme/endscreen.png"  alt="End Screen for site" />    
+</p>
+</details>
+<details>
+<summary>4 404 page</summary>   <a name="404page"></a>
+  <p align="center">
+     <img src="assets/images/readme/404page.png"  alt="404 page for site" />    
 </p>
 </details>
 <br/>

@@ -23,7 +23,7 @@
   The site was tested on a Lenovo Laptop, an Acer Aspire Netbook and older iphone5(limited functionality).  
 
   Appearance and Functionality appeared consistent in all browsers on the Desktop, but on the older iPhone5
-  the WebP images could not be seen, on this older model, Safari does not support these images but in September 2020 onward, WebP support was added in Safari version 14. I have been testing on simulated versions online, but it hard to gauge on an actual working model. 
+  the WebP images could not be seen, on this older model, Safari does not support these images but in September 2020 onward, WebP support was added in Safari version 14. I have been testing on simulated versions online, but it hard to gauge without an actual working model. 
 <br/>
 
 #### [Return to Table of Contents](#toc)
@@ -47,7 +47,7 @@
    </p>
    <br/>
 
-   Should be responsive down to 320px screen, but any smaller and there will be issues. In regard to bigger screens it should be good to ?px. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application.
+   Should be responsive down to 320px screen, but any smaller and there will be issues. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application. I used Developer tools and was working with all screen sizes.
 
    The Media Query Breakpoints I used was:
    - 600px width and below;
