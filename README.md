@@ -32,6 +32,9 @@ Quiz-Lite is a General Trivia Quiz that utilises questions generated within the 
     4. [Icons](#icons)
     5. [Structure](#structure)
     6. [Final Webpages](#webpages)
+       1. [Intro Screen]
+       2. [Game Screen]
+       3. [End Screen]
 4.  [Features](#features)
     1. [Index Page](#indexpage)    
 5.  [Future](#future)

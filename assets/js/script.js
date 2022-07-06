@@ -1,3 +1,4 @@
+/*jshint esversion: 8* useful for testing purposes, needs version 8 for async*/
 const img = document.getElementById('daynight');
 const welcomeText = document.getElementById('welcomeText');
 const restartButton = document.getElementById('restart-btn');
@@ -30,8 +31,11 @@ changeColourScheme();
 //Function to get the username from the user for use in the welcome message and it will be
 //stored in session
 function getUserName() {
-    let username = document.querySelector("#username").value.trim();       
+    let username = document.querySelector('#username').value.trim();       
     sessionStorage.setItem('username', username);
+    //When name is submitted, clears the field, user can still change name till start button is pressed
+    //Allows numbers too, because it's user's choice what they want to be called.
+    document.getElementById('username').value = '';
     //Welcome message to the user, if username not given it still welcomes the user
     document.getElementById('welcomeText').innerHTML = 'Welcome ' + username + ' to Quiz-Lite!';   
 }
@@ -39,7 +43,7 @@ function getUserName() {
 getUserName();
 
 // Fetch 10 questions from API from general knowledge category which includes all catergories, 
-//and difficulty levels, catch all (default setting).
+//and difficulty levels.
 async function getQuestions() {
 
     //pass variable to question variable line2
@@ -96,8 +100,10 @@ function startGame() {
         //hides the final result screen till the game is over
         const targetDiv3 = document.getElementById('hiddenResults');
         targetDiv3.style.display = 'none';
+        //The verification display is shown throughout game
         const targetDiv4 = document.getElementById('verify-answer');
         targetDiv4.style.display = 'block';
+        //The start button is not shown after it is used, but restart is available
         startButton.style.display = 'none';
     });
 }
@@ -111,7 +117,7 @@ function choiceListeners() {
         //for each choice add a click event listener, pass the event to the callback function
         choice.addEventListener('click', event => {
             //event target is the one that is clicked 
-            var value = event.target.innerText;
+            //var value = event.target.innerText;
         });
     });
 }
@@ -199,7 +205,7 @@ function reset() {
 function showCorrectAnswer() {
     document.getElementById('verification-answer').innerHTML = correctAnswer;
 }
-//The user can click on next to see the next question       
+//The user can click on the next button to see the next question       
 let nextButton = document.getElementById('next-btn');
 nextButton.addEventListener('click', getNextQuestion => {
     reset();
@@ -225,7 +231,6 @@ function incrementWrongAnswer() {
 //hides next button when there are no questions left in the game
 function hideButton() {
     document.getElementById('nextButton');
-
     if (questionNumber >= 10) {
         nextButton.style.display = 'none';
     } else {
@@ -238,9 +243,12 @@ const targetDiv4 = document.getElementById('verify-answer');
 //When the quiz is over the score is shown to the user  
 //final scores to be displayed to user on ending the game 
 function showFinalScore() {
+    //Issue question number is higher than question length on initial start up
+    //question lenght is o and question number set at 1, but when game starts problem is gone
     if (questionNumber > [questions.results.length]) {
         //final scores and message is displayed to the user                  
         targetDiv3.style.display = 'block';
+        //verification display is removed
         targetDiv4.style.display = 'none';
         document.getElementById('scoreText').innerText = 'You have scored, ' + `${finalScore}` + '!';
         let closingMessage = document.getElementById('closing-message');
