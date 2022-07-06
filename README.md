@@ -187,7 +187,7 @@ In relation to the color, I gave the main font the color #313131(when in light m
 
 <br/>
 
-## Icons and Favicon used on site <a name="icons"></a>
+## Icons and other Imagery used on site <a name="icons"></a>
 
 I used an Icon of a brain above the heading, I did not want an overbearing image, and instead opted for a small image which gives some context to the Quiz Application. Another icon I used was the image for the day-night toggle on the left hand top of the screen. Other than that the only other icons are the social media icons within the footer element. 
 
@@ -204,7 +204,7 @@ The Application has gone through a number of transitions. Originally it was 2 pa
 
 <br/>
 
-## Final Application Page  <a name="webpages"></a>
+## Final Webpages  <a name="webpages"></a>
 
 <details>
   <summary>1. Intro Screen</summary>  <a name="introscreen"></a>
@@ -314,7 +314,7 @@ The answers will be displayed in a series of buttons. When the right button is s
 
 ### End Section:
 
-There is a verification answer panel, which shows the user the correct answer for each question. There is also a running total of correct and incorrect scores. When the game has completed its cycle, an alert button is displayed to the user.(Will probably be replaced by a modal, but ran out of time).  
+There is a verification answer panel, which shows the user the correct answer for each question. There is also a running total of correct and incorrect scores. When the game has completed its cycle, an alert button is displayed to the user. (Will probably be replaced by a modal, but ran out of time).  
 
 <br/>
 
@@ -502,7 +502,7 @@ The API itself sends the answers in a specific format and another issue was trin
 I used information from the Love Maths module to learn how to increment the scores, but had an issue with showing final scores for the game, which was resolved with storing the variable in session storage, which I used for a number of variables.
 
 The prompt has been replaced and it is mentioned in the features section)
-The username prompt was a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with this [site](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects. 
+The username prompt was a temporary measure, and the hope is to introduce a more customised Responsive and Accesable (WAI-ARIA) replacement for Javascript's pop-up windows. I had experimented with [Sweetalert2](https://sweetalert2.github.io/#input-types) in regards to the username prompt and category and difficulty modules, but would have involved an updated version of javascript and was wary of introducing a new version, as it could have caused issues with existing elements. This site would be worth exploring for all future projects. 
 
 <br/>
 
@@ -519,7 +519,7 @@ One unfixed bug relates to user giving inputs that will change the criteria in t
 
 #### Category and Difficulty Section: (Formerly a feature, but now outside project scope)
 
-When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. These options are now optional, but will be removed if issue is not resolved. (See images below).
+When using the API, I wanted to introduce more interactivity and allow the user to search for questios based on their requirements. Initially these options would have been on the first page and based on their input they would be presented with the result of their chosen criteria. When the change was made to have one page, I devised these options would be available in modals. Each modal has radio buttons and the values would be used as literal strings in the fetch request. There have been issues integrating user input into the fetch request. The fetch request does have default settings and will, despite this fetch generic options and generic difficulty levels, so if these options can't be utilised in this iteration, the hope is to fix this issue and allow users more control over the quiz options in the future. (See images below).
 
 <br/>
 
@@ -535,6 +535,8 @@ When using the API, I wanted to introduce more interactivity and allow the user 
 
 Another bug exists in that more than one option can be selected in the answers, this would need to be refactored so that you can only choose one button, and would probably be better utilized in a loop. The present set up will work, but can cause erroneous scores, if not played in the right way.
 
+Last minute issues with images, Lighthouse expects bigger images than those provided, and anything bigger would be too big for smaller screens, so will probably have 2 sets of images for different size screens, in future iterations.
+
 #### [Return to Table of Contents](#toc)
 ----
 ## Credit  <a name="credits"></a>
@@ -546,7 +548,7 @@ I used the documentation and template provided by the Code Institute to provide 
 ### Media
 
 - [Trivia API](https://www.youtube.com/watch?v=SgJ_femmsfg)
-- [Build a Quix App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k)
+- [Build a Quiz App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k)
 - [How to make a Quiz App](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=3120s)
 - [Build a Quiz App](https://www.youtube.com/watch?v=rFWbAj40JrQ&t=6s)
 - [Create a Multiple Choice Quiz](https://www.youtube.com/watch?v=49pYIMygIcU&t=2137s)
@@ -554,17 +556,18 @@ I used the documentation and template provided by the Code Institute to provide 
 
 ### Code
 
-I did refer to a variety of Tutorials when compiling functions, different concepts from different video tutorials were integrated into the application on an ongoing basis. I believe this was the first one I looked at, but changes were made to fit into my project, but this would have been the starting block, and it relates to the [Build a Quix App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k) Video.
+I did refer to a variety of Tutorials when compiling functions, different concepts from different video tutorials were integrated into the application on an ongoing basis. I believe this was the first one I looked at, but changes were made to fit into my project, but this would have been the starting block, and it relates to the [Build a Quiz App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k) Video.
+
+Github Repository:
 
 https://github.com/WebDevSimplified/JavaScript-Quiz-App
 
 
 ### Sources
-Sites that I have consulted when there was issues with the site:<br/>
+Sites that I have consulted when there was issues:<br/>
 
 - [W3Schools](https://www.w3schools.com/html/html5_svg.asp)
 - [https://stackoverflow.com/](https://stackoverflow.com/)
-
 - Tutor Support
 - Code Institute Slack Channel
 

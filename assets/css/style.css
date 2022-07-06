@@ -56,7 +56,6 @@ input[type=text]:focus {
     border: 3px solid rgb(72, 66, 75);
 }
 
-
 /*Styling for the welcome message using username*/
 #welcomeText {
     font-size: 1.4rem;
@@ -312,6 +311,7 @@ button {
 #closing-message {
     font-family: 'Shadows Into Light', cursive;
     font-size: .9rem;
+    color: black;
 }
 
 /*Styling for Button area with category and difficullty Button*/
@@ -382,7 +382,7 @@ footer p {
 
     .informationForQuestion {
         align-items: center;
-        width: 78%;
+        width: 80%;
         font-size: .75rem;
     }
 
@@ -407,7 +407,7 @@ footer p {
 
     .informationForQuestion {
         align-items: center;
-        width: 74%;
+        width: 77%;
         font-size: .70rem;
     }
 
