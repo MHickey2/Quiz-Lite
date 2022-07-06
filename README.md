@@ -547,7 +547,9 @@ I used the documentation and template provided by the Code Institute to provide 
 
 ### Code
 
-I did refer to a variety of Tutorials when compiling functions, different concepts from different video tutorials were integrated into the application on an ongoing basis. 
+I did refer to a variety of Tutorials when compiling functions, different concepts from different video tutorials were integrated into the application on an ongoing basis. I believe this was the first one I looked at, but changes were made to fit into my project, but this would have been the starting block, and it relates to the [Build a Quix App with JavScript](https://www.youtube.com/watch?v=riDzcEQbX6k) Video.
+
+https://github.com/WebDevSimplified/JavaScript-Quiz-App
 
 
 ### Sources

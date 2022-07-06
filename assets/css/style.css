@@ -379,6 +379,7 @@ footer p {
 @media screen and (max-width: 600px) {
 
     .informationForQuestion {
+        align-items: center;
         width: 80%;        
         font-size: .75rem;
     }

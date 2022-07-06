@@ -7,9 +7,10 @@
 3.  [Validator Testing](#validatortesting)
      1. [W3C Validator](#w3c)
      2. [CSS Validator](#css)
-     3. [Lighthouse](#lighthouse)
-     4. [Contrast Checker](#contrastchecker)
-     5. [WAVE](#wave)
+     3. [JSHint](#jshint)
+     4. [Lighthouse](#lighthouse)
+     5. [Contrast Checker](#contrastchecker)
+     6. [WAVE](#wave)
 4.  [Manual Testing](#manualtesting)
 5. [User Story Testing](#userstorytesting)  
 
@@ -60,7 +61,7 @@
 
 - W3C Validator <a name="w3c"></a>
 
-Using [https://validator.w3.org/](https://validator.w3.org/)  The main issues that came up were in relations to using various headings to display information from the API. I changed these elements to <p></p> and it worked out the issues. There were also some empty headings, were content alone was being displayed, and these were changed to spans. There are more issues in the Bug section in the [README.md](README.md). The results of the HTML validation can be seen below:
+Using [https://validator.w3.org/](https://validator.w3.org/)  The main issues that came up were in relations to using various headings to display information from the API. I changed these elements and it worked out the issues. There were also some empty headings, were content alone was being displayed, and these were changed to spans. There are more issues in the Bug section in the [README.md](README.md). The results of the HTML validation can be seen below:
 
 
 <br/>
@@ -80,9 +81,17 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 </p>
 <br/>
 
+- JSHint   <a name="jshint"></a>
+
+<br/>
+<p align ="center">      
+     <img src="assets/images/readme/jshint.jpg"  alt="JSHint Validation results"/>   
+</p>
+<br/>
+
 - Lighthouse  <a name="lighthouse"></a>
 
-Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. 
+Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. The questionnumber begins at 1 and until the game starts there is no lenght for the questions array so line 246 in script.js tests for this, but when the quiz starts this anomoly is fixed, but it picks it up in Lighthouse, hence the best practises score is effected. 
 
 See image below for Lighthouse scores for all pages in Desktop and Mobile.  
 
@@ -98,14 +107,14 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
 
 <br/>
   <p align ="center">      
-     <img src="assets/images/readme/contrast.jpg" height="" width="" alt="contrast index result"/>   
+     <img src="assets/images/readme/contrast.jpg"  alt="contrast index result"/>   
   </p>
   
   
 
 - Wave (Web Accesability Evaluation tool)   <a name="wave"></a>
   
-  WAVE is a web accesability tool developed by WebAIM.org. It provides visual feedback about the accessibility of your web content, it highlights any errors and gives you possible suggestions for improvements. 
+  WAVE is a web accesability tool developed by WebAIM.org. It provides visual feedback about the accessibility of your web content, it highlights any errors and gives you possible suggestions for improvements. This score tends to fluctuate, it is now showing errors in that it believes answer buttons are empty, they are not as they are showing the individual answers, in the future I may add characters or numbers, but they don't really add anything to the game in the current iteration.
 
   <br/>
   <p align ="center">      
@@ -117,7 +126,7 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
 ----
 ## Manual Testing<a name="manualtesting"></a>
 
-The Following table, shows the manual tests that were done within the site. 
+The Following table, shows the manual tests that were done within the site. The include details for the now defunct modals for category and difficuty, but I did refer to them in bugs, and testing was done earlier and I thought they should be included.
 
 
 <br/>
@@ -131,12 +140,11 @@ The Following table, shows the manual tests that were done within the site.
 
 ### Notes on Manual Testing:
 
-* The Prompt is not ideal and in a future model there will be more constraints on username requesting, but in the interest of testing, it was stripped back to basics. If the user enters a name, they are welcomed by name to the game. If they do not enter a name and press yes, they can start the game, and the welcome will have no username. At the moment if you cancel out of the prompt, the game will not start, and to play the game you will need to refresh the game.
+* The Prompt has been removed and instead username is requested on the intro screen, the username request form is working correctly and the input button is passing the username to the welcome message and is being stored in session storage.
 
 * The coloured boxes contain the testing that was done for features no longer within the scope of the project. But they have been included throughout the project and they were subject to a lot of testing, therefore for future iterations, I hope to build on the work carried out throughout this project to inject more control for the user on what categories are shown and which difficulty level they want to achieve.  Building on from this, the number of questions would also be chosen by the user in future applications.
 
 * Answer Buttons although working alright, there is an issue in that you can press other answers as well as your selected choice and your score will be affected by these additional selections, more information on this issue can be found in the unresolved issues in the README.md.
-
 
 
 
@@ -163,7 +171,7 @@ The user is requested to enter a username, and this is used to welcome them to t
 
 - Play the Quiz.
 
-The user can play the game, if they cancel out of the prompt, they will be unable to play, but a quick refresh and they can try again.
+The user can play the game, regardless of username submission.
 
 - See the number of questions to be answered.
 
@@ -176,7 +184,7 @@ There is a category and difficulty information panel which has information on di
 
 - Know whether I get the right answer to each question.
 
-When the user choses an option, the button will turn green if correct and red if wrong. 
+When the user choses an option, the button will turn green if correct, and red if wrong. 
 
 - Find out what is the correct answer if i guessed it wrong.
 
@@ -184,7 +192,7 @@ There is a verification Panel below the answers and this will supply the user wi
 
 - See a running total of my correct answers.
 
-There is a Tally under the answers, keeping check on right and wrong answer count.
+There is a Tally under the answers, keeping check on the right and wrong answer count.
 
 - At the end of the Quiz I would like some feedback and know what my overall score is.
 

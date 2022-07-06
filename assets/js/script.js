@@ -1,11 +1,9 @@
-/*jshint esversion: 8* useful for testing purposes, needs version 8 for async*/
+/*jshint esversion: 8 (useful for testing purposes, needs version 8 for async functions)*/
 const img = document.getElementById('daynight');
-const welcomeText = document.getElementById('welcomeText');
 const restartButton = document.getElementById('restart-btn');
-const inputButton = document.getElementById('input-btn')
+const inputButton = document.getElementById('input-btn');
 const maxQuestions = 10;
 
-let answers = [];
 let questions = [];
 let index = 0;
 let correctAnswer;
