@@ -17,14 +17,15 @@
 #### [Return to README.md](README.md)
 ----
 
+
 ## Browser Testing<a name="browsertesting"></a>
 
   The site was tested in Google Chrome, Microsoft Edge, Mozilla Firefox and Brave Browser on the Desktop.
   The site was tested on a Lenovo Laptop, an Acer Aspire Netbook and older iphone5(limited functionality).  
 
-  Appearance and Functionality appeared consistent in all browsers on the Desktop, but on the older iPhone5
-  the WebP images could not be seen, on this older model, Safari does not support these images but in September 2020 onward, WebP support was added in Safari version 14. I have been testing on simulated versions online, but it hard to gauge without an actual working model. 
+  Appearance and Functionality appeared consistent in all browsers on the Desktop. I changed images in last stages of the project from webp to png/jpg as they were small and did not seem to slow down the site. It also meant they could be seen on my iphone5.
 <br/>
+
 
 #### [Return to Table of Contents](#toc)
 
@@ -43,7 +44,7 @@
    </p>
    <br/>
 
-   Should be responsive down to 320px screen, but any smaller and there will be issues. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application. I used Developer tools and was working with all screen sizes.
+   Should be responsive down to 320px screen, but any smaller and there will be issues. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application. I used Developer tools and was working with all screen sizes above 320px.
 
    The Media Query Breakpoints I used were:
    - 600px width and below;
@@ -80,6 +81,10 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 - JSHint   <a name="jshint"></a>
 
+Using [https://jshint.com/](https://jshint.com/)
+
+I had to add /*jshint esversion:8 */ above the file as only version 8 accomodates async function, I included it in script.js for ease of use.
+
 <br/>
 <p align ="center">      
      <img src="assets/images/readme/jshint.jpg"  alt="JSHint Validation results"/>   
@@ -90,7 +95,7 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. The questionnumber begins at 1 and until the game starts there is no lenght for the questions array so line 246 in script.js tests for this, but when the quiz starts this anomoly is fixed, but it picks it up in Lighthouse, hence the best practises score is effected. Also in mobile screens it expects bigger images although the size displayed is the actual size. Could have gone smalled with toggle but didn't want it to be missed for people with visual conditions.
 
-See image below for Lighthouse scores for all pages in Desktop and Mobile.  
+See image below for Lighthouse scores in Desktop and Mobile.  
 
 <br/>
 <p align ="center">      
@@ -115,7 +120,7 @@ See image below for Lighthouse scores for all pages in Desktop and Mobile.
 
 - Wave (Web Accesability Evaluation tool)   <a name="wave"></a>
   
-  WAVE is a web accesability tool developed by WebAIM.org. It provides visual feedback about the accessibility of your web content, it highlights any errors and gives you possible suggestions for improvements. This score tends to fluctuate, it is now showing errors in that it believes answer buttons are empty, they are not as they are showing the individual answers, in the future I may add characters or numbers, but they don't really add anything to the game in the current iteration.
+  Using [WAVE](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh), this is a web accesability tool developed by WebAIM.org. It provides visual feedback about the accessibility of your web content, it highlights any errors and gives you possible suggestions for improvements. This score tends to fluctuate, it is now showing errors in that it believes answer buttons are empty, they are not as they are showing the individual answers, in the future I may add characters or numbers, but they don't really add anything to the game in the current iteration.
 
   <br/>
   <p align ="center">      
@@ -203,6 +208,8 @@ When the game is over, an alert is shown telling the user, the game is over and 
 
 The Restart button is shown below the closing message, and the user will be able to repeat the game.
 
+<br/>
+
 ## As a regular user of the site
 
 - I want to improve my scores. 
@@ -212,6 +219,7 @@ The Restart button is shown below the closing message, and the user will be able
 
 With modifications in future iterations, there will be opportunities to expand the capacity of the application to build complexity in the game and provide a range of difficulty and category levels. The game can also provide a bigger pool of quiz questions.
 
+<br/>
 
 ## As the site owner
 
