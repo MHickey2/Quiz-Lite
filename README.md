@@ -392,7 +392,7 @@ There were a number of features that were trialed within this application and th
 
 - Favicon Generator: &nbsp; [The Favicon Generator](https://www.ionos.com/tools/favicon-generator)
 
-- Icons: &nbsp; [https://www.flaticon.com/]
+- Icons: &nbsp; [Flaticon](https://www.flaticon.com/)
 
   
 <br/>

@@ -33,11 +33,7 @@
 
    I regularly tested the responsiveness of the site using Google Chrome Developer tools, information on this can be found [here](https://developer.chrome.com/docs/devtools/). I also used Window Resizer and a Responsive Design Tester Application available in the Google Chrome Store. The devices I tested for are in the image below. As I was focusing on grasping the javascript I kept the elements fairly centred on the page and that could be easily adapted for all screens. So used minimal media queries and used rem for fonts and did not use many images, so as to keep the interface as simple as possible. The main work was on adapting the size of elements for the smaller screens. 
 
-   <br/>
-   <p align ="center">      
-     <img src="assets/images/readme/resptests.png"  alt="responsive test results"/>     
-   </p>
-   
+     
    
    I also used [https://ui.dev/amiresponsive](https://ui.dev/amiresponsive) and it was a useful way to see how the site was progressing in regards to reponding to different screen sizes. The image showing responsiveness can be seen below.
 
@@ -49,8 +45,9 @@
 
    Should be responsive down to 320px screen, but any smaller and there will be issues. The website is not responsive for the Galaxy Fold, but this is not within my current scope anyway. The only mobile I had access to was the iphone5, and is limited in it's capabilities, so used simulators to test the application. I used Developer tools and was working with all screen sizes.
 
-   The Media Query Breakpoints I used was:
+   The Media Query Breakpoints I used were:
    - 600px width and below;
+   - 350px width and below;
   
 <br/>
 
@@ -91,13 +88,17 @@ Using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator
 
 - Lighthouse  <a name="lighthouse"></a>
 
-Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. The questionnumber begins at 1 and until the game starts there is no lenght for the questions array so line 246 in script.js tests for this, but when the quiz starts this anomoly is fixed, but it picks it up in Lighthouse, hence the best practises score is effected. 
+Used the Lighthouse Testing in Google Developer Tools, lighthouse testing is also picking up issues from the console log, which is affecting the overall score. The questionnumber begins at 1 and until the game starts there is no lenght for the questions array so line 246 in script.js tests for this, but when the quiz starts this anomoly is fixed, but it picks it up in Lighthouse, hence the best practises score is effected. Also in mobile screens it expects bigger images although the size displayed is the actual size. Could have gone smalled with toggle but didn't want it to be missed for people with visual conditions.
 
 See image below for Lighthouse scores for all pages in Desktop and Mobile.  
 
 <br/>
 <p align ="center">      
      <img src="assets/images/readme/lighthousedesktop.jpg"  alt="lighthouse results desktop" />   
+</p>
+<br/>
+<p align ="center">      
+     <img src="assets/images/readme/lighthousemobile.png"  alt="lighthouse results mobile" />   
 </p>
 
 

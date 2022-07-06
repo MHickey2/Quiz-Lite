@@ -401,6 +401,8 @@ footer p {
     }
 }
 
+/* *******************For small screen sizes 350px and down *************************************/
+
 @media screen and (max-width: 350px) {
 
     .informationForQuestion {
@@ -417,11 +419,11 @@ footer p {
 
     #verify-answer {
         width: 70%;
-        font-size: .70rem
+        font-size: .70rem;
     }
 
     .closing {
         width: 70%;
-        font-size: .70rem
+        font-size: .70rem;
     }
 }
