@@ -297,7 +297,7 @@ button {
     height: 80px;
     width: 350px;
     border-radius: 15px;
-    font-size: 1rem;
+    font-size: .9rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -311,7 +311,7 @@ button {
 
 #closing-message {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 /*Styling for Button area with category and difficullty Button*/
@@ -382,22 +382,22 @@ footer p {
 
     .informationForQuestion {
         align-items: center;
-        width: 80%;
+        width: 78%;
         font-size: .75rem;
     }
 
     .choice-container {
-        width: 80%;
+        width: 78%;
         height: 80px;
         font-size: .75rem;
     }
 
     #verify-answer {
-        width: 80%;
+        width: 78%;
     }
 
     .closing {
-        width: 80%;
+        width: 78%;
     }
 }
 
@@ -407,23 +407,29 @@ footer p {
 
     .informationForQuestion {
         align-items: center;
-        width: 70%;
+        width: 74%;
         font-size: .70rem;
     }
 
     .choice-container {
-        width: 70%;
+        width: 74%;
         height: 70px;
         font-size: .70rem;
     }
 
     #verify-answer {
-        width: 70%;
+        width: 74%;
         font-size: .70rem;
     }
 
     .closing {
-        width: 70%;
+        width: 74%;
         font-size: .70rem;
+    }
+
+    #closing-message {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: .80rem;
+        font-weight: bold;
     }
 }
